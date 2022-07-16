@@ -38,6 +38,8 @@ J'ai donc choisi les paramètres suivants :
 - Je push une fois fini sur un de mes projets github 
 - Le push trigger un build GitHub action (workflow dans le projets) qui héberge mon blog sur GitHub Pages 
 
+![](./gh-gatsby.png)
+
 Plusieurs avantages :
 - Mon blog est centralisé et versionné (une ancienne version de ce post décrivait l'ancienne façon d'héberger via GatsbyCloud héhé)
 - Les utilisateurs peuvent collaborer sur les articles en soumettant un PR (dans les faits un simple edit du post sur GitHub)
