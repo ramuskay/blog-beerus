@@ -36,12 +36,13 @@ Et je suis tombé sur le post de ce [blog](https://calvin.me/now-powered-by-gats
 J'ai donc choisi les paramètres suivants : 
 - Redaction du code en local sur VS-Studio code (j'ai les plugins preview markdown etc...)
 - Je push une fois fini sur un de mes projets github 
-- Le push trigger un build GatsbyCloud sur lequel j'aurais mon blog d'hébergé
+- Le push trigger un build GitHub action (workflow dans le projets) qui héberge mon blog sur GitHub Pages 
 
 Plusieurs avantages :
-- Mon blog est centralisé et versionné
+- Mon blog est centralisé et versionné (une ancienne version de ce post décrivait l'ancienne façon d'héberger via GatsbyCloud héhé)
 - Les utilisateurs peuvent collaborer sur les articles en soumettant un PR (dans les faits un simple edit du post sur GitHub)
 - J'avais hésité à l'héberger sur l'infra maison mais vu que tout est déjà publique aucun problème à le faire héberger par un tiers
+- Tout passe par un seul hebergeur --> Github
 
 Et quelques inconvénients: 
 - Je repose sur ce tiers pour le build et l'exposition de mon blog (free version 25 build/jour)
