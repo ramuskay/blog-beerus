@@ -95,3 +95,4 @@ jobs:
           git commit --allow-empty -m "${{ github.event.head_commit.message }}"
           git push
         working-directory: gh-pages
+
