@@ -19,6 +19,7 @@ export default class PostTemplate extends Component {
     post.id = postNode.fileAbsolutePath.split('/').slice(-2)[0].substr(11)
     post.category_id = config.postDefaultCategoryID
     post.date = postNode.fileAbsolutePath.split('/').slice(-2)[0].substr(0, 10)
+    post.timeToRead = postNode.timeToRead
 
     if (post.thumbnail) {
       if (post.thumbnail.childImageSharp) {
@@ -53,6 +54,10 @@ export default class PostTemplate extends Component {
                 >
                   Edit
                 </a>
+              </div>
+              <div className="post-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              &nbsp; {post.timeToRead} min read.
               </div>
               <PostTags tags={post.tags} />
             </div>
