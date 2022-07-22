@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-categories-js","path":"/categories/","result":{"data":{"allMarkdownRemark":{"group":[{"fieldValue":"Blog","totalCount":1}]}},"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-categories-js","path":"/categories/","result":{"data":{"allMarkdownRemark":{"group":[{"fieldValue":"Blog","totalCount":1},{"fieldValue":"Infra","totalCount":1}]}},"pageContext":{}},"staticQueryHashes":[]}

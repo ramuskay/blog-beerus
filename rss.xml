@@ -1,4 +1,465 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Calvin Bui</generator><lastBuildDate>Sat, 16 Jul 2022 05:17:39 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Créer mon propre blog !]]></title><description><![CDATA[Je cherchais une bonne solution pour monter mon propre blog. Au début j'ai forcément réfléchis à des CMS classique tel que : Wordpress Drupal Grav etc... Mais je désirais aussi…]]></description><link>https://blog.beerus.fr/creation-du-blog</link><guid isPermaLink="false">https://blog.beerus.fr/creation-du-blog</guid><category><![CDATA[gatsby]]></category><category><![CDATA[jamstack]]></category><category><![CDATA[blog]]></category><pubDate>Thu, 14 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Je cherchais une bonne solution pour monter mon propre blog. Au début j&apos;ai forcément réfléchis à des CMS classique tel que :&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Calvin Bui</generator><lastBuildDate>Fri, 22 Jul 2022 05:14:47 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Déployer son infra K3S sur Proxmox IaC]]></title><description><![CDATA[Architecture je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m'exercer. J'ai pas mal fait de Kubernetes classique en lab via…]]></description><link>https://blog.beerus.fr/deploy-k3s-proxmox</link><guid isPermaLink="false">https://blog.beerus.fr/deploy-k3s-proxmox</guid><category><![CDATA[k3s]]></category><category><![CDATA[hashicorp]]></category><category><![CDATA[packer]]></category><category><![CDATA[terraform]]></category><category><![CDATA[proxmox]]></category><pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#architecture&quot; aria-label=&quot;architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Architecture&lt;/h1&gt;
+&lt;p&gt;je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m&apos;exercer. J&apos;ai pas mal fait de Kubernetes classique en lab via des foramtions Udemy et j&apos;aimerai tester autre chose mais toujours sur une base K8S.
+Je me suis donc penché sur K3S de Rancher. Il dispose de plusieurs qualité qui me semble intéressantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Il est léger et plus rapide que K8s&lt;/li&gt;
+&lt;li&gt;Il peut s&apos;exécuter sur du plus petit matériel (proc ARM par ex 🥰). J&apos;ai comme projet potentiel de faire un cluster de raspberry donc K3S est plus qu&apos;indiqué.&lt;/li&gt;
+&lt;li&gt;Il ne dispose pas de tous les connecteurs cloud mais vu que ça sera du on premise dans mon cas c&apos;est parfait.&lt;/li&gt;
+&lt;li&gt;Plein de petits avantages : + facile et rapide à déployer, moins de surface d&apos;attaque, facile à update etc...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Par contre il ne fait pas tourner docker nativement mais containerd (bien que j&apos;ai vu un projet passer s&apos;appelant k3d qui intègre docker), ça sera l&apos;occasion d&apos;apprendre autre chose surtout que le CRI (Container Runtime Interface) en soi n&apos;est pas le plus important.&lt;/p&gt;
+&lt;p&gt;Une fois mon choix d&apos;orchestrateur choisi je me suis dit que j&apos;allais installer mon cluster K3s sur mon lab maison qui exécute un Proxmox et tant qu&apos;à faire autant avoir un workflow de déploiement un peu évolué pour s&apos;éxercer.&lt;/p&gt;
+&lt;p&gt;Parmi toutes les ressources que j&apos;ai pu voir celle qui me semblait au départ le plus intéressant faisait les choses suivantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Récupération de l&apos;ISO Ubuntu 20 sur Proxmox&lt;/li&gt;
+&lt;li&gt;Création du template Proxmox &quot;à la main&quot; via des commandes qm (cli proxmox)&lt;/li&gt;
+&lt;li&gt;Configuration de cloud init via l&apos;onglet promox dédié&lt;/li&gt;
+&lt;li&gt;Création des VM via Terraform&lt;/li&gt;
+&lt;li&gt;Ansible pour dépoyer K3s sur mes nouvelles VM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ca paraissait sympa sur le papier et puis ça permettait de mettre en application les quelques connaissances Terraform dont je disposais.
+Mais à bien réfléchir il y avait quand même deux problèmes dans ce process :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Une partie manuelle qui cassait un peu l&apos;automatisation voulue. Si je pouvais automatiser cela je serai vraiment dans un cas d&apos;IaC (&lt;strong&gt;Infra As Code&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Pas très flexible cat si je veux customiser mon template ça sera à la main aussi ou a la limite via script bash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;C&apos;est là que je suis tombé sur un autre outil d&apos;Hashicorp qui fait tout ce travail manuel pour moi et dispose de la flexibilité voulue : Packer !&lt;/p&gt;
+&lt;p&gt;&lt;/br&gt;Voici les deux workflow qui sont ressortis au final :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation du template --&gt; Cloud init --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Packer (+Cloud init) --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;J&apos;ai donc choisi le deuxième worflow&lt;br&gt;
+Avantages :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Infra as code - Full automatisée&lt;/li&gt;
+&lt;li&gt;Pas d&apos;intéraction directe avec Proxmox, seulement via son API&lt;/li&gt;
+&lt;li&gt;Peut donc être piloté depuis une machine tiers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Inconvénients:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⚠️Necessite plus de developpement et de temps pour un résultat équivalement dans mon cas (installation d&apos;un potentiel DHCP, creation du fichier de conf packer etc...)&lt;/li&gt;
+&lt;li&gt;Temps d&apos;exécution de création du template plus long&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Retrouver l&apos;ensemble du projet sur ce git : &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;packer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#packer&quot; aria-label=&quot;packer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Packer&lt;/h1&gt;
+&lt;p&gt;Je vais donc utiliser packer pour packager mon image ubuntu 20.04 avec quelques packages et conf additionnelles. Il suffit d&apos;installer &lt;a href=&quot;https://www.packer.io/downloads&quot;&gt;packer&lt;/a&gt; puis nous verrons les fichiers de configuration.&lt;br&gt;
+D&apos;ailleurs dans mon cas pas besoin de DHCP, celui de ma box avec ma VM template en mode bridge sera largement suffisant.&lt;br&gt;
+Voici mon aborescence packer pour la config :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── http
+│   ├── meta-data
+│   └── user-data
+├── ubuntu20.pkr.hcl
+└── variables.pkr.hcl&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Les fichiers de conf peuvent être en json ou HCL (format hashicrop), j&apos;ai choisi HCL à la place de JSON pour deux raisons :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Language commun avec tous les outils HashiCorp (vu qu&apos;on va aussi utiliser Terraform ça a du sens)&lt;/li&gt;
+&lt;li&gt;Plus &quot;fonctionnel&quot;, on peut par exemple mettre des commentaires (dans JSON non ça fera partie de la data)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On a donc 3 fichiers hcl concernant :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.pkr.hcl&lt;/code&gt; : la définition des variables par défaut&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ubuntu20.pkr.hcl&lt;/code&gt; : la définition du job packer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regardons plus en détail &lt;code class=&quot;language-text&quot;&gt;ubuntu20.pkr.hcl&lt;/code&gt; :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;source &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;template&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  proxmox_url &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${var.proxmox_hostname}/api2/json&quot;&lt;/span&gt;&lt;/span&gt;
+  username &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proxmox_username
+  password &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proxmox_password
+  node &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proxmox_node_name
+  insecure_skip_tls_verify &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proxmox_insecure_skip_tls_verify
+  network_adapters &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    bridge &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;vmbr0&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  disks &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    type &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;scsi&quot;&lt;/span&gt;&lt;/span&gt;
+    disk_size &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;20G&quot;&lt;/span&gt;&lt;/span&gt;
+    storage_pool &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_storage_pool
+    storage_pool_type &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;lvm&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;#iso_file = &quot;local:iso/ubuntu-20.04.4-live-server-amd64.iso&quot;&lt;/span&gt;
+  iso_url               &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iso_url
+  iso_storage_pool      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iso_storage_pool
+  iso_checksum          &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iso_checksum
+  unmount_iso &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+  boot_wait &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;5s&quot;&lt;/span&gt;&lt;/span&gt;
+  memory &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_memory
+  sockets   &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_sockets
+  cores     &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_cores
+  template_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_name
+  vm_id     &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_id
+  http_directory &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;http_directory
+  cloud_init &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+  cloud_init_storage_pool &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iso_storage_pool
+  boot_command &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;esc&gt;&amp;lt;wait&gt;&amp;lt;esc&gt;&amp;lt;wait&gt;&amp;lt;f6&gt;&amp;lt;wait&gt;&amp;lt;esc&gt;&amp;lt;wait&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;bs&gt;&amp;lt;bs&gt;&amp;lt;bs&gt;&amp;lt;bs&gt;&amp;lt;bs&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;autoinstall ds=nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ &quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;--- &amp;lt;enter&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  ssh_username &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;username
+  ssh_password &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user_password
+  ssh_timeout &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;20m&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+build &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  sources &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;source.proxmox.template&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;shell&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    inline &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo rm -f /etc/cloud/cloud.cfg.d/99-installer.cfg&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo rm -f /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo cloud-init clean&quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Rien de bien compliqué là dedans c&apos;est aussi l&apos;avantage en général des outils Hashicorp la configuration est très descriptive et donc compréhensible rapidement.
+On va renseigner les informations suivantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Des credentials pour le proxmox&lt;/li&gt;
+&lt;li&gt;Un peu de hardware pour le template (RAM, CPU, Disk etc...)&lt;/li&gt;
+&lt;li&gt;Une config pour le template (ID, nom, boot command , ssh cred etc...)&lt;/li&gt;
+&lt;li&gt;Un dossier pour la conf subiquity&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On active cloud-init car sinon on ne peut pas set les IP via Terraform&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;On tweak un peu l&apos;image car on veut qu&apos;elle soit cloud-init ready&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Justement concernant autoinstall depuis la version 20.04 preseed a été délaissé au profit de subiquity qui est (de mon point de vue) bien plus facile à utiliser car format yaml et s&apos;intègre très bien avec Packer. Ce qui donne deux fichiers :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;meta-data&lt;/code&gt; : requis. Utilisé par le cloud vu qu&apos;on déploit en local on le laisse vide&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;user-data&lt;/code&gt; : l&apos;équivalent du preseed, utilise autoinstall&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Le fichier &lt;code class=&quot;language-text&quot;&gt;user-data&lt;/code&gt; en détail :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-yml line-numbers&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#cloud-config&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;autoinstall&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;locale&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; en_US
+  &lt;span class=&quot;token key atrule&quot;&gt;keyboard&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; fr
+  &lt;span class=&quot;token key atrule&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;install-server&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;allow-pw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; qemu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;guest&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;agent
+  &lt;span class=&quot;token key atrule&quot;&gt;user-data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; canadium
+          &lt;span class=&quot;token key atrule&quot;&gt;passwd&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0
+          &lt;span class=&quot;token key atrule&quot;&gt;groups&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;adm&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; cdrom&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dip&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; plugdev&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sudo&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;lock-passwd&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;false&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ALL=(ALL) NOPASSWD&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;ALL
+          &lt;span class=&quot;token key atrule&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; /bin/bash
+          &lt;span class=&quot;token key atrule&quot;&gt;ssh_authorized_keys&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ssh&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEXrwiuUOCpWPvwOsGuF4K+aq1ufToGMi4ra/1omOZb&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Fichier de configuration ultra basique, on définit un seul user et deux conf pour le système. Les autres options peuvent être trouvées dans la &lt;a href=&quot;https://ubuntu.com/server/docs/install/autoinstall-reference&quot;&gt;doc&lt;/a&gt;&lt;br&gt;
+⚠️ Ce fichier est &quot;templatiser&quot; et redéfini via Terraform voir plus bas&lt;/p&gt;
+&lt;p&gt;On peut suite éxécutera ensuite packer via Terraform pour avoir une seule et même exécution&lt;br&gt;
+Ce qui nous donne un template de qualité !
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cc6a97ebfa97429c534052f94c048994/d8a90/template-proxmox.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.131455399061025%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA20lEQVQoz5WQy26DMBRE/f+/1nV3lNC4bkgwL2NjHoapxhKIRdSEkUawuPd45oqLzJGpB+73AnVZoqkbFEUB33tQ67qesvj4/EJyq9FPAXNYopdlQQgB0zRhnueX3ua4I26/Cs4adK7HjzbQTYfBe/gTHoZh/4o0TaHLEuM4Ql6/Ybtur/qumIxnYlKhlELbtpF+yTIYY3bYOzejeCLus7ZIkgRa60jnv5QyvngGyLoMxpYiz3NUVRXp22vHhP/pOMc9WpDunIsJnw2/0nEuAq21oDfgscqZhBvwD9YwwWrhe2wrAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;template proxmox&quot;
+        title=&quot;template proxmox&quot;
+        src=&quot;/static/cc6a97ebfa97429c534052f94c048994/d6170/template-proxmox.png&quot;
+        srcset=&quot;/static/cc6a97ebfa97429c534052f94c048994/53f68/template-proxmox.png 213w,
+/static/cc6a97ebfa97429c534052f94c048994/df70d/template-proxmox.png 425w,
+/static/cc6a97ebfa97429c534052f94c048994/d6170/template-proxmox.png 850w,
+/static/cc6a97ebfa97429c534052f94c048994/d8a90/template-proxmox.png 920w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;terraform&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#terraform&quot; aria-label=&quot;terraform permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Terraform&lt;/h1&gt;
+&lt;p&gt;Il faut maintenant déployer notre templates sous forme de VM, on va utiliser terraform pour cela qui va également nous préparer nos fichiers ansible.
+On installe &lt;a href=&quot;https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started&quot;&gt;Terraform&lt;/a&gt; puis on s&apos;attaque aux fichier de configuration :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── main.tf
+├── output.tf
+├── provider.tf
+├── terraform.tfvars
+└── variables.tf&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Listons les fichiers terraform :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;main.tf&lt;/code&gt; : On décrit notre déploiement, le fichier de job.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;output.tf&lt;/code&gt; : La sortie voulue lors de l&apos;exécution de terraform apply (on va print les IP ici)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;provider.tf&lt;/code&gt; : On précise quel provider on utilise, ici proxmox. (voir &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;doc&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;terraform.tfvars&lt;/code&gt; : la définition des variables pour le main.tf (même principe que Packer)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.tf&lt;/code&gt; : la définition des variables par défaut (même principe que Packer)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Et on a des fichiers de template qui va nous permettre de définir notre inventory ansible, groups_vars ansible, user-data de autoinstall etc...&lt;/p&gt;
+&lt;p&gt;Je vais juste décrire le fichier main.tf car les autres sont plutôt évident.
+On définit les variables pour l&apos;exécution future de packer :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;locals &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  template_folder &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${path.module}/${var.folder_packer}/${var.distrib_folder}&quot;&lt;/span&gt;&lt;/span&gt;
+  packer_cfg &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    PKR_VAR_proxmox_hostname  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pm_host
+    PKR_VAR_proxmox_username  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pm_user
+    PKR_VAR_proxmox_password  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pm_password
+    PKR_VAR_proxmox_node_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pm_node_name
+    PKR_VAR_proxmox_insecure_skip_tls_verify &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pm_tls_insecure
+
+    PKR_VAR_vm_id                 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_id
+    PKR_VAR_vm_name               &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_name
+    PKR_VAR_vm_storage_pool       &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_storage_pool
+    PKR_VAR_vm_cores              &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_cores
+    PKR_VAR_vm_memory             &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_memory
+    PKR_VAR_vm_sockets            &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm_sockets
+
+    PKR_VAR_iso_url             &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iso_url
+    PKR_VAR_iso_storage_pool    &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iso_storage_pool
+    PKR_VAR_iso_checksum        &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;iso_checksum
+
+    PKR_VAR_http_directory      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;http_directory
+
+    PKR_VAR_username              &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;username
+    PKR_VAR_user_password         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user_password
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ici justement on définit le job packer avec l&apos;ensemble des paramètres souhaités (au final c&apos;est une exécution shell classique).&lt;br&gt;
+J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt pour l&apos;exécution Terraform. Egalement un script python pour supprimé le template créé par Packer (pas de ressource native donc obligé de &quot;hack&quot;) :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;null_resource&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;packer_build&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local-exec&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    working_dir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; local&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;template_folder
+    command     &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;packer build . &amp;amp;&amp;amp; sleep 30&quot;&lt;/span&gt;&lt;/span&gt;
+    environment &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; local&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;packer_cfg
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local-exec&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;when&lt;/span&gt;  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; destroy
+    command &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${path.module}/scripts/delete_template.py&quot;&lt;/span&gt;&lt;/span&gt;
+    interpreter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;python&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    working_dir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;environment&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; merge&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;yamldecode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;triggers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;packer_cfg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    triggers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    packer_cfg &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; yamlencode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;local&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;packer_cfg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  depends_on &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    local_file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;data
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;On redéfinit un master K3S par dessus notre template (var.tamplate_vm_name), on remarque qu&apos;on doit préciser une dépendance pour que les tâches d&apos;exécutent dans le bon ordre. A noter aussi un script sh qui verifiera que le déploiement cloud-init est bien fini sur le serveur :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox_vm_qemu&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox_vm_master&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  count       &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;num_k3s_masters
+  name        &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;k3s-master-${count.index}&quot;&lt;/span&gt;&lt;/span&gt;
+  target_node &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pm_node_name
+  clone       &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;template_vm_name
+  os_type     &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cloud-init&quot;&lt;/span&gt;&lt;/span&gt;
+  agent       &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+  memory      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;num_k3s_masters_mem
+  cores       &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;num_k3s_masters_cpu
+
+  ipconfig0 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ip=${var.master_ips[count.index]}/${var.networkrange},gw=${var.gateway}&quot;&lt;/span&gt;&lt;/span&gt;
+
+  lifecycle &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    ignore_changes &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      ciuser&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      sshkeys&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      disk&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      desc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      network
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  connection &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    type &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ssh&quot;&lt;/span&gt;&lt;/span&gt;
+    user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;username
+    password &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user_password
+    host &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;worker_ips&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    source      &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${path.module}/scripts/wait-cloud-init.sh&quot;&lt;/span&gt;&lt;/span&gt;
+    destination &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/tmp/wait-cloud-init.sh&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;remote-exec&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    inline &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;chmod +x /tmp/wait-cloud-init.sh&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/tmp/wait-cloud-init.sh&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  depends_on &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    null_resource&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;packer_build
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;On fera la même tâche pour les workers&lt;/p&gt;
+&lt;p&gt;Et ici on définit nos tâches de customisation de conf, c&apos;est à dire :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Générer des fichiers de configuration pour la future exécution d&apos;ansible&lt;/li&gt;
+&lt;li&gt;Générer le user-data necessaire à l&apos;autoinstall de packer (on modifie essentiellement le user/password)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;data &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;template_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cloud-init-user-data&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    template &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${file(&quot;&lt;/span&gt;&lt;/span&gt;$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;templates&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;user&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tpl&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;)}&quot;&lt;/span&gt;&lt;/span&gt;
+    vars &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token constant&quot;&gt;SUDO_PASSWORD_HASH&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${var.user_password_hash}&quot;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token constant&quot;&gt;SUDO_USERNAME&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${var.username}&quot;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token constant&quot;&gt;SSH_PUBLIC_KEY&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${var.ssh_pub_key}&quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;user-data&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    content     &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${data.template_file.cloud-init-user-data.rendered}&quot;&lt;/span&gt;&lt;/span&gt;
+    filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${local.template_folder}/http/user-data&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+data &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;template_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;k8s&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  template &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; file&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;./templates/k8s.tpl&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  vars &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    k3s_master_ip &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${join(&quot;&lt;/span&gt;&lt;/span&gt;\n&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;, [for instance in proxmox_vm_qemu.proxmox_vm_master : join(&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;, [instance.default_ipv4_address, &quot;&lt;/span&gt;&lt;/span&gt; ansible_ssh_private_key_file&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;, var.pvt_key])])}&quot;&lt;/span&gt;&lt;/span&gt;
+    k3s_node_ip   &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${join(&quot;&lt;/span&gt;&lt;/span&gt;\n&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;, [for instance in proxmox_vm_qemu.proxmox_vm_workers : join(&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;, [instance.default_ipv4_address, &quot;&lt;/span&gt;&lt;/span&gt; ansible_ssh_private_key_file&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;, var.pvt_key])])}&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;k8s_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  content  &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;template_file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;k8s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rendered
+  filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${path.module}/ansible/hosts&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+data &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;template_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;groups_vars_ansible&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    template &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${file(&quot;&lt;/span&gt;&lt;/span&gt;$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;templates&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;all&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tpl&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;)}&quot;&lt;/span&gt;&lt;/span&gt;
+    vars &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token constant&quot;&gt;ANSIBLE_USER&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${var.username}&quot;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token constant&quot;&gt;K3S_VERSION&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${var.k3s_version}&quot;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;groups_vars_ansible&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    content     &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${data.template_file.groups_vars_ansible.rendered}&quot;&lt;/span&gt;&lt;/span&gt;
+    filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${path.module}/ansible/group_vars/all.yml&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Et enfin le job ansible :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;null_resource&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ansible-playbook&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local-exec&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    command &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ansible-playbook -i ${var.inventory_file}  --private-key ${var.ssh_key_file} site.yml&quot;&lt;/span&gt;&lt;/span&gt;
+    working_dir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;..&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  depends_on &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    proxmox_vm_qemu&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proxmox_vm_workers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    proxmox_vm_qemu&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proxmox_vm_master&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    local_file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;k8s_file&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    local_file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;var_file
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;ansible&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ansible&quot; aria-label=&quot;ansible permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ansible&lt;/h1&gt;
+&lt;p&gt;On va enfn déployer le cluster K3S via ansible. En voici l&apos;aborescence :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ansible/
+├── ansible.cfg
+├── group_vars
+│   └── all.yml
+├── playbook.yml
+└── roles
+    ├── download
+    │   └── tasks
+    │       └── main.yml
+    ├── k3s
+    │   ├── master
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   └── templates
+    │   │       ├── k3s.service.j2
+    │   │       └── k3s.service.j2.withoutterafic
+    │   └── node
+    │       ├── tasks
+    │       │   └── main.yml
+    │       └── templates
+    │           └── k3s.service.j2
+    ├── postconfig
+    │   └── localhost
+    │       └── tasks
+    │           └── main.yml
+    ├── prereq
+    │   ├── defaults
+    │   │   └── main.yml
+    │   ├── tasks
+    │   │   └── main.yml
+    │   └── templates
+    │       └── resolv.conf.j2
+    ├── raspberrypi
+    │   ├── handlers
+    │   │   └── main.yml
+    │   └── tasks
+    │       ├── main.yml
+    │       └── prereq
+    │           ├── CentOS.yml
+    │           ├── Raspbian.yml
+    │           ├── Ubuntu.yml
+    │           └── default.yml&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Voici les différents roles :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;download&lt;/code&gt; : Télécharge la release de k3s&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;k3s&lt;/code&gt; : La configuration de k3s pour le master et les nodes (rien de bien compliqué)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;postconfig&lt;/code&gt; : On configure kubeconfig et installe helm en local sur le server/workstation executant le job ansible&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;prereq&lt;/code&gt; : On installe les prerequis K3S (netfilter, ip forwarding etc...)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;raspberrypi&lt;/code&gt; : Un job specifique si on est sous Raspberry PI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A noter :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Le fichier de group vars all.yml est généré via Terraform à partir de variables&lt;/li&gt;
+&lt;li&gt;Le fichier ansible.cfg peut être configurer à votre convenance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;On a donc créé un cluster K3s de 0 sans aucune interaction directe ou manuelle avec Proxmox, pas mal non ? En plus de cela tous est dynamique et flexible, il suffit de changer les conf 😉&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 193px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f2380d33d87d2b65cfee893b785bb6fb/aadfe/final_promox.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 76.6839378238342%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACoUlEQVQoz3VSbW/SYBTlX/vBLDOa+MVopnExcXO6mC0z0w9uTgaMlwItdGPr6BsUWkpfaRkFWtpC357HwDajZp7c3NwPz7nn5pwnBSEo5XN7+1+GI+uihiEllKQolqTq2HmjcXVzY0EIAQDwIaQgBDTZrFaxMAgNSea4jqwomixriq5quuf5SzJ8GKnbrXPP/bD9nhqIcRyPhqY5MGVZNTRdVZSZN/+f+JIMIBzqyuPnj9bpLWmg41i1XCzn8shlvY6j6I3tQgiT1TMA4F1fDanbHQCAJI5iED10HbgrkNzP98qM4TGDZbXMOa0555xBig6lz0jVoXWXGXisOedGYXcc85OEs6KOFbMDjzF8xvBSha5d6Np5blqR5jvH2JOdTy/rZ3s5+sX20UGBePut9Oag8DlPvDvMvdrLbOxnt75XNg8LH0+biOilMNHBRAft2bg6/4G21jZf7/LnaNfOUxrSNk+JfvZaKbbMLNE7xjsZon9GKnlKzTTVWn+WCqIkiJJFGAMIBbFfubhoioIk6XX8QhB6bIenWrw2MHhJ43tik2I10+oI/dF4GoN7w5IkgRAKDLO+sfZ1VPAmHk2RmtTrdLsCL0hSnybJbrtNNK5kRTUNw7JGq6hW9iWrGMcTSxRFazR1bEfXNHu6xHg8jeMojpNFsHBdNwgCwxwGQQDh38pUo/F089mufGLIZgVBOIau4TiK4hTVLJUQrFJJn6Svr+kaWjOHJvwzZwih60zrl7gd+1EQ+r7vum4UJ0my/CBgGTIMwzAIgjAMF4vgX7I1HrE0y3cErIpmTo5+HqcZtoNWyhhSzJ4iVwTJUES5iOAYns7lfc/7TV5213PFntDmON+fz1zX833HtieTycQaO0sfHHs6dd2Z789t246i6BdNSiPdUxaiiwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;final promox&quot;
+        title=&quot;final promox&quot;
+        src=&quot;/static/f2380d33d87d2b65cfee893b785bb6fb/aadfe/final_promox.png&quot;
+        srcset=&quot;/static/f2380d33d87d2b65cfee893b785bb6fb/aadfe/final_promox.png 193w&quot;
+        sizes=&quot;(max-width: 193px) 100vw, 193px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Vous pouvez reprendre ce &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;projet&lt;/a&gt; (qui lui même est forké). Par rapport à son utilisation tout est expliqué dans le &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer/blob/main/terraform/README.md&quot;&gt;README&lt;/a&gt;
+et consiste principalement à changer des variables Terraform.&lt;/p&gt;
+&lt;p&gt;Malgré tous cela il y a pas mal d&apos;axes d&apos;améliorations et problèmes inhérents à la solution choisie :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On pourrait mettre les variables sensibles dans Vault (Outil Hashicorp) et un git qui à chaque push redéploit une image packer.&lt;/li&gt;
+&lt;li&gt;Il faudrait aussi créér les utilisateurs adaptés (terraform &amp;#x26; packer) avec les bons droits, voir ressource &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;Terraform&lt;/a&gt; par exemple.&lt;/li&gt;
+&lt;li&gt;Il faudrait que le job packer se termine au bon moment pour que le job terraform ne se lance pas trop tôt (j&apos;ai un sleep 30 pour l&apos;instant)&lt;/li&gt;
+&lt;li&gt;Pas de provider packer natif donc on doit &quot;tricher&quot; pour supprimer le template&lt;/li&gt;
+&lt;li&gt;Terraform considére à un deuxième run que rien a changé et ne relance pas le job ansible (on peut tout de même le lancer à la main)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bref il y a plein d&apos;autres moyens de faire et d&apos;améliorer ce pipeline, les outils HashiCorp sont quand même super pour cela !&lt;/p&gt;
+&lt;h1 id=&quot;sources&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sources&quot; aria-label=&quot;sources permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sources&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.aerialls.eu/posts/ubuntu-server-2004-image-packer-subiquity-for-proxmox/&quot;&gt;https://www.aerialls.eu/posts/ubuntu-server-2004-image-packer-subiquity-for-proxmox/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://tlhakhan.medium.com/ubuntu-server-20-04-autoinstall-2e5f772b655a&quot;&gt;https://tlhakhan.medium.com/ubuntu-server-20-04-autoinstall-2e5f772b655a&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://stackoverflow.com/questions/72567455/running-cloud-init-twice-via-packer-terraform-on-vmware-ubuntu-22-04-guest&quot;&gt;https://stackoverflow.com/questions/72567455/running-cloud-init-twice-via-packer-terraform-on-vmware-ubuntu-22-04-guest&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://salmonsec.com/blogs/home_lab_3#6-init-kubeadm-images-sh&quot;&gt;https://salmonsec.com/blogs/home_lab_3#6-init-kubeadm-images-sh&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://github.com/blz-ea/proxmox-packer&quot;&gt;https://github.com/blz-ea/proxmox-packer&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5&quot;&gt;https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5&lt;/a&gt;&lt;/p&gt;</content:encoded><author>Beerus Inc.</author></item><item><title><![CDATA[Créer mon propre blog !]]></title><description><![CDATA[Je cherchais une bonne solution pour monter mon propre blog. Au début j'ai forcément réfléchis à des CMS classique tel que : Wordpress Drupal Grav etc... Mais je désirais aussi…]]></description><link>https://blog.beerus.fr/creation-du-blog</link><guid isPermaLink="false">https://blog.beerus.fr/creation-du-blog</guid><category><![CDATA[gatsby]]></category><category><![CDATA[jamstack]]></category><category><![CDATA[blog]]></category><pubDate>Thu, 14 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Je cherchais une bonne solution pour monter mon propre blog. Au début j&apos;ai forcément réfléchis à des CMS classique tel que :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Wordpress&lt;/li&gt;
 &lt;li&gt;Drupal&lt;/li&gt;
