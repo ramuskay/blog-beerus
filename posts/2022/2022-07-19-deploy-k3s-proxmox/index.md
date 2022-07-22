@@ -8,7 +8,7 @@ tags:
 - packer
 - terraform
 - proxmox
-# https://www.reshot.com/free-svg-icons/item/sharing-C6F57JEL49/
+# https://cncf-branding.netlify.app/img/projects/k3s/icon/color/k3s-icon-color.svg
 thumbnail: thumbnail.svg
 ---
 
