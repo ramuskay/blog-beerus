@@ -1,62 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Calvin Bui</generator><lastBuildDate>Fri, 22 Jul 2022 05:14:47 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Déployer son infra K3S sur Proxmox IaC]]></title><description><![CDATA[Architecture je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m'exercer. J'ai pas mal fait de Kubernetes classique en lab via…]]></description><link>https://blog.beerus.fr/deploy-k3s-proxmox</link><guid isPermaLink="false">https://blog.beerus.fr/deploy-k3s-proxmox</guid><category><![CDATA[k3s]]></category><category><![CDATA[hashicorp]]></category><category><![CDATA[packer]]></category><category><![CDATA[terraform]]></category><category><![CDATA[proxmox]]></category><pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#architecture&quot; aria-label=&quot;architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Architecture&lt;/h1&gt;
-&lt;p&gt;je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m&apos;exercer. J&apos;ai pas mal fait de Kubernetes classique en lab via des foramtions Udemy et j&apos;aimerai tester autre chose mais toujours sur une base K8S.
-Je me suis donc penché sur K3S de Rancher. Il dispose de plusieurs qualité qui me semble intéressantes :&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Calvin Bui</generator><lastBuildDate>Fri, 22 Jul 2022 14:03:02 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Déployer son infra K3S sur Proxmox en mode IaC]]></title><description><![CDATA[Architecture Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m'exercer. J'ai pas mal fait de Kubernetes classique en lab via…]]></description><link>https://blog.beerus.fr/deploy-k3s-proxmox</link><guid isPermaLink="false">https://blog.beerus.fr/deploy-k3s-proxmox</guid><category><![CDATA[k3s]]></category><category><![CDATA[hashicorp]]></category><category><![CDATA[packer]]></category><category><![CDATA[terraform]]></category><category><![CDATA[proxmox]]></category><pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#architecture&quot; aria-label=&quot;architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Architecture&lt;/h1&gt;
+&lt;p&gt;Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m&apos;exercer. J&apos;ai pas mal fait de Kubernetes classique en lab via des formations Udemy et j&apos;aimerai tester autre chose mais toujours sur une base K8S.
+Je me suis penché sur K3S de Rancher. Il dispose de plusieurs qualités qui me semble intéressantes :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Il est léger et plus rapide que K8s&lt;/li&gt;
 &lt;li&gt;Il peut s&apos;exécuter sur du plus petit matériel (proc ARM par ex 🥰). J&apos;ai comme projet potentiel de faire un cluster de raspberry donc K3S est plus qu&apos;indiqué.&lt;/li&gt;
-&lt;li&gt;Il ne dispose pas de tous les connecteurs cloud mais vu que ça sera du on premise dans mon cas c&apos;est parfait.&lt;/li&gt;
+&lt;li&gt;Il ne dispose pas de tous les connecteurs cloud mais vu que ça sera du &quot;on premise&quot; dans mon cas c&apos;est parfait.&lt;/li&gt;
 &lt;li&gt;Plein de petits avantages : + facile et rapide à déployer, moins de surface d&apos;attaque, facile à update etc...&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Par contre il ne fait pas tourner docker nativement mais containerd (bien que j&apos;ai vu un projet passer s&apos;appelant k3d qui intègre docker), ça sera l&apos;occasion d&apos;apprendre autre chose surtout que le CRI (Container Runtime Interface) en soi n&apos;est pas le plus important.&lt;/p&gt;
-&lt;p&gt;Une fois mon choix d&apos;orchestrateur choisi je me suis dit que j&apos;allais installer mon cluster K3s sur mon lab maison qui exécute un Proxmox et tant qu&apos;à faire autant avoir un workflow de déploiement un peu évolué pour s&apos;éxercer.&lt;/p&gt;
-&lt;p&gt;Parmi toutes les ressources que j&apos;ai pu voir celle qui me semblait au départ le plus intéressant faisait les choses suivantes :&lt;/p&gt;
+&lt;p&gt;Une fois mon choix d&apos;orchestrateur choisi je me suis dit que j&apos;allais installer mon cluster K3s sur mon lab maison qui exécute un Proxmox et tant qu&apos;à faire autant avoir un workflow de déploiement un peu évolué pour s&apos;exercer.&lt;/p&gt;
+&lt;p&gt;Parmi toutes les ressources que j&apos;ai pu voir le workflow qui me semblait au départ le plus intéressant faisait les choses suivantes :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Récupération de l&apos;ISO Ubuntu 20 sur Proxmox&lt;/li&gt;
 &lt;li&gt;Création du template Proxmox &quot;à la main&quot; via des commandes qm (cli proxmox)&lt;/li&gt;
 &lt;li&gt;Configuration de cloud init via l&apos;onglet promox dédié&lt;/li&gt;
 &lt;li&gt;Création des VM via Terraform&lt;/li&gt;
-&lt;li&gt;Ansible pour dépoyer K3s sur mes nouvelles VM&lt;/li&gt;
+&lt;li&gt;Ansible pour déployer K3s sur mes nouvelles VM&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Ca paraissait sympa sur le papier et puis ça permettait de mettre en application les quelques connaissances Terraform dont je disposais.
+&lt;p&gt;Cela paraissait sympa sur le papier et puis ça permettait de mettre en application les quelques connaissances Terraform dont je disposais.
 Mais à bien réfléchir il y avait quand même deux problèmes dans ce process :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Une partie manuelle qui cassait un peu l&apos;automatisation voulue. Si je pouvais automatiser cela je serai vraiment dans un cas d&apos;IaC (&lt;strong&gt;Infra As Code&lt;/strong&gt;)&lt;/li&gt;
-&lt;li&gt;Pas très flexible cat si je veux customiser mon template ça sera à la main aussi ou a la limite via script bash&lt;/li&gt;
+&lt;li&gt;Une partie manuelle qui cassait un peu l&apos;automatisation voulue. Si je pouvais automatiser cela je serais vraiment dans un cas d&apos;IaC (&lt;strong&gt;Infra As Code&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Pas très flexible car si je veux customiser mon template ça sera à la main aussi ou à la limite via script bash&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;C&apos;est là que je suis tombé sur un autre outil d&apos;Hashicorp qui fait tout ce travail manuel pour moi et dispose de la flexibilité voulue : Packer !&lt;/p&gt;
-&lt;p&gt;&lt;/br&gt;Voici les deux workflow qui sont ressortis au final :&lt;/p&gt;
+&lt;p&gt;&lt;/br&gt;Voici les deux workflows qui sont ressortis au final :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Creation du template --&gt; Cloud init --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/li&gt;
+&lt;li&gt;Création du template --&gt; Cloud init --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Packer (+Cloud init) --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;J&apos;ai donc choisi le deuxième worflow&lt;br&gt;
 Avantages :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Infra as code - Full automatisée&lt;/li&gt;
-&lt;li&gt;Pas d&apos;intéraction directe avec Proxmox, seulement via son API&lt;/li&gt;
-&lt;li&gt;Peut donc être piloté depuis une machine tiers&lt;/li&gt;
+&lt;li&gt;Pas d&apos;interaction directe avec Proxmox, seulement via son API&lt;/li&gt;
+&lt;li&gt;Peut donc être piloté depuis une machine tierce&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Inconvénients:&lt;/p&gt;
+&lt;p&gt;⚠️ Inconvénients :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;⚠️Necessite plus de developpement et de temps pour un résultat équivalement dans mon cas (installation d&apos;un potentiel DHCP, creation du fichier de conf packer etc...)&lt;/li&gt;
+&lt;li&gt;Nécessite plus de développement et de temps pour un résultat équivalent dans mon cas (installation d&apos;un potentiel DHCP, création du fichier de conf packer etc...)&lt;/li&gt;
 &lt;li&gt;Temps d&apos;exécution de création du template plus long&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Retrouver l&apos;ensemble du projet sur ce git : &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;packer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#packer&quot; aria-label=&quot;packer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Packer&lt;/h1&gt;
-&lt;p&gt;Je vais donc utiliser packer pour packager mon image ubuntu 20.04 avec quelques packages et conf additionnelles. Il suffit d&apos;installer &lt;a href=&quot;https://www.packer.io/downloads&quot;&gt;packer&lt;/a&gt; puis nous verrons les fichiers de configuration.&lt;br&gt;
+&lt;p&gt;Je vais donc utiliser packer pour packager mon image Ubuntu 20.04 avec quelques packages et confs additionnelles. Il suffit d&apos;installer &lt;a href=&quot;https://www.packer.io/downloads&quot;&gt;packer&lt;/a&gt; puis nous verrons les fichiers de configuration.&lt;br&gt;
 D&apos;ailleurs dans mon cas pas besoin de DHCP, celui de ma box avec ma VM template en mode bridge sera largement suffisant.&lt;br&gt;
-Voici mon aborescence packer pour la config :&lt;/p&gt;
+Voici mon arborescence packer pour la config :&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── http
 │   ├── meta-data
 │   └── user-data
 ├── ubuntu20.pkr.hcl
 └── variables.pkr.hcl&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Les fichiers de conf peuvent être en json ou HCL (format hashicrop), j&apos;ai choisi HCL à la place de JSON pour deux raisons :&lt;/p&gt;
+&lt;p&gt;Les fichiers de conf peuvent être en json ou HCL (format hashicorp), j&apos;ai choisi HCL à la place de JSON pour deux raisons :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Language commun avec tous les outils HashiCorp (vu qu&apos;on va aussi utiliser Terraform ça a du sens)&lt;/li&gt;
-&lt;li&gt;Plus &quot;fonctionnel&quot;, on peut par exemple mettre des commentaires (dans JSON non ça fera partie de la data)&lt;/li&gt;
+&lt;li&gt;Langage commun avec tous les outils HashiCorp (vu qu&apos;on va aussi utiliser Terraform ça a du sens)&lt;/li&gt;
+&lt;li&gt;Plus &quot;fonctionnel&quot;, on peut par exemple mettre des commentaires (dans JSON non ça fera toujours partie de la data)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;On a donc 3 fichiers hcl concernant :&lt;/p&gt;
+&lt;p&gt;On a donc 2 fichiers hcl concernant :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.pkr.hcl&lt;/code&gt; : la définition des variables par défaut&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ubuntu20.pkr.hcl&lt;/code&gt; : la définition du job packer&lt;/li&gt;
@@ -114,7 +114,7 @@ build &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Rien de bien compliqué là dedans c&apos;est aussi l&apos;avantage en général des outils Hashicorp la configuration est très descriptive et donc compréhensible rapidement.
+&lt;p&gt;Rien de bien compliqué là-dedans c&apos;est aussi l&apos;avantage en général des outils Hashicorp la configuration est très descriptive et donc compréhensible rapidement.
 On va renseigner les informations suivantes :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Des credentials pour le proxmox&lt;/li&gt;
@@ -151,9 +151,9 @@ On va renseigner les informations suivantes :&lt;/p&gt;
           &lt;span class=&quot;token key atrule&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; /bin/bash
           &lt;span class=&quot;token key atrule&quot;&gt;ssh_authorized_keys&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ssh&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEXrwiuUOCpWPvwOsGuF4K+aq1ufToGMi4ra/1omOZb&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Fichier de configuration ultra basique, on définit un seul user et deux conf pour le système. Les autres options peuvent être trouvées dans la &lt;a href=&quot;https://ubuntu.com/server/docs/install/autoinstall-reference&quot;&gt;doc&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Fichier de configuration ultra basique, on définit un seul user et deux confs pour le système. Les autres options peuvent être trouvées dans la &lt;a href=&quot;https://ubuntu.com/server/docs/install/autoinstall-reference&quot;&gt;doc&lt;/a&gt;&lt;br&gt;
 ⚠️ Ce fichier est &quot;templatiser&quot; et redéfini via Terraform voir plus bas&lt;/p&gt;
-&lt;p&gt;On peut suite éxécutera ensuite packer via Terraform pour avoir une seule et même exécution&lt;br&gt;
+&lt;p&gt;On peut ensuite exécuter packer via Terraform pour avoir une seule et même exécution&lt;br&gt;
 Ce qui nous donne un template de qualité !
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -187,22 +187,28 @@ Ce qui nous donne un template de qualité !
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&quot;terraform&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#terraform&quot; aria-label=&quot;terraform permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Terraform&lt;/h1&gt;
-&lt;p&gt;Il faut maintenant déployer notre templates sous forme de VM, on va utiliser terraform pour cela qui va également nous préparer nos fichiers ansible.
-On installe &lt;a href=&quot;https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started&quot;&gt;Terraform&lt;/a&gt; puis on s&apos;attaque aux fichier de configuration :&lt;/p&gt;
+&lt;p&gt;Il faut maintenant déployer notre template sous forme de VM, on va utiliser Terraform pour qui sera notre outil principal. &lt;strong&gt;Tout&lt;/strong&gt; passera par Terraform :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;La création de fichier de conf pour Packer, Ansible et Terraform&lt;/li&gt;
+&lt;li&gt;L&apos;exécution de Packer&lt;/li&gt;
+&lt;li&gt;L&apos;exécution de Terraform bien sûr&lt;/li&gt;
+&lt;li&gt;L&apos;exécution d&apos;Ansible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On installe &lt;a href=&quot;https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started&quot;&gt;Terraform&lt;/a&gt; puis on s&apos;attaque aux fichiers de configuration :&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── main.tf
 ├── output.tf
 ├── provider.tf
 ├── terraform.tfvars
 └── variables.tf&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Listons les fichiers terraform :&lt;/p&gt;
+&lt;p&gt;Listons les fichiers Terraform :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;main.tf&lt;/code&gt; : On décrit notre déploiement, le fichier de job.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;output.tf&lt;/code&gt; : La sortie voulue lors de l&apos;exécution de terraform apply (on va print les IP ici)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;output.tf&lt;/code&gt; : La sortie voulue lors de l&apos;exécution de Terraform apply (on va print les IP ici)&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;provider.tf&lt;/code&gt; : On précise quel provider on utilise, ici proxmox. (voir &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;doc&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;terraform.tfvars&lt;/code&gt; : la définition des variables pour le main.tf (même principe que Packer)&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.tf&lt;/code&gt; : la définition des variables par défaut (même principe que Packer)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Et on a des fichiers de template qui va nous permettre de définir notre inventory ansible, groups_vars ansible, user-data de autoinstall etc...&lt;/p&gt;
+&lt;p&gt;Et on a des fichiers de template qui vont nous permettre de définir notre inventory ansible, groups_vars ansible, user-data de autoinstall etc...&lt;/p&gt;
 &lt;p&gt;Je vais juste décrire le fichier main.tf car les autres sont plutôt évident.
 On définit les variables pour l&apos;exécution future de packer :&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;locals &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -232,7 +238,7 @@ On définit les variables pour l&apos;exécution future de packer :&lt;/p&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Ici justement on définit le job packer avec l&apos;ensemble des paramètres souhaités (au final c&apos;est une exécution shell classique).&lt;br&gt;
-J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt pour l&apos;exécution Terraform. Egalement un script python pour supprimé le template créé par Packer (pas de ressource native donc obligé de &quot;hack&quot;) :&lt;/p&gt;
+J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt pour l&apos;exécution Terraform. Également un script python pour supprimer le template créé par Packer (pas de ressource native donc obligé de &quot;hack&quot;) :&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;null_resource&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;packer_build&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local-exec&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     working_dir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; local&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;template_folder
@@ -253,7 +259,7 @@ J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt
     local_file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;data
   &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;On redéfinit un master K3S par dessus notre template (var.tamplate_vm_name), on remarque qu&apos;on doit préciser une dépendance pour que les tâches d&apos;exécutent dans le bon ordre. A noter aussi un script sh qui verifiera que le déploiement cloud-init est bien fini sur le serveur :&lt;/p&gt;
+&lt;p&gt;On redéfinit un master K3S par-dessus notre template (var.tamplate_vm_name), on remarque qu&apos;on doit préciser une dépendance pour que les tâches s&apos;exécutent dans le bon ordre. A noter aussi un script sh qui vérifiera que le déploiement cloud-init est bien fini sur le serveur :&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox_vm_qemu&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox_vm_master&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   count       &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;num_k3s_masters
   name        &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;k3s-master-${count.index}&quot;&lt;/span&gt;&lt;/span&gt;
@@ -302,7 +308,7 @@ J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt
 &lt;p&gt;Et ici on définit nos tâches de customisation de conf, c&apos;est à dire :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Générer des fichiers de configuration pour la future exécution d&apos;ansible&lt;/li&gt;
-&lt;li&gt;Générer le user-data necessaire à l&apos;autoinstall de packer (on modifie essentiellement le user/password)&lt;/li&gt;
+&lt;li&gt;Générer le user-data nécessaire à l&apos;autoinstall de packer (on modifie essentiellement le user/password)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;data &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;template_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cloud-init-user-data&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     template &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${file(&quot;&lt;/span&gt;&lt;/span&gt;$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;templates&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;user&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tpl&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;)}&quot;&lt;/span&gt;&lt;/span&gt;
@@ -356,7 +362,7 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
   &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&quot;ansible&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ansible&quot; aria-label=&quot;ansible permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ansible&lt;/h1&gt;
-&lt;p&gt;On va enfn déployer le cluster K3S via ansible. En voici l&apos;aborescence :&lt;/p&gt;
+&lt;p&gt;Le cluster K3S est déployer via ansible. En voici l&apos;arborescence :&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ansible/
 ├── ansible.cfg
 ├── group_vars
@@ -403,9 +409,9 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;download&lt;/code&gt; : Télécharge la release de k3s&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;k3s&lt;/code&gt; : La configuration de k3s pour le master et les nodes (rien de bien compliqué)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;postconfig&lt;/code&gt; : On configure kubeconfig et installe helm en local sur le server/workstation executant le job ansible&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;prereq&lt;/code&gt; : On installe les prerequis K3S (netfilter, ip forwarding etc...)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;raspberrypi&lt;/code&gt; : Un job specifique si on est sous Raspberry PI&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;postconfig&lt;/code&gt; : On configure kubeconfig et installe helm en local sur le server/workstation exécutant le job ansible&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;prereq&lt;/code&gt; : On installe les prérequis K3S (netfilter, ip forwarding etc...)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;raspberrypi&lt;/code&gt; : Un job spécifique si on est sous Raspberry PI&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A noter :&lt;/p&gt;
 &lt;ul&gt;
@@ -442,15 +448,14 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Vous pouvez reprendre ce &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;projet&lt;/a&gt; (qui lui même est forké). Par rapport à son utilisation tout est expliqué dans le &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer/blob/main/terraform/README.md&quot;&gt;README&lt;/a&gt;
-et consiste principalement à changer des variables Terraform.&lt;/p&gt;
+&lt;p&gt;Vous pouvez reprendre ce &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;projet&lt;/a&gt; (qui lui-même est forké). Par rapport à son utilisation tout est expliqué dans le &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer/blob/main/terraform/README.md&quot;&gt;README&lt;/a&gt;  et consiste principalement à changer des variables Terraform.&lt;/p&gt;
 &lt;p&gt;Malgré tous cela il y a pas mal d&apos;axes d&apos;améliorations et problèmes inhérents à la solution choisie :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;On pourrait mettre les variables sensibles dans Vault (Outil Hashicorp) et un git qui à chaque push redéploit une image packer.&lt;/li&gt;
-&lt;li&gt;Il faudrait aussi créér les utilisateurs adaptés (terraform &amp;#x26; packer) avec les bons droits, voir ressource &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;Terraform&lt;/a&gt; par exemple.&lt;/li&gt;
-&lt;li&gt;Il faudrait que le job packer se termine au bon moment pour que le job terraform ne se lance pas trop tôt (j&apos;ai un sleep 30 pour l&apos;instant)&lt;/li&gt;
+&lt;li&gt;Il faudrait aussi créer les utilisateurs adaptés (Terraform &amp;#x26; Packer) avec les bons droits, voir ressource &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;Terraform&lt;/a&gt; par exemple.&lt;/li&gt;
+&lt;li&gt;Il faudrait que le job packer se termine au bon moment pour que le job Terraform ne se lance pas trop tôt (j&apos;ai un sleep 30 pour l&apos;instant)&lt;/li&gt;
 &lt;li&gt;Pas de provider packer natif donc on doit &quot;tricher&quot; pour supprimer le template&lt;/li&gt;
-&lt;li&gt;Terraform considére à un deuxième run que rien a changé et ne relance pas le job ansible (on peut tout de même le lancer à la main)&lt;/li&gt;
+&lt;li&gt;Terraform considère à un deuxième run que rien a changé et ne relance pas le job ansible (on peut tout de même le lancer à la main)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bref il y a plein d&apos;autres moyens de faire et d&apos;améliorer ce pipeline, les outils HashiCorp sont quand même super pour cela !&lt;/p&gt;
 &lt;h1 id=&quot;sources&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sources&quot; aria-label=&quot;sources permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sources&lt;/h1&gt;
