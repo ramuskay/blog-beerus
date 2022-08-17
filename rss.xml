@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Beerus inc.</generator><lastBuildDate>Fri, 22 Jul 2022 16:00:25 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Déployer son infra K3S sur Proxmox en mode IaC]]></title><description><![CDATA[Architecture Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m'exercer. J'ai pas mal fait de Kubernetes classique en lab via…]]></description><link>https://blog.beerus.fr/deploy-k3s-proxmox</link><guid isPermaLink="false">https://blog.beerus.fr/deploy-k3s-proxmox</guid><category><![CDATA[k3s]]></category><category><![CDATA[hashicorp]]></category><category><![CDATA[packer]]></category><category><![CDATA[terraform]]></category><category><![CDATA[proxmox]]></category><pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#architecture&quot; aria-label=&quot;architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Architecture&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Beerus inc.</generator><lastBuildDate>Wed, 17 Aug 2022 04:47:49 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Retour d'expérience sur la certification CKA]]></title><description><![CDATA[Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c'est l'occasion pour moi de faire un petit…]]></description><link>https://blog.beerus.fr/get-CKA</link><guid isPermaLink="false">https://blog.beerus.fr/get-CKA</guid><category><![CDATA[k8s]]></category><category><![CDATA[certification]]></category><pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c&apos;est l&apos;occasion pour moi de faire un petit retour d&apos;expérience !&lt;/p&gt;
+&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
+&lt;p&gt;Tout d&apos;abord il faut savoir qu&apos;il n&apos;existe que 4 certifications Kubernetes officielles :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kubernetes and Cloud Native Associate (KCNA)&lt;/li&gt;
+&lt;li&gt;Certified Kubernetes Application Developer (CKAD)&lt;/li&gt;
+&lt;li&gt;Certified Kubernetes Administrator (CKA)&lt;/li&gt;
+&lt;li&gt;Certified Kubernetes Security Specialist (CKS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Celle qui correspond le plus à mon profil et ce que je sais faire est la CKA.
+Elle coûte environ 400$ et possède les avantages suivants :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un certain nombre de ressources sur Kubernetes (rien d&apos;exceptionnel)&lt;/li&gt;
+&lt;li&gt;Deux examens blancs (identiques cependant) pour se préparer&lt;/li&gt;
+&lt;li&gt;Des accès à des plateformes d&apos;entrainement et de scénario divers&lt;/li&gt;
+&lt;li&gt;L&apos;accès à certification en elle-même&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Afin d&apos;obtenir la certification il &quot;suffit&quot; d&apos;avoir 66% de réponse correcte le jour de l&apos;examen.&lt;br&gt;
+Les réponses ne sont pas de type QCM mais plus en mode TP, il faut &quot;réaliser&quot; l&apos;exercice sur un environnement Kubernetes.&lt;br&gt;
+L&apos;examen se décompose de la façon suivante :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Storage 10%&lt;/li&gt;
+&lt;li&gt;Troubleshooting 30%&lt;/li&gt;
+&lt;li&gt;Workloads &amp;#x26; Scheduling 15%&lt;/li&gt;
+&lt;li&gt;Cluster Architecture, Installation &amp;#x26; Configuration 25%&lt;/li&gt;
+&lt;li&gt;Services &amp;#x26; Networking 20%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;se-preparer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#se-preparer&quot; aria-label=&quot;se preparer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Se préparer&lt;/h1&gt;
+&lt;p&gt;Etant donné que je n&apos;ai jamais eu de réelle expérience professionnelle de Kubernetes je n&apos;ai pas pris cette certification à la légère, j&apos;ai acheté deux formations sur Udemy pour préparer cet examen :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Certified Kubernetes Administrator (CKA) with Practice Tests (~13€)&lt;/li&gt;
+&lt;li&gt;Kubernetes for the Absolute Beginners (~13€)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ces formations comprennent :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Les cours en vidéo de 3 à 20 minutes chacune&lt;/li&gt;
+&lt;li&gt;Des résumés PDF des chapitres étudiés (honnêtement pas terrible les PDF)&lt;/li&gt;
+&lt;li&gt;Accès à une plateforme d&apos;entrainement scénarisée selon les chapitres&lt;/li&gt;
+&lt;li&gt;Quelques examens blancs (ne représente pas les conditions de l&apos;examen cependant)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Franchement je n&apos;attendais pas grand-chose de ces formations notamment par rapport au prix investi mais j&apos;ai vraiment été agréablement surpris ! (Comme quoi ne pas juger une formation en fonction du prix).&lt;br&gt;
+Par contre si j&apos;avais su je n&apos;aurais peut-être pas pris la formation &quot;Kubernetes for the Absolute Beginners&quot; qui est reprise en entier ou presque dans la formation &quot;Certified Kubernetes Administrator (CKA) with Practice Tests&quot;.&lt;/p&gt;
+&lt;p&gt;Pour ceux qui ne veulent pas débourser de l&apos;argent pour cela je conseille les vidéos de Xavki sur YouTube dans la playlist Kubernetes. Elle ne prépare pas en tant que tel pour la certification mais ses vidéos sont vraiment de qualité et vont plus loin que le périmètre de la certification.&lt;/p&gt;
+&lt;p&gt;Ensuite je conseille les liens suivants qui m&apos;ont été utile pour fignoler ma préparation :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://kubernetes.io/docs&quot;&gt;https://kubernetes.io/docs&lt;/a&gt; : fait partie des rares sites autorisés le jour de l&apos;examen, je conseille de bien s&apos;approprier le site afin de perdre le moins de temps possible le jour J.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad&quot;&gt;https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad&lt;/a&gt; : concerne les détails pratique de l&apos;examen (comment cela se passe, la plateforme utilisé etc...)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/StenlyTU/K8s-training-official&quot;&gt;https://github.com/StenlyTU/K8s-training-official&lt;/a&gt; : un repo d&apos;exercices en lien avec les topics CKA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Je conseille plus que vivement d&apos;utiliser la plateforme d&apos;examen blanc fourni par le site killer.sh&lt;br&gt;
+Elle propose des conditions d&apos;examen &lt;strong&gt;identiques&lt;/strong&gt; et permet donc d&apos;avoir une première approche de ce qu&apos;il sera proposé le jour J.&lt;br&gt;
+Personnellement je n&apos;ai eu que 75/125 soit seulement 60% donc en dessous des 66% demandé. MAIS :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Les questions sont plus difficiles que celles du vrai examen&lt;/li&gt;
+&lt;li&gt;Elles sont également plus nombreuses (25 au lieu de 17) pour le même temps (2h)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En lisant quelques sub reddit je me suis rendu compte que je n&apos;étais pas seul dans ce cas et que 75pts restait finalement un bon score.&lt;/p&gt;
+&lt;p&gt;Enfin voici quelques conseils que j&apos;ai pu trouver ici et là sur internet.&lt;br&gt;
+Ajouter des variables bash pour aller plus vite :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;export do=&quot;--dry-run=client -o yaml&quot;
+export now=&quot;--force --grace-period 0&quot;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ces deux variables peuvent être ajoutées à la fin des commandes kubectl pour créer un fichier ou supprimer un pod plus rapidement.&lt;br&gt;
+Ex: &lt;code class=&quot;language-text&quot;&gt;kubectl run nginx --image nginx $do &gt; pod.yml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Bien étudier ce workflow qui détaille comment troubleshoot une partie des ressources K8S, cela représente 30% de la note tout de même :
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/813069e8929197f3610ce363288e7c30/be26e/workflow_troubleshoot.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 139.90610328638496%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAcABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEDAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB625WGBEXd1goH//EABsQAAIDAAMAAAAAAAAAAAAAAAECABAREiEi/9oACAEBAAEFAu1PItBG9GlDa2RToAyZX//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EAB8QAAEDAwUAAAAAAAAAAAAAACEAAhEBEoEQIGGR8f/aAAgBAQAGPwKLndITTCJVC9uNfUbp42//xAAeEAEAAgICAwEAAAAAAAAAAAABABEhMUFRYYGhwf/aAAgBAQABPyGiWrdwBQeVhoVZdxNap6RytViA+YJNm85/UoR0u1fJlL9PEFLuIW+ZR1P/2gAMAwEAAgADAAAAEBAtAP/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABYRAAMAAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxAr/8QAHhABAQADAAIDAQAAAAAAAAAAAREAITFhgUFRcZH/2gAIAQEAAT8QdhAWKB5ZrEsQfAfV7lWA+kvoxiPtZC/aZ8mIGHcmpA77h0c0CzPFTHGIrr7cYnLrwj4JlgKurNH0YFZpzeQ4P5n/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;workflow troubleshoot&quot;
+        title=&quot;workflow troubleshoot&quot;
+        src=&quot;/static/813069e8929197f3610ce363288e7c30/8a34a/workflow_troubleshoot.jpg&quot;
+        srcset=&quot;/static/813069e8929197f3610ce363288e7c30/08b27/workflow_troubleshoot.jpg 213w,
+/static/813069e8929197f3610ce363288e7c30/6f6b2/workflow_troubleshoot.jpg 425w,
+/static/813069e8929197f3610ce363288e7c30/8a34a/workflow_troubleshoot.jpg 850w,
+/static/813069e8929197f3610ce363288e7c30/be26e/workflow_troubleshoot.jpg 1142w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;lexamen-en-lui-meme&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#lexamen-en-lui-meme&quot; aria-label=&quot;lexamen en lui meme permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;L&apos;examen en lui même&lt;/h1&gt;
+&lt;p&gt;Une fois qu&apos;une date sera choisie il faudra respecter les conditions suivantes le jour J :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir une webcam (externe ou interne)&lt;/li&gt;
+&lt;li&gt;Avoir une pièce d&apos;identité non expirée (permis de conduire, passeport, CNI etc...)&lt;/li&gt;
+&lt;li&gt;Être dans une pièce isolée où être seul et au calme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bien vérifier également que la webcam puisse filmer la pièce d&apos;identité &lt;strong&gt;distinctement&lt;/strong&gt; (c&apos;est très important !).&lt;/p&gt;
+&lt;p&gt;Il faut se connecter jusqu&apos;à 30min avant, une fois cela fait il sera possible de télécharger un logiciel qui fera office de plateforme d&apos;examen (attention 300Mo dans mon cas).&lt;br&gt;
+Une fois téléchargé et installé il faudra prendre une photo de soi-même via la webcam et une photo de notre pièce d&apos;identité, cela enclenchera la vérification par un instructeur.&lt;br&gt;
+La vérification dans mon cas n&apos;a pas duré très longtemps, cela effectué l&apos;instructeur demandera de filmer la pièce afin de vérifier que tout est ok et qu&apos;il n&apos;y a rien d&apos;interdit à proximité.&lt;br&gt;
+Dans mon cas on m&apos;a demandé de poser mon téléphone dans le champ de la caméra mais hors de portée et d&apos;enlever le plastique de ma bouteille d&apos;eau !
+Lorsque toutes ces vérifications sont terminées on peut enfin commencer l&apos;examen ! Comme vu précédemment l&apos;environnement est exactement le même que killer.sh mais en plus simple.&lt;br&gt;
+A part un ou deux écueils je n&apos;ai pas trouvé l&apos;examen très complexe.&lt;/p&gt;
+&lt;p&gt;On obtient le résultat au bout de 24h max, pour moi j&apos;ai réussi à l&apos;obtenir avec 83% donc ça passe 🙂&lt;/p&gt;
+&lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Je doutais un peu que la certification m&apos;apporte réellement quelque chose mais finalement afin de l&apos;obtenir je me suis vraiment investi et cela m&apos;a apporté des connaissances théoriques sur la techno.&lt;br&gt;
+Cela me donne un véritable vernis de base lorsqu&apos;il sera question de Kubernetes.&lt;/p&gt;
+&lt;p&gt;Ceci dit cela ne remplacera jamais l&apos;expérience &quot;sur le terrain&quot; selon moi et la certification ne vient qu&apos;en complément. J&apos;ai donc hâte de pouvoir mettre en pratique les connaissances acquises ! 🤞&lt;/p&gt;</content:encoded><author>Beerus Inc.</author></item><item><title><![CDATA[Déployer son infra K3S sur Proxmox en mode IaC]]></title><description><![CDATA[Architecture Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m'exercer. J'ai pas mal fait de Kubernetes classique en lab via…]]></description><link>https://blog.beerus.fr/deploy-k3s-proxmox</link><guid isPermaLink="false">https://blog.beerus.fr/deploy-k3s-proxmox</guid><category><![CDATA[k3s]]></category><category><![CDATA[hashicorp]]></category><category><![CDATA[packer]]></category><category><![CDATA[terraform]]></category><category><![CDATA[proxmox]]></category><pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#architecture&quot; aria-label=&quot;architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Architecture&lt;/h1&gt;
 &lt;p&gt;Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m&apos;exercer. J&apos;ai pas mal fait de Kubernetes classique en lab via des formations Udemy et j&apos;aimerai tester autre chose mais toujours sur une base K8S.
 Je me suis penché sur K3S de Rancher. Il dispose de plusieurs qualités qui me semble intéressantes :&lt;/p&gt;
 &lt;ul&gt;
