@@ -17,7 +17,7 @@ export default class MainLayout extends Component {
       themeClass = 'dark'
     } else if (notFound) {
       themeClass = 'not-found'
-    }l
+    }
     
 
     return (
