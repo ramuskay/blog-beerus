@@ -17,7 +17,8 @@ export default class MainLayout extends Component {
       themeClass = 'dark'
     } else if (notFound) {
       themeClass = 'not-found'
-    }
+    }l
+    
 
     return (
       <>
@@ -26,7 +27,7 @@ export default class MainLayout extends Component {
             class: `theme ${themeClass}`,
           }}
         >
-          <html lang="en" />
+          <html lang="fr" />
           <meta name="description" content={config.siteDescription} />
           <link rel="icon" type="image/png" href={favicon} />
         </Helmet>
