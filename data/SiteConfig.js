@@ -15,6 +15,7 @@ const config = {
   userName: 'Beerus Inc.',
   userEmail: '',
   userTwitter: '',
+  googleSiteVerification: "18MIKg3LXM5E_B-fq-2nGUfIsFItgDJlbt6lMVSGtUw",
   menuLinks: [
     {
       name: 'GitHub',

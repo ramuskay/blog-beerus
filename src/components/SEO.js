@@ -93,6 +93,7 @@ export default class SEO extends Component {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+        <meta name="google-site-verification" content="18MIKg3LXM5E_B-fq-2nGUfIsFItgDJlbt6lMVSGtUw" />
       </Helmet>
     )
   }
