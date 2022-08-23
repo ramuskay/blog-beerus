@@ -1,4 +1,248 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Beerus inc.</generator><lastBuildDate>Wed, 17 Aug 2022 21:15:29 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Retour d'expérience sur la certification CKA]]></title><description><![CDATA[Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c'est l'occasion pour moi de faire un petit…]]></description><link>https://blog.beerus.fr/get-CKA</link><guid isPermaLink="false">https://blog.beerus.fr/get-CKA</guid><category><![CDATA[k8s]]></category><category><![CDATA[certification]]></category><pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c&apos;est l&apos;occasion pour moi de faire un petit retour d&apos;expérience !&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Beerus inc.</generator><lastBuildDate>Tue, 23 Aug 2022 17:55:08 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Redondance "du pauvre" d'un site personnel]]></title><description><![CDATA[Contexte Mon serveur hébergé a des petits soucis en ce moment, il a tendance à planter régulièrement malgré le fait que je le supervise activement. J'ai très longtemps pensé que c…]]></description><link>https://blog.beerus.fr/redondance-sites</link><guid isPermaLink="false">https://blog.beerus.fr/redondance-sites</guid><category><![CDATA[ovh]]></category><category><![CDATA[python]]></category><pubDate>Thu, 18 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
+&lt;p&gt;Mon serveur hébergé a des petits soucis en ce moment, il a tendance à planter régulièrement malgré le fait que je le supervise activement.&lt;br&gt;
+J&apos;ai très longtemps pensé que c&apos;était l&apos;un de mes containers docker qui s&apos;emballait (malgré le fait qu&apos;il y ait des options de runtime de paramétrées) mais il s&apos;avère que c&apos;est le metrics scraper d&apos;OVH installé qui posait problème !&lt;br&gt;
+Bref avant de résoudre le problème, mes services hébergés ne répondaient plus de temps en temps et cela reste tout de même très embêtant. Il a donc fallu que je pense à une potentielle redondance !&lt;/p&gt;
+&lt;h1 id=&quot;etude-des-solutions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#etude-des-solutions&quot; aria-label=&quot;etude des solutions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Etude des solutions&lt;/h1&gt;
+&lt;p&gt;Il fallait donc que je trouve une solution pour avoir les sites les plus importants toujours en fonction en cas de défaillance majeure de mon serveur dédié le temps que je trouve une solution à long terme. Pour simplifier la problématique je ne souhaite basculer qu&apos;un seul site pour le moment car il est consulté fréquemment pour des raisons professionnelles, les autres n&apos;ont pas d&apos;importance cruciale.&lt;/p&gt;
+&lt;p&gt;J&apos;ai les équipements suivants avec moi :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Une IP publique dédiée d&apos;OVH&lt;/li&gt;
+&lt;li&gt;Un serveur hébergé chez OVH&lt;/li&gt;
+&lt;li&gt;Un micro serveur avec des ressources équivalentes de celle d&apos;OVH chez moi&lt;/li&gt;
+&lt;li&gt;La fibre et une IP publique dynamique (celle de ma box)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Voici les quelques techniques auxquelles j&apos;ai pensé en premier lieu :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Backup, Replica&lt;/li&gt;
+&lt;li&gt;Cluster&lt;/li&gt;
+&lt;li&gt;Solution de fail over&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La solution &lt;strong&gt;backup/réplica&lt;/strong&gt; a tout de suite été écartée du fait qu&apos;elle ne soit pas du tout flexible. Je fais déjà du backup de mon serveur vers chez moi mais c&apos;est cela concerne plus la conf de mon dockerfile et les datas de certains containers mais rien qui ne me permet de remonter une infra en 10min automatiquement (surtout pour une solution censée rester temporaire).&lt;br&gt;
+Pour le &lt;strong&gt;cluster&lt;/strong&gt; ça serait la solution idéale, dans mon cas passer sous Docker Swarm ou encore mieux tout migrer sous K8s/K3s. Le problème est que je veux une solution rapide à mettre en place ne necessitant pas une refonte complète de mon infra. D&apos;autant plus que je n&apos;ai pas du tout réfléchi à la conception de ma future infra et comment cela est géré avec une IP publique dynamique.&lt;br&gt;
+La dernière proposition est surement la plus adaptée pour moi, trouver une &lt;strong&gt;solution de failover&lt;/strong&gt; simple et efficace avec le moins d&apos;intervention humaine sans toucher à la configuration déjà en place.&lt;/p&gt;
+&lt;p&gt;Une fois choisie il a fallu que je compare les solutions avec les contraintes suivantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Une bascule faite en 5 minutes max en cas de problème.&lt;/li&gt;
+&lt;li&gt;L&apos;ensemble des données doivent être identique et synchronisé (si modification d&apos;un fichier html réplication immédiate sur le backup).&lt;/li&gt;
+&lt;li&gt;Rapide et simple à mettre en place, pas de service payant etc...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Après un moment de réflexion voici le workflow imaginé :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 799px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0b40409ff0374b8d105c68dfa76bfa3f/dd6e8/schema_failover.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 81.69014084507043%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACdElEQVQ4y21Ua5OiQAzk//+w+3BVt+4pyCpvmAEGUN4goPZVsovluUtVagaS6XQ6E7TLNOPZxsuEeVlQtz38SCFWJTyRIy1q+DJHFOfIzzWm+TOWbD1Hpr2CUWBDYELxNyklHNdlEzLGNC8I4wLzcn2APZu2IpMN44UPnKsWvsjQdANknCASAkIIpCpj/8EJeb9cb2i7ns/S2vUDNAogx2qUhVl2A5wg5VLjrELbT0jzGoHMEac5LNuBHwQIghDmxxFHy0IkJLSm7RAnKZJU8doPI5dD4HXTIFUKoYhxtH2EkWQW5L/e7ggjAV03OIbOs4ZBGPFLXTcQQmK73XEglWqaH3jbvGOnG9jqOu8d12MtbceFsTc5tqobZkyrRjSJJTE6nUumTSzoG7EdxwuGfsDYD5i+GrdqTRURCD20L6saGmUj+zhaXJKUMQMRKFk7jOhtD8POREvvXY+27Rg4TRU2m3e4js9siYQWyhidynE3LZzLCtudDpXlUCrjTqZ5gTwUOB1s3qssY39xOsH1fGZ26mv4YYi6bqGFQiJ0XOReAN/zWaumaXG749H56cvmeeFSyUfaGYaJQEYQVcracslU3qmsUFQ1a0jvlJUSOZ4HahppR7p9TtGVJcrygiUhzZNEcRMphieFMq/Z+R4uVyR+gOLXb1wI6GsKCMzzA9iOw6Ck2fWOxzX7NikPm2fMTYuz6+Ng2Xx5ialu7FGWFeqmRRwnDPg8xz/O8iOAGN/u2O9Nvqek0fvfLXdznS5aX+f5P8DLUyYqI0lS7vrhaOFo2dz1P28b9q2aPhP5DvjClA7RvaMSadSoEbphPP40P/1t/gE/lLzSQjd27wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;schema failover&quot;
+        title=&quot;schema failover&quot;
+        src=&quot;/static/0b40409ff0374b8d105c68dfa76bfa3f/dd6e8/schema_failover.png&quot;
+        srcset=&quot;/static/0b40409ff0374b8d105c68dfa76bfa3f/53f68/schema_failover.png 213w,
+/static/0b40409ff0374b8d105c68dfa76bfa3f/df70d/schema_failover.png 425w,
+/static/0b40409ff0374b8d105c68dfa76bfa3f/dd6e8/schema_failover.png 799w&quot;
+        sizes=&quot;(max-width: 799px) 100vw, 799px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Le détail des flux serait donc le suivant :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Problème sur la production (serveur OVH) qui rend le site web indisponible&lt;/li&gt;
+&lt;li&gt;Un script sur le serveur backup vérifie régulièrement la disponibilité du site web&lt;/li&gt;
+&lt;li&gt;Le script constate l&apos;indisponibilité et via les API OVH change l&apos;IP publique du site en question en la faisant pointer sur le serveur de backup lui-même&lt;/li&gt;
+&lt;li&gt;Avec un TTL assez faible (60), l&apos;utilisateur devrait avoir accès au site web via le backup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Il reste le sujet de la synchronisation des données, solutions possibles :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un montage sur le dossier du site web en question&lt;/li&gt;
+&lt;li&gt;Un rsync depuis le backup vers la prod à une fréquence régulière&lt;/li&gt;
+&lt;li&gt;Un rsync depuis la prod vers le backup dès qu&apos;un fichier est modifié&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;J&apos;ai passé pas mal de temps sur ces solutions car elles ont toutes leurs problèmes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Montage&lt;/strong&gt; : Aucun intérêt car si la prod plante je n&apos;ai plus de montage et donc plus de donnée, il faut forcément une copie. Je peux toujours par la suite via un cron faire une copie régulière des données en local mais aucun intérêt par rapport aux autres solutions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rsync depuis le backup&lt;/strong&gt; : Pas trop fan de créer des accès sur mon serveur de prod même si c&apos;est du rsync via clé SSH sur un user non root. Mais surtout comment je détecte qu&apos;un fichier a changé ou été créé ? Seule la prod peut avoir ses infos. J&apos;ai tout de même essayé de créer un montage sshfs avec une surveillance du dossier via l&apos;outil inotify mais cela ne marche pas du tout ensemble, inotify fonctionne avec un système de fichier local.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rsync depuis la prod&lt;/strong&gt; : Dernière solution, celle-ci parait la plus &quot;faisable&quot; la prod surveillant ses fichiers via inotify ou un autre outil et rsync en cas de changement. Par contre avec l&apos;IP dynamique je suis toujours &quot;bloqué&quot; car à chaque redémarrage de ma box je change d&apos;IP. J&apos;ai donc dû faire appel à un service type DynDNS, ma box ne gérant que DynDNS ou NoIP j&apos;ai choisi ce dernier qui a une version freemium (il faut valider manuellement le domaine tous les mois sinon 5€/mois...)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;mise-en-place&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mise-en-place&quot; aria-label=&quot;mise en place permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Mise en place&lt;/h1&gt;
+&lt;p&gt;J&apos;ai 4 parties à mettre en place :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Le script de vérification de la disponibilité du site web.&lt;/li&gt;
+&lt;li&gt;Le script de changement du DNS.&lt;/li&gt;
+&lt;li&gt;L&apos;outil qui va permettre la synchro des données de la prod vers le backup.&lt;/li&gt;
+&lt;li&gt;Des petits scripts annexes pour alerter en cas de défaillance de la prod/backup.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Toute la partie scripting va être condensée dans un seul et même script&lt;/p&gt;
+&lt;h2 id=&quot;partie-scripting&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#partie-scripting&quot; aria-label=&quot;partie scripting permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Partie scripting&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;from urllib.request import urlopen, Request
+from urllib.error import HTTPError, URLError
+import sys
+import time
+import requests
+import dns.resolver
+import ovh
+
+new_ip = requests.get(&apos;https://api.ipify.org&apos;).content.decode(&apos;utf8&apos;) #Dynamic public IP
+domain = &quot;beerus.fr&quot;
+site_name = &quot;&amp;lt;the_website_to_monitor&gt;&quot;
+ifttt_event = &quot;&amp;lt;event_ifttt_name&gt;&quot; #See https://ifttt.com
+ifttt_key = &quot;&amp;lt;event_ifttt_key&gt;&quot; #See https://ifttt.com
+ovh_secret = &quot;&amp;lt;ovh_secret&gt;&quot; #See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/
+ovh_key = &quot;&amp;lt;ovh_key&gt;&quot; #See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/
+ovh_consumer = &quot;&amp;lt;ovh_consumer&gt;&quot; #See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/
+
+# setting the URL you want to monitor
+URL = Request(&quot;https://{0}.{1}&quot;.format(site_name, domain),
+              headers={&apos;User-Agent&apos;: &apos;Mozilla/5.0&apos;})
+i = 0
+
+#Verify status of the DNS
+result = dns.resolver.query(site_name, &apos;A&apos;)
+for ipval in result:
+    if ipval.to_text() == new_ip:
+        print(&quot;Already switched&quot;)
+        sys.exit(0)
+
+#The site is answering ?
+while i &amp;lt; 10:
+    time.sleep(5)
+    print(URL.full_url)
+    try:
+        response = urlopen(URL, timeout=2)
+    except (HTTPError, URLError) as error:
+        i = i+1
+        continue
+    if response.status == 200:
+        print(&quot;Prod is okay&quot;)
+        break
+    i = i+1
+
+#The website is down so we can switch and alert
+if i == 10:
+    response = requests.post(&apos;https://maker.ifttt.com/trigger/{0}/with/key/{1}&apos;.format(ifttt_event, ifttt_key))
+    client = ovh.Client(
+        endpoint=&apos;ovh-eu&apos;,
+        application_key=ovh_key,
+        application_secret=ovh_secret,
+        consumer_key=ovh_consumer,
+    )
+
+    result = client.put(
+        &apos;/domain/zone/{0}/record/5206233547&apos;.format(domain),
+        subDomain=site_name,
+        target=new_ip,
+        ttl=60,
+    )
+
+    result = client.post(&apos;/domain/zone/{0}/refresh&apos;.format(domain))&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Le script ci-dessus a été passé en cron sur le serveur backup et est exécuté toutes les 10 minutes.&lt;br&gt;
+Il exécute les actions suivantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vérification du DNS (le site a-t-il déjà basculé ?)&lt;/li&gt;
+&lt;li&gt;Curl vers le site en question, 10 tests avec un intervalle de 5s&lt;/li&gt;
+&lt;li&gt;Si down bascule vers le backup via les API d&apos;OVH&lt;/li&gt;
+&lt;li&gt;Notification (on verra ça dans une autre partie)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;synchronisation-donnees&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#synchronisation-donnees&quot; aria-label=&quot;synchronisation donnees permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Synchronisation données&lt;/h2&gt;
+&lt;p&gt;Pour la synchro j&apos;avais dans un premier temps pensé à inotify avec rsync.&lt;br&gt;
+Il aurait suffi de lancer le binaire (via systemd dans l&apos;idéal) et dès lors qu&apos;il aurait remarqué un event qui match avec les options précisées (create, delete, move etc...) il effectuerait un rsync.&lt;br&gt;
+Le problème étant que cela nécessite pas mal de bricolage (script, création d&apos;un systemd etc...) et j&apos;aurais aimé en éviter le plus possible.
+Heureusement je suis tombé sur l&apos;outil &lt;strong&gt;lsyncd&lt;/strong&gt; qui fait exactement ce travail, pas besoin de réinventer la roue !
+En plus il peut se baser sur rsync pour faire ses actions ce qui est parfait pour moi. J&apos;ai fait deux configurations :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Une pour le webroot de mon site, en cas de modification/ajout/suppression lsyncd exécute un rsync immédiatement vers mon backup&lt;/li&gt;
+&lt;li&gt;Une pour le dossier des certificats de mon site web, étant donné que je suis sous LetsEncrypt les certificats sont renouvelés régulièrement. De la même façon dès qu&apos;il y a une modification de ceux-ci (le certificat public à priori) il copie le nouveau certificat sur le backup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tous cela est parfait mais il me manque encore la partie SSH pure car mon serveur backup est hébergé chez moi derrière ma box. J&apos;utilise déjà le port 22 pour d&apos;autres usages donc il va falloir faire de la configuration additionnelle.&lt;br&gt;
+J&apos;avais deux possibilités :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Je fais un NAT sur un port différent du 22 (du style IP_PUB:2222 --&gt; backup:22)&lt;/li&gt;
+&lt;li&gt;Je fais un bastion SSH avec un hardenning et qui forward mes requêtes vers mon backup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;J&apos;ai décidé de faire la deuxième solution, ça permet de s&apos;entrainer sur quelque chose que je n&apos;ai pas l&apos;habitude de faire 🙂. Je passe la partie hardenning car ce n&apos;est pas ce que j&apos;ai envie d&apos;aborder dans ce post mais ça consiste à faire les choses suivantes (non exhaustives) :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fail2ban&lt;/li&gt;
+&lt;li&gt;No PermitRoot&lt;/li&gt;
+&lt;li&gt;Authentification par clé uniquement&lt;/li&gt;
+&lt;li&gt;Un Jail chroot avec un nombre de binaire limité (adios su et sudo 😈)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Par rapport au bastion, 3 solutions pour faire ce jump :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stockage des clés SSH sur le bastion&lt;/li&gt;
+&lt;li&gt;Forwarding SSH agent&lt;/li&gt;
+&lt;li&gt;Utiliser ProxyCommand/ProxyJump&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Stockage des clés SSH sur le bastion&lt;/strong&gt;: Cela signifie que le bastion possède la clé SSH privée de mon serveur backup, étant donné qu&apos;il reste public cela est toujours dangereux. On met cette idée de côté pour l&apos;instant.&lt;br&gt;
+&lt;strong&gt;Forwarding SSH agent&lt;/strong&gt;: On passe nos clés privées à un agent SSH puis on forward cet agent sur notre bastion. L&apos;agent SSH étant une socket Unix (lié à la variable $SSH_AUTH_SOCK) le jump host va pointer vers notre agent local au lieu de pointer sur le sien. Mais il suffit d&apos;être root sur le bastion pour faire pointer sa variable $SSH_AUTH_SOCK sur notre socket et accéder au backup. Pas terrible niveau sécu également.&lt;br&gt;
+&lt;strong&gt;ProxyCommand/ProxyJump&lt;/strong&gt;: La meilleure solution, le serveur intermédiaire (le bastion) exécute une &lt;code class=&quot;language-text&quot;&gt;ProxyCommand&lt;/code&gt; lors de la connexion et forward l&apos;input et l&apos;output vers le backup. Il suffit pour cela d&apos;utiliser l&apos;option &lt;code class=&quot;language-text&quot;&gt;-J&lt;/code&gt; du binaire SSH.&lt;br&gt;
+Ex : &lt;code class=&quot;language-text&quot;&gt;ssh -J username@bastion username@backup&lt;/code&gt;. Le seul problème de cette solution c&apos;est que si je veux préciser une clé SSH privée la commande ne peut pas deviner si cela s&apos;applique au bastion ou au backup. Je suis donc passé via la config SSH :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Host bastion
+    User linux
+    HostName bastion.domain.tld
+    IdentityFile ~/.ssh/bastion_rsa
+
+Host backup #Pas besoin d&apos;être accessible depuis internet donc
+    User backup
+    HostName backup.domain.lan
+    IdentityFile ~/.ssh/backup_rsa
+    ProxyJump bastion.domain.tld&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Et lorsque je fais un simple &lt;code class=&quot;language-text&quot;&gt;ssh backup&lt;/code&gt; (après recopie des clés publiques sur les bons serveurs) la magie opère ! Petit test de modification d&apos;un fichier ça fonctionne bien, le fichier modifié est bien propagé sur le backup 🙂&lt;/p&gt;
+&lt;h2 id=&quot;notifications&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#notifications&quot; aria-label=&quot;notifications permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Notifications&lt;/h2&gt;
+&lt;p&gt;Dernier point : le fignolage ! Il s&apos;agit désormais de m&apos;avertir en cas de défaillance de la prod OU du backup (on ne sait jamais lui aussi il peut planter !).&lt;br&gt;
+Pour le backup je fais presque que la même chose que le script ci-dessus, j&apos;ai des curl qui interroge régulièrement le nom DynDNS pointant vers mon site web (j&apos;ai configuré mon reverse proxy Nginx pour répondre au vrai nom de mon site web et au nom DynDNS). En cas de défaillance je reçois un mail sur ma boite perso @beerus.fr.&lt;/p&gt;
+&lt;p&gt;Par contre pour la prod c&apos;est plus complexe (et plus important aussi). En fait je pourrais faire le même mécanisme que pour le backup mais je ne recevrai jamais le mail @beerus.fr car mon serveur mail est hébergé sur la même machine que mon site web...&lt;br&gt;
+J&apos;ai commencé à regarder pour pouvoir utiliser les API de Gmail mais très honnetement ça ne me tentait pas trop.&lt;br&gt;
+Donc à la place j&apos;ai utilisé le service &lt;strong&gt;IFTTT&lt;/strong&gt;, j&apos;ai trouvé le concept tellement simple et efficace.
+Une application Android (ou Apple) à télécharger ensuite &quot;programmer&quot; son alerte :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 757px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7508569b10bf3ac074b7b9ce1309c7e3/70668/ifttt.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 87.79342723004696%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACqElEQVQ4y42TWUiUURSAr6aFFdGTBC0Q0UYGEYRBD70E2UPLa09B0Js9hS22Gr30olmmOaMt4+joNGlEikG0gDqbk+aWW4VMkOU4FvWQzsz94t77a5pL/fD95/yHc89/7lnE/T7IboKzfrgUNHKSM76Z+uT3+cAfLgbhWgiutEJRF4gdHljthGMvQRSDKAJxB8RtECXSyGJpYemFGG6AuAkpNnNmfRWIPY8huxk8740xsw4ONsK6Stjultppo0uypVqS8RA2uCRJpZLkUjRJpSBKTQI6YFY9pDtgaw0stsPyclhWDotshhSbJNUOqWVGV9mklUnSyphC+SfbYJsbxNAPCH6F0Ah0jkKHRZdG0j0Goc+/CIR/ar1zVE75dE7jbQT6v4FgwSeh3x+7Q7Q1v5hmk/OeEIPfwTsM7RHoG4Nei3dj0BOVWnaOxGn/Mq71rqi0QNMThe6oyVLFEidew65ayHBbHS62KDF1UQ1QtU2xq5rKqZoplpabGq51wioH7K4DcbkVrreDsx9OeSHXD3mtcLgRshokx1/BzkeSA/WSfU/hyDNJZq1kc42aAtPEybHZVA1ifwOsccLeJ3D0OZxsgkONZnyWlEk9ASqzFXcVsPKemk2p50/csigyM5n+AERFP+T44EIATvsgx2s2IjdgbOf8krw2uPxGZS/1dqituBoyN8mzdLUxelNm90lOk6bLwx96GegIztHl2d0WcQmxxCTSAibikvFYXB8ZCn+ib2BQH1C2iXhilr8invgrQynlDLnQM5+vmM8xEokQCATw+Xy0tLRolO73+wmHw/P+eM4MY7EYlZWVFBQU4HA4tO5yuahwOCgsLMRmsxGNRv+d4fSAVVVV5Ofn64Aejwe3261tKqDdbv+/gLOv7J9xZa/Xq78XuvJvVvnCPbv8G/UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ifttt&quot;
+        title=&quot;ifttt&quot;
+        src=&quot;/static/7508569b10bf3ac074b7b9ce1309c7e3/70668/ifttt.png&quot;
+        srcset=&quot;/static/7508569b10bf3ac074b7b9ce1309c7e3/53f68/ifttt.png 213w,
+/static/7508569b10bf3ac074b7b9ce1309c7e3/df70d/ifttt.png 425w,
+/static/7508569b10bf3ac074b7b9ce1309c7e3/70668/ifttt.png 757w&quot;
+        sizes=&quot;(max-width: 757px) 100vw, 757px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Comme on peut le voir ci-dessus en cas de réception d&apos;un webhook on envoie une notification push à l&apos;application IFTTT reliée au compte.&lt;br&gt;
+J&apos;ai juste eu à ajouter la commande curl à mon script ci-dessus et le tour était joué, ça marche parfaitement ! Très peu d&apos;infos sont également transmise à ce service tiers (surement une ip publique et peut-être des infos négligables concernant mon téléphone) ça reste acceptable de mon côté, le businness plan consiste à proposer des version premium qui permettent de développer son propre algo ou avoir plus d&apos;event.&lt;/p&gt;
+&lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Une grosse journée de travail pour concevoir, mettre en place et peaufiner. J&apos;espérais pas mettre plus de temps et c&apos;est chose faite.
+J&apos;ai une solution, certes bricolée, mais fonctionnelle et facile. Il me reste tout de même une partie manuelle : en cas de défaillance de la prod et de bascule sur le backup, je dois manuellement refaire pointer le DNS vers la prod (bien que j&apos;utilise un script pour ça).
+La solution n&apos;est de toute façon mise en place que temporairement le temps que je réfléchisse à une nouvelle architecture qui sera bien plus robuste et pensée en amont.&lt;br&gt;
+Cela reste malgré tout un très bon exercice, très proche du système ça toujours fait du bien de remettre les mains dans le cambouis 🙂&lt;/p&gt;</content:encoded><author>Beerus Inc.</author></item><item><title><![CDATA[Retour d'expérience sur la certification CKA]]></title><description><![CDATA[Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c'est l'occasion pour moi de faire un petit…]]></description><link>https://blog.beerus.fr/get-CKA</link><guid isPermaLink="false">https://blog.beerus.fr/get-CKA</guid><category><![CDATA[k8s]]></category><category><![CDATA[certification]]></category><pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c&apos;est l&apos;occasion pour moi de faire un petit retour d&apos;expérience !&lt;/p&gt;
 &lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
 &lt;p&gt;Tout d&apos;abord il faut savoir qu&apos;il n&apos;existe que 4 certifications Kubernetes officielles :&lt;/p&gt;
 &lt;ul&gt;
