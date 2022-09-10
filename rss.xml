@@ -1,4 +1,361 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Beerus inc.</generator><lastBuildDate>Tue, 23 Aug 2022 17:55:08 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Redondance "du pauvre" d'un site personnel]]></title><description><![CDATA[Contexte Mon serveur hébergé a des petits soucis en ce moment, il a tendance à planter régulièrement malgré le fait que je le supervise activement. J'ai très longtemps pensé que c…]]></description><link>https://blog.beerus.fr/redondance-sites</link><guid isPermaLink="false">https://blog.beerus.fr/redondance-sites</guid><category><![CDATA[ovh]]></category><category><![CDATA[python]]></category><pubDate>Thu, 18 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Beerus blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://blog.beerus.fr/</link><image><url>https://blog.beerus.fr//favicon/favicon-48.png</url><title>Beerus blog</title><link>https://blog.beerus.fr/</link></image><generator>Beerus inc.</generator><lastBuildDate>Sat, 10 Sep 2022 16:59:21 GMT</lastBuildDate><atom:link href="https://blog.beerus.fr//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Fix le "joycon drift" de ma switch]]></title><description><![CDATA[Contexte C'est fait ! J'ai enfin eu le fameux joycon drift sur les deux joycons de ma switch. Pour rappel ce qu'est le joycon drit voir ici. Cela ne m'empêche pas réellement de…]]></description><link>https://blog.beerus.fr/repair-joycon</link><guid isPermaLink="false">https://blog.beerus.fr/repair-joycon</guid><category><![CDATA[switch]]></category><category><![CDATA[DIY]]></category><pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
+&lt;p&gt;C&apos;est fait ! J&apos;ai enfin eu le fameux joycon drift sur les deux joycons de ma switch. Pour rappel ce qu&apos;est le joycon drit voir &lt;a href=&quot;https://www.pocket-lint.com/fr-fr/jeux-video/actualites/nintendo/148751-comment-reparer-nintendo-switch-joy-con-drift&quot;&gt;ici&lt;/a&gt;.&lt;br&gt;
+Cela ne m&apos;empêche pas réellement de jouer mais cela reste très pénible voir même parfois handicapant dans certains jeux, j&apos;ai donc commencé à réfléchir à changer ou réparer mes joycons.&lt;/p&gt;
+&lt;h1 id=&quot;outils&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#outils&quot; aria-label=&quot;outils permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Outils&lt;/h1&gt;
+&lt;p&gt;Forcément c&apos;est un problème rencontré par tous les utilisateurs de la switch à un moment donné donc il existe une foison de tutoriels/vidéos sur internet.&lt;br&gt;
+Ce qui ressorti des ressources que j&apos;ai pu consultées c&apos;est qu&apos;il me fallait deux tournevis spécifiques :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Y00 Triwing Screwdriver&lt;/li&gt;
+&lt;li&gt;PH000 Phillips Screwdriver&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Au début je voulais prendre uniquement ces deux tournevis et utiliser une feuille de papier cartonnée (type business card) qui est censée être placée juste en dessous du joycon. Mais j&apos;ai eu du mal à trouver ces deux tournevis seuls (hors site chinois type Aliexpress par lesquels je ne veux pas passer...)&lt;br&gt;
+Je suis donc parti sur ce &lt;a href=&quot;https://www.amazon.ca/gp/product/B08CS7DS5V/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;#x26;psc=1&quot;&gt;pack&lt;/a&gt; à 20 CAD soit environ 15€ ! Peut-être un peu cher mais là il y a tout dedans :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Y00 Triwing Screwdriver&lt;/li&gt;
+&lt;li&gt;PH000 Phillips Screwdriver&lt;/li&gt;
+&lt;li&gt;4 joysticks neufs&lt;/li&gt;
+&lt;li&gt;Un tweezer&lt;/li&gt;
+&lt;li&gt;Un &quot;Plastic crowbar&quot; (pas trouvé le nom en français)&lt;/li&gt;
+&lt;li&gt;De la visserie en tout genre (ressort boutons L/R, Slider Lock, vis etc...)&lt;/li&gt;
+&lt;li&gt;De la cosmétique pour les joycons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/62c092bef9391375c7240439abee45ec/62aaf/full_box.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.11737089201877%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAFVhCiTjcl//8QAGxAAAQQDAAAAAAAAAAAAAAAAAQACAxEQEjH/2gAIAQEAAQUCj6x4OLpARaAWP//EABURAQEAAAAAAAAAAAAAAAAAABEQ/9oACAEDAQE/ARn/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwGn/8QAGRABAAIDAAAAAAAAAAAAAAAAARARAFFh/9oACAEBAAY/AnWNFs9j/8QAGhAAAwEAAwAAAAAAAAAAAAAAAAERIVFhgf/aAAgBAQABPyFpS40gLizo8HLGxik2p5ZuH//aAAwDAQACAAMAAAAQt8//xAAWEQEBAQAAAAAAAAAAAAAAAAABEDH/2gAIAQMBAT8QHif/xAAVEQEBAAAAAAAAAAAAAAAAAAAQIf/aAAgBAgEBPxCD/8QAHBABAQACAwEBAAAAAAAAAAAAAREAIUFhkVGh/9oACAEBAAE/ELsKLHBTf7iyGgJ79w7V5xEgumMxb89jkQLHvP/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;full box&quot;
+        title=&quot;full box&quot;
+        src=&quot;/static/62c092bef9391375c7240439abee45ec/8a34a/full_box.jpg&quot;
+        srcset=&quot;/static/62c092bef9391375c7240439abee45ec/08b27/full_box.jpg 213w,
+/static/62c092bef9391375c7240439abee45ec/6f6b2/full_box.jpg 425w,
+/static/62c092bef9391375c7240439abee45ec/8a34a/full_box.jpg 850w,
+/static/62c092bef9391375c7240439abee45ec/63107/full_box.jpg 1275w,
+/static/62c092bef9391375c7240439abee45ec/62aaf/full_box.jpg 1280w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;reparation&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reparation&quot; aria-label=&quot;reparation permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Réparation&lt;/h1&gt;
+&lt;p&gt;Ok maintenant qu&apos;on est équipé il s&apos;agit de passer à la pratique ! Pour cela il faut bien distinguer le joycon droit du gauche car ils sont montés différemment.&lt;br&gt;
+Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être large.&lt;/p&gt;
+&lt;h2 id=&quot;joycon-droit&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#joycon-droit&quot; aria-label=&quot;joycon droit permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Joycon droit&lt;/h2&gt;
+&lt;p&gt;On va tout d&apos;abord enlever les 4 vis entourées sur la photo ci-dessous :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/953c0462e2beeeb94da5f70c7b0ddd80/fb816/first_screw.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEBQH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAgMB/9oADAMBAAIQAxAAAAHYyloCgUasjLM6dQ4Mn//EABwQAAEEAwEAAAAAAAAAAAAAAAEAAgMREBMyIf/aAAgBAQABBQIouo7SppiVG32yu3uN4m5x/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEREP/aAAgBAwEBPwGFHn//xAAWEQEBAQAAAAAAAAAAAAAAAAAQARH/2gAIAQIBAT8B0h//xAAeEAACAQMFAAAAAAAAAAAAAAAAEQECEiAhMjNBkf/aAAgBAQAGPwIbg3R4WjTg4qTUXUY//8QAHhABAAIBBAMAAAAAAAAAAAAAAQARQRAhMWFRceH/2gAIAQEAAT8hVE5TNZZ8+FPDMdWZq5Tg9wV0Jbb1NsOCiL2wb3X/2gAMAwEAAgADAAAAEAQRs//EABkRAAIDAQAAAAAAAAAAAAAAAAAhARARcf/aAAgBAwEBPxCco4FVf//EABcRAAMBAAAAAAAAAAAAAAAAAAEQESH/2gAIAQIBAT8QForq/8QAHRABAAMAAgMBAAAAAAAAAAAAAQARITFRQXGhsf/aAAgBAQABPxC4pDOWW+onNvZsE2r01+ypruXZ8dVG42EB5Ou4YF3pcCAXocJfalZ4yKt/SAAKc0jLn//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;first screw&quot;
+        title=&quot;first screw&quot;
+        src=&quot;/static/953c0462e2beeeb94da5f70c7b0ddd80/8a34a/first_screw.jpg&quot;
+        srcset=&quot;/static/953c0462e2beeeb94da5f70c7b0ddd80/08b27/first_screw.jpg 213w,
+/static/953c0462e2beeeb94da5f70c7b0ddd80/6f6b2/first_screw.jpg 425w,
+/static/953c0462e2beeeb94da5f70c7b0ddd80/8a34a/first_screw.jpg 850w,
+/static/953c0462e2beeeb94da5f70c7b0ddd80/fb816/first_screw.jpg 960w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Une fois les 4 vis enlevées, passer le &quot;plastic crowbar&quot; dans la fente qui vient d&apos;apparaître suite aux vis enlevées :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/16f890d9d78e6e6e459b399ad64ebd78/67200/unplug.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABvXJgtJyXk0YkHCRP/8QAHBAAAgEFAQAAAAAAAAAAAAAAAQIAAxAREiEx/9oACAEBAAEFAsRl7rHrYArFwC4CqWnAm7R/Lf/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGzGK1//8QAFhEAAwAAAAAAAAAAAAAAAAAAARAR/9oACAECAQE/AbUCv//EAB0QAAECBwAAAAAAAAAAAAAAAAABEBIgISIxMlH/2gAIAQEABj8CfNS5YTZl7L//xAAdEAEAAwABBQAAAAAAAAAAAAABABEhEDFhcYGh/9oACAEBAAE/ISbj44NGTdlZABR9XLp+rDIWhlOSrowb5//aAAwDAQACAAMAAAAQ0Caz/8QAFxEBAQEBAAAAAAAAAAAAAAAAABEBIf/aAAgBAwEBPxCDurZin//EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQIBAT8QQXKI/8QAHRABAAICAwEBAAAAAAAAAAAAAQARITFBUXGh8P/aAAgBAQABPxBK1Km/lxBomHi2uV8IkHQwXD733MIQbp9LEz4LQC+XBWW2AU84mpSdQNZqLmWz/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;unplug&quot;
+        title=&quot;unplug&quot;
+        src=&quot;/static/16f890d9d78e6e6e459b399ad64ebd78/8a34a/unplug.jpg&quot;
+        srcset=&quot;/static/16f890d9d78e6e6e459b399ad64ebd78/08b27/unplug.jpg 213w,
+/static/16f890d9d78e6e6e459b399ad64ebd78/6f6b2/unplug.jpg 425w,
+/static/16f890d9d78e6e6e459b399ad64ebd78/8a34a/unplug.jpg 850w,
+/static/16f890d9d78e6e6e459b399ad64ebd78/67200/unplug.jpg 961w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Il suffit ensuite de &lt;strong&gt;délicatement&lt;/strong&gt; ouvrir le joycon et en voici le contenu :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 646px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6af3f7a3644c190f86fcd354a3de9200/82797/fisrt_open.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 88.26291079812205%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAASABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBA//EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHhDpENK0KB/8QAGBAAAwEBAAAAAAAAAAAAAAAAARARAAL/2gAIAQEAAQUCLs3Q0QX/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAbEAEAAQUBAAAAAAAAAAAAAAABAAIQESAxcf/aAAgBAQAGPwK+YAlXk6af/8QAGxAAAgIDAQAAAAAAAAAAAAAAABEBIRAxUUH/2gAIAQEAAT8htKFO1XcS+jKFt2J7ESViVRrR/9oADAMBAAIAAwAAABB84AH/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/EB//xAAWEQEBAQAAAAAAAAAAAAAAAAARABD/2gAIAQIBAT8QZ3//xAAcEAEAAwADAQEAAAAAAAAAAAABABEhMVFhQbH/2gAIAQEAAT8QQA+sptDdAeXqYVjOinB7KawFtH3RMlGK9Wv4QFpUAY0SkMuW4VHk/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;fisrt open&quot;
+        title=&quot;fisrt open&quot;
+        src=&quot;/static/6af3f7a3644c190f86fcd354a3de9200/82797/fisrt_open.jpg&quot;
+        srcset=&quot;/static/6af3f7a3644c190f86fcd354a3de9200/08b27/fisrt_open.jpg 213w,
+/static/6af3f7a3644c190f86fcd354a3de9200/6f6b2/fisrt_open.jpg 425w,
+/static/6af3f7a3644c190f86fcd354a3de9200/82797/fisrt_open.jpg 646w&quot;
+        sizes=&quot;(max-width: 646px) 100vw, 646px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;On peut remarquer que les deux parties sont reliées avec des câbles plats flexibles. Maintenant il faut retirer la batterie, légèrement pousser à l&apos;endroit entouré en rouge.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6125f2f94a74156411c3b00f682c1121/fb816/remove_battery.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBBAUC/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAIB/9oADAMBAAIQAxAAAAHumXSkbJlYCmymBAf/xAAcEAACAgIDAAAAAAAAAAAAAAAAAQIDEjIQISL/2gAIAQEAAQUCUK8nt7HZIplWjJDJCfT2fH//xAAXEQEAAwAAAAAAAAAAAAAAAAABABAR/9oACAEDAQE/AQmX/8QAFxEBAAMAAAAAAAAAAAAAAAAAAQAQEf/aAAgBAgEBPwFZt//EAB4QAAECBwEAAAAAAAAAAAAAAAARIQECECAxMkJR/9oACAEBAAY/AhIHRsZWb2rNb//EABsQAQACAwEBAAAAAAAAAAAAAAEAESExUUGh/9oACAEBAAE/IaUQ3TLDRw4qNXPyxu1uJ47o5MLUBYhB5cu2YaodmzLpn//aAAwDAQACAAMAAAAQFA9P/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAQ/9oACAEDAQE/EEjjf//EABYRAQEBAAAAAAAAAAAAAAAAABEAEP/aAAgBAgEBPxAJzn//xAAcEAEAAwEAAwEAAAAAAAAAAAABABEhMUFhcZH/2gAIAQEAAT8QaF10KmXy4tlECb7mRIK37RK7ehMr8iitdc1X2x8Sn2YAguD2CLYCb2+W6moB9YHECAUVkUgNFz//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;remove battery&quot;
+        title=&quot;remove battery&quot;
+        src=&quot;/static/6125f2f94a74156411c3b00f682c1121/8a34a/remove_battery.jpg&quot;
+        srcset=&quot;/static/6125f2f94a74156411c3b00f682c1121/08b27/remove_battery.jpg 213w,
+/static/6125f2f94a74156411c3b00f682c1121/6f6b2/remove_battery.jpg 425w,
+/static/6125f2f94a74156411c3b00f682c1121/8a34a/remove_battery.jpg 850w,
+/static/6125f2f94a74156411c3b00f682c1121/fb816/remove_battery.jpg 960w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Afin de donner ça :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/81b59f57a7d669648d2d6b3ebaada005/fb816/without_battery.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABkW15KbFVpPJHkxX/xAAbEAACAgMBAAAAAAAAAAAAAAAAAQIDERIiMf/aAAgBAQABBQJmGYF7dPaCM9t8po2cJO2diP/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABoQAAIDAQEAAAAAAAAAAAAAAAABEBEhAhL/2gAIAQEABj8Co2dhI1Gqj1y6YvfVx//EABwQAQADAAIDAAAAAAAAAAAAAAEAESExUUFhgf/aAAgBAQABPyHTTPcBgxHXbSooRRJr6JzkQ8dyjouhhnJMYUJTiHE//9oADAMBAAIAAwAAABA0BfH/xAAWEQEBAQAAAAAAAAAAAAAAAAAAERD/2gAIAQMBAT8QVc//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8QcP/EAB4QAQEAAgEFAQAAAAAAAAAAAAERACExEEFRYZHR/9oACAEBAAE/EC0BJyOMtEztOXpBJRo4ZG3fzO6gm/R2xBcGQapVSy/uG22TaV48433JpH3ByG47Sm+cNTta1F54xuP/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;without battery&quot;
+        title=&quot;without battery&quot;
+        src=&quot;/static/81b59f57a7d669648d2d6b3ebaada005/8a34a/without_battery.jpg&quot;
+        srcset=&quot;/static/81b59f57a7d669648d2d6b3ebaada005/08b27/without_battery.jpg 213w,
+/static/81b59f57a7d669648d2d6b3ebaada005/6f6b2/without_battery.jpg 425w,
+/static/81b59f57a7d669648d2d6b3ebaada005/8a34a/without_battery.jpg 850w,
+/static/81b59f57a7d669648d2d6b3ebaada005/fb816/without_battery.jpg 960w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;A partir de ce point il va falloir enlever les 5 vis entourées pour pouvoir retirer le cache de la batterie :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4de449b7a3732bb96afe06fa07a3cbfa/fb816/without_battery_cache.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAABAACAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB5tmqBSqiIBtF1Wf/xAAcEAABBAMBAAAAAAAAAAAAAAABAAIDESIxMhL/2gAIAQEAAQUCpUQqpDUrvRfu1i8nIlQ9v6//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAdEAACAgEFAAAAAAAAAAAAAAAAARAhUQMRIjGR/9oACAEBAAY/AjZq503ijJ3RwfsoZ//EAB0QAAMBAAIDAQAAAAAAAAAAAAABESExQRBRYaH/2gAIAQEAAT8h4YNyheg2aNHIXSfASa6ctHROK0cCqluI2Po88f1mJH//2gAMAwEAAgADAAAAEPwZgf/EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAwEBPxC2XCG//8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAECAQE/ELINZMv/xAAeEAEAAwABBQEAAAAAAAAAAAABABEhQTFRYXGxof/aAAgBAQABPxAwBl0Tt8xGszCYdmq35K91QOiy/cMQi8l+RJ9qTmNDPcKMoC3iZ3YyhSoldY0qauj6gAYLZ//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;without battery cache&quot;
+        title=&quot;without battery cache&quot;
+        src=&quot;/static/4de449b7a3732bb96afe06fa07a3cbfa/8a34a/without_battery_cache.jpg&quot;
+        srcset=&quot;/static/4de449b7a3732bb96afe06fa07a3cbfa/08b27/without_battery_cache.jpg 213w,
+/static/4de449b7a3732bb96afe06fa07a3cbfa/6f6b2/without_battery_cache.jpg 425w,
+/static/4de449b7a3732bb96afe06fa07a3cbfa/8a34a/without_battery_cache.jpg 850w,
+/static/4de449b7a3732bb96afe06fa07a3cbfa/fb816/without_battery_cache.jpg 960w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;C&apos;est ici que la partie la plus technique va s&apos;opérer. Il va falloir dans un premier temps retirer les 3 câbles plats entourés par un carré rouge. Pour faire cela il faut réaliser les deux tâches suivantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Relever le petit ergot noir (ou gris pour le carré n°1)&lt;/li&gt;
+&lt;li&gt;Avec les doigts ou le tweezer délicatement retirer le câble&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Puis retirer les deux vis entourées ce qui va libérer le joycon et vous pourrez mettre à sa place un des nouveaux joycon.&lt;/p&gt;
+&lt;p&gt;Et voilà ! Il &quot;suffit&quot; de faire toutes les opérations précédentes à l&apos;envers et ainsi remonter le joycon. Attention pour mettre le câble plat je recommande vivement d&apos;utiliser le tweezer afin d&apos;être plus précis :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4d6ca88fdb52bec098de4e68d856d000/62aaf/tweezer_ex.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.11737089201877%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAQauLB7Wr//EABgQAAMBAQAAAAAAAAAAAAAAAAABEgIi/9oACAEBAAEFAp2nPJt5RKHJ/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQIQ/9oACAEDAQE/AaQz/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8BJ//EABwQAAEDBQAAAAAAAAAAAAAAAAACESEBEDFBYf/aAAgBAQAGPwLg+rMpNMEkOf/EAB0QAAIBBAMAAAAAAAAAAAAAAAERACExYXFBocH/2gAIAQEAAT8hLE3Hcb1R5iAWCxp1ATllQGoTc//aAAwDAQACAAMAAAAQyC//xAAWEQADAAAAAAAAAAAAAAAAAAABEDH/2gAIAQMBAT8QIVf/xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPxAKT//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExQVFhcYH/2gAIAQEAAT8QYmD0Rw9hqJ1rlV0LfBaxN6RQK1KUXQ+1mYh4nCo9WzpM5j//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tweezer ex&quot;
+        title=&quot;tweezer ex&quot;
+        src=&quot;/static/4d6ca88fdb52bec098de4e68d856d000/8a34a/tweezer_ex.jpg&quot;
+        srcset=&quot;/static/4d6ca88fdb52bec098de4e68d856d000/08b27/tweezer_ex.jpg 213w,
+/static/4d6ca88fdb52bec098de4e68d856d000/6f6b2/tweezer_ex.jpg 425w,
+/static/4d6ca88fdb52bec098de4e68d856d000/8a34a/tweezer_ex.jpg 850w,
+/static/4d6ca88fdb52bec098de4e68d856d000/63107/tweezer_ex.jpg 1275w,
+/static/4d6ca88fdb52bec098de4e68d856d000/62aaf/tweezer_ex.jpg 1280w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Pas besoin d&apos;enfoncer jusqu&apos;au bout, une fois réenfoncé il faut descendre l&apos;ergot en plastique relevé précédemment.&lt;/p&gt;
+&lt;p&gt;NB : Il n&apos;est pas impossible que le bouton L/R vienne à s&apos;échapper (à droite sur la photo ci-dessus), il faut le reclipser avant de remonter la coque qui a été enlevée lors de la première étape.&lt;/p&gt;
+&lt;h2 id=&quot;joycon-gauche&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#joycon-gauche&quot; aria-label=&quot;joycon gauche permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Joycon gauche&lt;/h2&gt;
+&lt;p&gt;Le joycon gauche est légèrement différent du droit. En voici les différences :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fd7820e65fab12e583161e8e17e7bd3f/fb816/left_joycon.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABUsYJKRJaeT2DTRf/xAAcEAADAAEFAAAAAAAAAAAAAAAAAQIQEiEjMTL/2gAIAQEAAQUC8xJyIY1pexVnbw8f/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPwE1X//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABwQAAICAgMAAAAAAAAAAAAAAAAhARACMQNBcv/aAAgBAQAGPwKcu6RoRsRjLvh81//EABsQAAMBAQEBAQAAAAAAAAAAAAABESFBMVGh/9oACAEBAAE/Ic9RnII+usbZ0j8OkxU6OPsjU5svSb2ELpkH6f/aAAwDAQACAAMAAAAQl9PA/8QAFhEBAQEAAAAAAAAAAAAAAAAAEAEx/9oACAEDAQE/EAun/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEhEP/aAAgBAgEBPxAolM//xAAeEAEAAgMAAgMAAAAAAAAAAAABABEhMUFRwWGh0f/aAAgBAQABPxDcCoPNvD3DA9BXrHIR8jde4i1aWwphohW9sCUAHQS/qOKTzEKAUjVicr5hiXBO7MBMD+Zun//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;left joycon&quot;
+        title=&quot;left joycon&quot;
+        src=&quot;/static/fd7820e65fab12e583161e8e17e7bd3f/8a34a/left_joycon.jpg&quot;
+        srcset=&quot;/static/fd7820e65fab12e583161e8e17e7bd3f/08b27/left_joycon.jpg 213w,
+/static/fd7820e65fab12e583161e8e17e7bd3f/6f6b2/left_joycon.jpg 425w,
+/static/fd7820e65fab12e583161e8e17e7bd3f/8a34a/left_joycon.jpg 850w,
+/static/fd7820e65fab12e583161e8e17e7bd3f/fb816/left_joycon.jpg 960w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Retirer les 3 vis entourées ci-dessus. Une fois le cache de la batterie enlevé voilà ce que ça donne :&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3c4cf11844cee112c46e909f91e7024a/62aaf/left_joycon_explode.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.11737089201877%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAcrVOVhzzZ//xAAZEAEAAwEBAAAAAAAAAAAAAAABABEhAhL/2gAIAQEAAQUCBmrdTp9Dd6T/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwFH/8QAFREBAQAAAAAAAAAAAAAAAAAAABL/2gAIAQIBAT8BU//EABkQAAIDAQAAAAAAAAAAAAAAAAARASExEP/aAAgBAQAGPwLcE4FFquaJn//EABsQAQEBAAMBAQAAAAAAAAAAAAERACExcUFR/9oACAEBAAE/IVDxK9uYO99C66JC5BkgrTp0AVPcr/hv/9oADAMBAAIAAwAAABALz//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EIl//8QAFhEBAQEAAAAAAAAAAAAAAAAAAAEx/9oACAECAQE/EMSn/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARIUFRYZHR/9oACAEBAAE/ENQNgHRUsm6gqQdOeYLSlYUo1BnDC6fYNekHW7HNheqVK9T/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;left joycon explode&quot;
+        title=&quot;left joycon explode&quot;
+        src=&quot;/static/3c4cf11844cee112c46e909f91e7024a/8a34a/left_joycon_explode.jpg&quot;
+        srcset=&quot;/static/3c4cf11844cee112c46e909f91e7024a/08b27/left_joycon_explode.jpg 213w,
+/static/3c4cf11844cee112c46e909f91e7024a/6f6b2/left_joycon_explode.jpg 425w,
+/static/3c4cf11844cee112c46e909f91e7024a/8a34a/left_joycon_explode.jpg 850w,
+/static/3c4cf11844cee112c46e909f91e7024a/63107/left_joycon_explode.jpg 1275w,
+/static/3c4cf11844cee112c46e909f91e7024a/62aaf/left_joycon_explode.jpg 1280w&quot;
+        sizes=&quot;(max-width: 850px) 100vw, 850px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Retirer les deux câbles plats entourés ci-dessus puis les deux vis entourées. Et voilà !&lt;/p&gt;
+&lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Rien de bien compliqué dans ce changement de sticks sur les joycons, il faut juste être minutieux et bien équipé !&lt;/p&gt;</content:encoded><author>Beerus Inc.</author></item><item><title><![CDATA[Redondance "du pauvre" d'un site personnel]]></title><description><![CDATA[Contexte Mon serveur hébergé a des petits soucis en ce moment, il a tendance à planter régulièrement malgré le fait que je le supervise activement. J'ai très longtemps pensé que c…]]></description><link>https://blog.beerus.fr/redondance-sites</link><guid isPermaLink="false">https://blog.beerus.fr/redondance-sites</guid><category><![CDATA[ovh]]></category><category><![CDATA[python]]></category><pubDate>Thu, 18 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
 &lt;p&gt;Mon serveur hébergé a des petits soucis en ce moment, il a tendance à planter régulièrement malgré le fait que je le supervise activement.&lt;br&gt;
 J&apos;ai très longtemps pensé que c&apos;était l&apos;un de mes containers docker qui s&apos;emballait (malgré le fait qu&apos;il y ait des options de runtime de paramétrées) mais il s&apos;avère que c&apos;est le metrics scraper d&apos;OVH installé qui posait problème !&lt;br&gt;
 Bref avant de résoudre le problème, mes services hébergés ne répondaient plus de temps en temps et cela reste tout de même très embêtant. Il a donc fallu que je pense à une potentielle redondance !&lt;/p&gt;

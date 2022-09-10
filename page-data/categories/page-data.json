@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-categories-js","path":"/categories/","result":{"data":{"allMarkdownRemark":{"group":[{"fieldValue":"Blog","totalCount":1},{"fieldValue":"Infra","totalCount":3}]}},"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-categories-js","path":"/categories/","result":{"data":{"allMarkdownRemark":{"group":[{"fieldValue":"Blog","totalCount":1},{"fieldValue":"Gaming","totalCount":1},{"fieldValue":"Infra","totalCount":3}]}},"pageContext":{}},"staticQueryHashes":[]}
