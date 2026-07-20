@@ -1,8 +1,8 @@
 {
-  "name": "blog.beerus.fr",
+  "name": "homelabeur.eu",
   "description": "Personal website running on Gatsby, React, and Node.js.",
   "version": "1.0.0",
-  "author": "Beerus Inc.",
+  "author": "Homelabeur Inc.",
   "repository": "git@github.com:ramuskay/blog-beerus.git",
   "dependencies": {
     "@babel/eslint-parser": "^7.17.0",
@@ -55,6 +55,7 @@
   },
   "keywords": [
     "beerus",
+    "homelabeur",
     "devops",
     "sysadmin",
     "tutorials",

@@ -82,7 +82,7 @@ import dns.resolver
 import ovh
 
 new_ip = requests.get('https://api.ipify.org').content.decode('utf8') #Dynamic public IP
-domain = "beerus.fr"
+domain = "homelabeur.eu"
 site_name = "<the_website_to_monitor>"
 ifttt_event = "<event_ifttt_name>" #See https://ifttt.com
 ifttt_key = "<event_ifttt_key>" #See https://ifttt.com
@@ -193,9 +193,9 @@ Et lorsque je fais un simple `ssh backup` (après recopie des clés publiques su
 ## Notifications
 
 Dernier point : le fignolage ! Il s'agit désormais de m'avertir en cas de défaillance de la prod OU du backup (on ne sait jamais lui aussi il peut planter !).  
-Pour le backup je fais presque que la même chose que le script ci-dessus, j'ai des curl qui interroge régulièrement le nom DynDNS pointant vers mon site web (j'ai configuré mon reverse proxy Nginx pour répondre au vrai nom de mon site web et au nom DynDNS). En cas de défaillance je reçois un mail sur ma boite perso @beerus.fr.  
+Pour le backup je fais presque que la même chose que le script ci-dessus, j'ai des curl qui interroge régulièrement le nom DynDNS pointant vers mon site web (j'ai configuré mon reverse proxy Nginx pour répondre au vrai nom de mon site web et au nom DynDNS). En cas de défaillance je reçois un mail sur ma boite perso @homelabeur.eu.  
 
-Par contre pour la prod c'est plus complexe (et plus important aussi). En fait je pourrais faire le même mécanisme que pour le backup mais je ne recevrai jamais le mail @beerus.fr car mon serveur mail est hébergé sur la même machine que mon site web...  
+Par contre pour la prod c'est plus complexe (et plus important aussi). En fait je pourrais faire le même mécanisme que pour le backup mais je ne recevrai jamais le mail @homelabeur.eu car mon serveur mail est hébergé sur la même machine que mon site web...  
 J'ai commencé à regarder pour pouvoir utiliser les API de Gmail mais très honnetement ça ne me tentait pas trop.  
 Donc à la place j'ai utilisé le service **IFTTT**, j'ai trouvé le concept tellement simple et efficace.
 Une application Android (ou Apple) à télécharger ensuite "programmer" son alerte :

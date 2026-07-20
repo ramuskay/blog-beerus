@@ -1,4 +1,4 @@
-# Beerus blog
+# Homelabeur blog
 
 Personal blog website running on Gatsby, React, and Node.js forked from calvin.me.
 

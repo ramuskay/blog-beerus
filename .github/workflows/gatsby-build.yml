@@ -38,7 +38,7 @@ jobs:
         working-directory: master
 
       - name: 🧶 Get Yarn cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -60,7 +60,7 @@ jobs:
 
       - name: 🥡 Getting Gatsby cache
         id: gatsby-cache-build
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: master/.cache
           key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}

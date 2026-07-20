@@ -42,7 +42,7 @@ export default class Navigation extends Component {
           <div className="brand">
             <Link to="/">
               <img src={avatar} className="favicon" alt="Avatar" />
-              <span className="text">Beerus Inc.</span>
+              <span className="text">Homelabeur Inc.</span>
             </Link>
           </div>
           <div className="links">

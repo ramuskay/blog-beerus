@@ -1,3 +1,3 @@
 User-agent: *
 
-#sitemap: https://blog.beerus.fr
+#sitemap: https://homelabeur.eu

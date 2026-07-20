@@ -116,7 +116,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = 'Beerus inc.'
+          ret.generator = 'Homelabeur inc.'
           return ret
         },
         query: `
@@ -174,7 +174,7 @@ module.exports = {
             }
           `,
             output: config.siteRss,
-            title: 'Beerus Inc. - RSS Feed',
+            title: 'Homelabeur Inc. - RSS Feed',
           },
         ],
       },
