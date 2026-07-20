@@ -189,5 +189,15 @@ module.exports = {
         respectDoNotTrack: false,
       },
     },
+    {
+      resolve: `gatsby-remark-table-of-contents`,
+      options: {
+        exclude: "Table of Contents", // Titre à exclure du sommaire
+        tight: false,                 // Liste compacte ou non
+        ordered: false,               // Liste ordonnée (1, 2, 3) ou à puces
+        fromHeading: 2,               // Profondeur de titre min. (h2)
+        toHeading: 6,                 // Profondeur de titre max. (h6)
+      },
+    },
   ],
 }
