@@ -7,9 +7,13 @@ tags:
 - 3d
 - 3dprint
 - server
-# https://favpng.com/png_view/server-cliparts-computer-servers-clip-art-png/avBuhAYP#google_vignette
+# https://openmoji.org/library/emoji-1F528/
 thumbnail: thumbnail.svg
 ---
+
+```toc
+# This code block gets replaced with the TOC
+```
 
 # Context
 
@@ -83,7 +87,8 @@ I also defined some "core" rules (again) for my front panel design (✨) :
 
 ## 1 - Firewall
 
-**Hardware** : QOTOM Q730G5 Barebone Mini PC – Intel Quad-core J4105, AES-NI, 5 Intel 2,5 G LAN, 10 W (8G RAM, 32G SSD)
+🖥️ **Hardware** : QOTOM Q730G5 Barebone Mini PC – Intel Quad-core J4105, AES-NI, 5 Intel 2,5 G LAN, 10 W (8G RAM, 32G SSD)  
+🗺️ **Model** : https://www.printables.com/model/1611162-qotom-q730g5-for-10-rack
 
 The Qotom (that is hosting the firewall) doesn't have a standard size (I would fit in 1.5U but not only 1). Anyway no models were found for this one So I decided to create my own model but also to put it on the top of my rack to avoid losing some precious space and keep it under 1U
 
@@ -126,7 +131,8 @@ Finally on my second iteration I forgot to align holes to fix it to the rack; it
 
 ## 2 - Router
 
-**Hardware** : TP-Link Jetstream TL-SG2008P
+🖥️ **Hardware** : TP-Link Jetstream TL-SG2008P  
+🗺️ **Model** : https://www.printables.com/model/1192281-10-inch-rack-tp-link-sg2210p-sg2008-sg105-m2
 
 For the router (which functions more like a switch than a router), I used an existing model. However, I had to refine it slightly for two reasons:
 
@@ -135,9 +141,11 @@ For the router (which functions more like a switch than a router), I used an exi
 
 ## 3 - Omada Controller + switch
 
-**Hardware** : 
-- TP-Link Omada controller OC200
+🖥️ **Hardware** : 
 - TP-Link TL-SG105 5 ports 1G
+- TP-Link Omada controller OC200  
+
+🗺️ **Model** : https://www.printables.com/model/467925-tp-link-oc200-3u-rackmount-adapter-for-10-inch-net
 
 I ran into a major issue with this DeskPI Rack T2: I don't have enough space! The 12U filled up quickly, and I had to make some choices because not everything fits (see the PI section below and the rack iteration section above).  
 In the final rack configuration, I decided to merge the controller and the switch together because:
@@ -153,21 +161,23 @@ I create my own designed from this [model](https://www.printables.com/model/4679
 
 ## 4 - JetKVM + KVM
 
-**Hardware** : KVM Ezcoo USB 3.0 KVM Switch HDMI 4 Computer 1 Monitor 4K 60Hz SPDIF L/R Hotkey EDID
+🖥️ **Hardware** : KVM Ezcoo USB 3.0 KVM Switch HDMI 4 Computer 1 Monitor 4K 60Hz SPDIF L/R Hotkey EDID  
+🗺️ **Model** : https://www.printables.com/model/1271417-10-rackmount-jetkvm-ezcoo-kvm-hotkey-supported-swi
 
-Nothing relevant here except the fact I used this [model](https://www.printables.com/model/1271417-10-rackmount-jetkvm-ezcoo-kvm-hotkey-supported-swi)
+Nothing relevant here except the fact I used this model above
 
 ## 5 - Mini PC
 
-**Hardware** : Beelink Mini PC, Mini S12 Intel 12th Gen 4-Core N95(up to 3.4GHz)
+🖥️ **Hardware** : Beelink Mini PC, Mini S12 Pro Intel 12th Gen 4-Core N100 (up to 3.4GHz)  
+🗺️ **Model** : https://www.printables.com/model/1032580-beelink-mini-s12-10-inch-rack-mount
 
-Nothing relevant here except the fact I used this [model](https://www.printables.com/model/1032580-beelink-mini-s12-10-inch-rack-mount)
-
+Nothing relevant here except the fact I used this model above
 ## 6 - NAS
 
-**Hardware** : Synology DS918+
+🖥️ **Hardware** : Synology DS918+  
+🗺️ **Model** : https://www.printables.com/model/1383568-synology-ds920-nas-front-plate-for-deskpi-rackmate
 
-At first, I was thinking of using this [model](https://www.printables.com/model/1383568-synology-ds920-nas-front-plate-for-deskpi-rackmate) and have the same setup (NAS at the bottom of the rack)  
+At first, I was thinking of using this model above and have the same setup (NAS at the bottom of the rack)  
 But once printed I realized that the holes where not aligned and I start to wonder how it was placed in the rack shown in the model's description. I think it's just sitting on the floor, which is a hard stop for me for 2 reasons:
 - I don't want it on the floor to avoid excess dust (even though I know I can't completely prevent it).
 - I want to respect the 📦 moving and 🍩 commandment which is clearly incompatible with having it on the floor
@@ -182,7 +192,8 @@ Next, I want my NAS to not move at all (to follow my 📦 commandment). Simply p
 
 ## 7 - Wifi AP
 
-**Hardware** : TP-Link Omada Business WiFi 6 AX3000 Ceiling Mount Access Point (EAP650)
+🖥️ **Hardware** : TP-Link Omada Business WiFi 6 AX3000 Ceiling Mount Access Point (EAP650)  
+🗺️ **Model** : https://makerworld.com/en/models/480832-vertical-stand-for-omada-eap-6-series-v1?from=search#profileId-392486
 
 The goal here is to host the Wifi access point at the same place as the other devices (🍩)
 To hold it, I considered several options:
@@ -201,7 +212,17 @@ Indeed, I can place it vertically or horizontally, and in the horizontal positio
 - Use a horizontal stand mount, which comes in various designs, including one I really like that looks like a UFO (🌸)
 - Create my own custom design to match a specific visual style
 
-To simplify a project that was already becoming overly complex, I decided to go with a standard vertical stand mount using an [existing model](https://makerworld.com/en/models/480832-vertical-stand-for-omada-eap-6-series-v1?from=search#profileId-392486) that covers my need. I slightly redesigned it to add holes for screws (📦). It's already aligned with the holes present on the top cover of my DeskPI, nice !
+To simplify a project that was already becoming overly complex, I decided to go with a standard vertical stand mount using the model above that covers my need. I slightly redesigned it to add holes for screws (📦). It's already aligned with the holes present on the top cover of my DeskPI, nice !
+
+## 8 - UPS
+
+🖥️ **Hardware** : CyberPower CP1500GAVR 1500 VA
+
+One final upgrade I added was a power‑backup system for power outages. Technically it’s optional, but where I live power cuts happen often — usually just for a few minutes — which is the perfect use case for an UPS (Uninterruptible Power Supply). I found one almost for free on the second‑hand market and bought two new batteries for it. It’s been working flawlessly.
+
+After some discussion and reflection, though, I think that next time — once these batteries reach the end of their life — I’ll switch to a LiFePO‑based device, which is better suited for my homelab setup.
+
+Anyway I will write a full article in the future about how I integrate it with my devices, because I have some 🌶️ ideas in mind... Stay tuned 👀
 
 # Side stories about the rack
 
@@ -238,6 +259,8 @@ After a few (well… many) iterations, I ended up with something that isn't perf
 That said, this clip can't be used with the OC200 because its mounting holes are closed, whereas the SG105 has open slots that allow me to slide the clip in.
 
 ![](clip_router.jpg)
+
+The model is [here](https://www.printables.com/model/1658542-hair-pin-clip-rackmount-tl-sg-105)
 
 ## The mini raspberry lab epic
 
@@ -343,6 +366,7 @@ Some pictures on how it looks at the end
 
 ![alt text](rear_cable_mgt.png)
 ![alt text](side_cable_mgt.jpg)
+I just noticed the Synology logo upside down, it makes me crazy 🙃
 
 ## The cable cover journey
 
@@ -423,3 +447,5 @@ I created two iterations—one normal and one reverse and we chose the bottom on
 
 Overall it was a super experience I had to learn multiple things which was really cool. I can even reuse some of the skills I learned during this project (3d printing for instance)  
 Also now that the "hardware" part is done, I will throw myself into the software one to configure all this !
+
+Special thanks to everyone I shared this project with, and particularly to one coworker who gave me access to a 3D printing software training course (Autodesk Fusion).
