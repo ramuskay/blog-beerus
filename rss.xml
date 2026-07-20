@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Homelabeur blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://homelabeur.eu/</link><image><url>https://homelabeur.eu//favicon/favicon-48.png</url><title>Homelabeur blog</title><link>https://homelabeur.eu/</link></image><generator>Homelabeur inc.</generator><lastBuildDate>Mon, 20 Jul 2026 21:29:21 GMT</lastBuildDate><atom:link href="https://homelabeur.eu//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Fix le "joycon drift" de ma switch]]></title><description><![CDATA[Contexte C'est fait ! J'ai enfin eu le fameux joycon drift sur les deux joycons de ma switch. Pour rappel ce qu'est le joycon drit voir ici. Cela ne m'empêche pas réellement de…]]></description><link>https://homelabeur.eu/repair-joycon</link><guid isPermaLink="false">https://homelabeur.eu/repair-joycon</guid><category><![CDATA[switch]]></category><category><![CDATA[DIY]]></category><pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
-&lt;p&gt;C&apos;est fait ! J&apos;ai enfin eu le fameux joycon drift sur les deux joycons de ma switch. Pour rappel ce qu&apos;est le joycon drit voir &lt;a href=&quot;https://www.pocket-lint.com/fr-fr/jeux-video/actualites/nintendo/148751-comment-reparer-nintendo-switch-joy-con-drift&quot;&gt;ici&lt;/a&gt;.&lt;br&gt;
-Cela ne m&apos;empêche pas réellement de jouer mais cela reste très pénible voir même parfois handicapant dans certains jeux, j&apos;ai donc commencé à réfléchir à changer ou réparer mes joycons.&lt;/p&gt;
-&lt;h1 id=&quot;outils&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#outils&quot; aria-label=&quot;outils permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Outils&lt;/h1&gt;
-&lt;p&gt;Forcément c&apos;est un problème rencontré par tous les utilisateurs de la switch à un moment donné donc il existe une foison de tutoriels/vidéos sur internet.&lt;br&gt;
-Ce qui ressorti des ressources que j&apos;ai pu consultées c&apos;est qu&apos;il me fallait deux tournevis spécifiques :&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Homelabeur blog]]></title><description><![CDATA[Le blog d'un passionné de sysadmin et de Devops !]]></description><link>https://homelabeur.eu/</link><image><url>https://homelabeur.eu//favicon/favicon-48.png</url><title>Homelabeur blog</title><link>https://homelabeur.eu/</link></image><generator>Homelabeur inc.</generator><lastBuildDate>Mon, 20 Jul 2026 22:26:58 GMT</lastBuildDate><atom:link href="https://homelabeur.eu//rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Fix the "joycon drift" on my switch]]></title><description><![CDATA[Context Done! I finally got the infamous joycon drift on both joycons of my switch. As a reminder, for what joycon drift is, see here. It doesn't really prevent me from playing but…]]></description><link>https://homelabeur.eu/repair-joycon</link><guid isPermaLink="false">https://homelabeur.eu/repair-joycon</guid><category><![CDATA[switch]]></category><category><![CDATA[DIY]]></category><pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;context&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#context&quot; aria-label=&quot;context permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Context&lt;/h1&gt;
+&lt;p&gt;Done! I finally got the infamous joycon drift on both joycons of my switch. As a reminder, for what joycon drift is, see &lt;a href=&quot;https://www.nintendo.com/en-gb/Support/Repair/Joy-Con-Control-Sticks-Are-Not-Responding-or-Respond-Incorrectly-responsiveness-syndrome-or-so-called-drifting--1867803.html&quot;&gt;here&lt;/a&gt;.&lt;br&gt;
+It doesn&apos;t really prevent me from playing but it remains very annoying and sometimes even handicapping in certain games, so I started thinking about replacing or repairing my joycons.&lt;/p&gt;
+&lt;h1 id=&quot;tools&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tools&quot; aria-label=&quot;tools permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tools&lt;/h1&gt;
+&lt;p&gt;Of course this is a problem encountered by all switch users at some point, so there are plenty of tutorials/videos on the internet.&lt;br&gt;
+What came out of the resources I consulted is that I needed two specific screwdrivers:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Y00 Triwing Screwdriver&lt;/li&gt;
 &lt;li&gt;PH000 Phillips Screwdriver&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Au début je voulais prendre uniquement ces deux tournevis et utiliser une feuille de papier cartonnée (type business card) qui est censée être placée juste en dessous du joycon. Mais j&apos;ai eu du mal à trouver ces deux tournevis seuls (hors site chinois type Aliexpress par lesquels je ne veux pas passer...)&lt;br&gt;
-Je suis donc parti sur ce &lt;a href=&quot;https://www.amazon.ca/gp/product/B08CS7DS5V/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;#x26;psc=1&quot;&gt;pack&lt;/a&gt; à 20 CAD soit environ 15€ ! Peut-être un peu cher mais là il y a tout dedans :&lt;/p&gt;
+&lt;p&gt;At first I wanted to only get these two screwdrivers and use a piece of cardboard paper (like a business card) that is supposed to be placed just under the joycon. But I had trouble finding these two screwdrivers on their own (aside from Chinese sites like Aliexpress which I don&apos;t want to use...)&lt;br&gt;
+So I went with this &lt;a href=&quot;https://www.amazon.ca/gp/product/B08CS7DS5V/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;#x26;psc=1&quot;&gt;pack&lt;/a&gt; for 20 CAD ! Maybe a little expensive but it has everything inside:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Y00 Triwing Screwdriver&lt;/li&gt;
 &lt;li&gt;PH000 Phillips Screwdriver&lt;/li&gt;
-&lt;li&gt;4 joysticks neufs&lt;/li&gt;
-&lt;li&gt;Un tweezer&lt;/li&gt;
-&lt;li&gt;Un &quot;Plastic crowbar&quot; (pas trouvé le nom en français)&lt;/li&gt;
-&lt;li&gt;De la visserie en tout genre (ressort boutons L/R, Slider Lock, vis etc...)&lt;/li&gt;
-&lt;li&gt;De la cosmétique pour les joycons&lt;/li&gt;
+&lt;li&gt;4 new joysticks&lt;/li&gt;
+&lt;li&gt;A tweezer&lt;/li&gt;
+&lt;li&gt;A &quot;Plastic crowbar&quot;&lt;/li&gt;
+&lt;li&gt;Various hardware (L/R button springs, Slider Lock, screws, etc.)&lt;/li&gt;
+&lt;li&gt;Cosmetics for the joycons&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -51,11 +51,11 @@ Je suis donc parti sur ce &lt;a href=&quot;https://www.amazon.ca/gp/product/B08C
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&quot;reparation&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reparation&quot; aria-label=&quot;reparation permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Réparation&lt;/h1&gt;
-&lt;p&gt;Ok maintenant qu&apos;on est équipé il s&apos;agit de passer à la pratique ! Pour cela il faut bien distinguer le joycon droit du gauche car ils sont montés différemment.&lt;br&gt;
-Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être large.&lt;/p&gt;
-&lt;h2 id=&quot;joycon-droit&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#joycon-droit&quot; aria-label=&quot;joycon droit permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Joycon droit&lt;/h2&gt;
-&lt;p&gt;On va tout d&apos;abord enlever les 4 vis entourées sur la photo ci-dessous :&lt;/p&gt;
+&lt;h1 id=&quot;repair&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#repair&quot; aria-label=&quot;repair permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Repair&lt;/h1&gt;
+&lt;p&gt;Ok now that we&apos;re equipped, it&apos;s time to get to work! To do this, you need to clearly distinguish the right joycon from the left one as they are assembled differently.&lt;br&gt;
+I think you should count about 30 minutes for both joycons to be safe.&lt;/p&gt;
+&lt;h2 id=&quot;right-joycon&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#right-joycon&quot; aria-label=&quot;right joycon permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Right Joycon&lt;/h2&gt;
+&lt;p&gt;We will first remove the 4 screws circled in the photo below:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -87,7 +87,7 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Une fois les 4 vis enlevées, passer le &quot;plastic crowbar&quot; dans la fente qui vient d&apos;apparaître suite aux vis enlevées :&lt;/p&gt;
+&lt;p&gt;Once the 4 screws are removed, slide the &quot;plastic crowbar&quot; into the gap that has appeared after removing the screws:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -119,7 +119,7 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Il suffit ensuite de &lt;strong&gt;délicatement&lt;/strong&gt; ouvrir le joycon et en voici le contenu :&lt;/p&gt;
+&lt;p&gt;Then simply &lt;strong&gt;carefully&lt;/strong&gt; open the joycon and here is its content:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 646px; &quot;
@@ -150,7 +150,7 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;On peut remarquer que les deux parties sont reliées avec des câbles plats flexibles. Maintenant il faut retirer la batterie, légèrement pousser à l&apos;endroit entouré en rouge.&lt;/p&gt;
+&lt;p&gt;You can notice that the two parts are connected with flat flexible cables. Now you need to remove the battery, gently push at the area circled in red.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -182,7 +182,7 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Afin de donner ça :&lt;/p&gt;
+&lt;p&gt;To get this:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -214,7 +214,7 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;A partir de ce point il va falloir enlever les 5 vis entourées pour pouvoir retirer le cache de la batterie :&lt;/p&gt;
+&lt;p&gt;From this point you will need to remove the 5 circled screws to be able to remove the battery cover:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -246,13 +246,13 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;C&apos;est ici que la partie la plus technique va s&apos;opérer. Il va falloir dans un premier temps retirer les 3 câbles plats entourés par un carré rouge. Pour faire cela il faut réaliser les deux tâches suivantes :&lt;/p&gt;
+&lt;p&gt;This is where the most technical part will take place. First you will need to remove the 3 flat cables circled with a red square. To do this you need to perform the following two tasks:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Relever le petit ergot noir (ou gris pour le carré n°1)&lt;/li&gt;
-&lt;li&gt;Avec les doigts ou le tweezer délicatement retirer le câble&lt;/li&gt;
+&lt;li&gt;Lift the small black tab (or grey for square #1)&lt;/li&gt;
+&lt;li&gt;With your fingers or the tweezer, carefully remove the cable&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Puis retirer les deux vis entourées ce qui va libérer le joycon et vous pourrez mettre à sa place un des nouveaux joycon.&lt;/p&gt;
-&lt;p&gt;Et voilà ! Il &quot;suffit&quot; de faire toutes les opérations précédentes à l&apos;envers et ainsi remonter le joycon. Attention pour mettre le câble plat je recommande vivement d&apos;utiliser le tweezer afin d&apos;être plus précis :&lt;/p&gt;
+&lt;p&gt;Then remove the two circled screws which will free the joystick and you can put one of the new joysticks in its place.&lt;/p&gt;
+&lt;p&gt;And that&apos;s it! You just need to do all the previous operations in reverse and reassemble the joycon. Note that when inserting the flat cable I strongly recommend using the tweezer to be more precise:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -285,10 +285,10 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Pas besoin d&apos;enfoncer jusqu&apos;au bout, une fois réenfoncé il faut descendre l&apos;ergot en plastique relevé précédemment.&lt;/p&gt;
-&lt;p&gt;NB : Il n&apos;est pas impossible que le bouton L/R vienne à s&apos;échapper (à droite sur la photo ci-dessus), il faut le reclipser avant de remonter la coque qui a été enlevée lors de la première étape.&lt;/p&gt;
-&lt;h2 id=&quot;joycon-gauche&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#joycon-gauche&quot; aria-label=&quot;joycon gauche permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Joycon gauche&lt;/h2&gt;
-&lt;p&gt;Le joycon gauche est légèrement différent du droit. En voici les différences :&lt;/p&gt;
+&lt;p&gt;No need to push all the way in, once re-inserted you need to lower the plastic tab that was previously raised.&lt;/p&gt;
+&lt;p&gt;NB: It&apos;s possible that the L/R button may escape (on the right in the photo above), you need to re-clip it before reassembling the shell that was removed in the first step.&lt;/p&gt;
+&lt;h2 id=&quot;left-joycon&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#left-joycon&quot; aria-label=&quot;left joycon permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Left Joycon&lt;/h2&gt;
+&lt;p&gt;The left joycon is slightly different from the right one. Here are the differences:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -320,7 +320,7 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Retirer les 3 vis entourées ci-dessus. Une fois le cache de la batterie enlevé voilà ce que ça donne :&lt;/p&gt;
+&lt;p&gt;Remove the 3 screws circled above. Once the battery cover is removed, here is what it looks like:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -353,60 +353,60 @@ Je pense qu&apos;il faut compter environ 30min pour les deux joycons pour être 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Retirer les deux câbles plats entourés ci-dessus puis les deux vis entourées. Et voilà !&lt;/p&gt;
+&lt;p&gt;Remove the two flat cables circled above then the two circled screws. And that&apos;s it!&lt;/p&gt;
 &lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;Rien de bien compliqué dans ce changement de sticks sur les joycons, il faut juste être minutieux et bien équipé !&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Redondance "du pauvre" d'un site personnel]]></title><description><![CDATA[Contexte Mon serveur hébergé a des petits soucis en ce moment, il a tendance à planter régulièrement malgré le fait que je le supervise activement. J'ai très longtemps pensé que c…]]></description><link>https://homelabeur.eu/redondance-sites</link><guid isPermaLink="false">https://homelabeur.eu/redondance-sites</guid><category><![CDATA[ovh]]></category><category><![CDATA[python]]></category><pubDate>Thu, 18 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
-&lt;p&gt;Mon serveur hébergé a des petits soucis en ce moment, il a tendance à planter régulièrement malgré le fait que je le supervise activement.&lt;br&gt;
-J&apos;ai très longtemps pensé que c&apos;était l&apos;un de mes containers docker qui s&apos;emballait (malgré le fait qu&apos;il y ait des options de runtime de paramétrées) mais il s&apos;avère que c&apos;est le metrics scraper d&apos;OVH installé qui posait problème !&lt;br&gt;
-Bref avant de résoudre le problème, mes services hébergés ne répondaient plus de temps en temps et cela reste tout de même très embêtant. Il a donc fallu que je pense à une potentielle redondance !&lt;/p&gt;
-&lt;h1 id=&quot;etude-des-solutions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#etude-des-solutions&quot; aria-label=&quot;etude des solutions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Etude des solutions&lt;/h1&gt;
-&lt;p&gt;Il fallait donc que je trouve une solution pour avoir les sites les plus importants toujours en fonction en cas de défaillance majeure de mon serveur dédié le temps que je trouve une solution à long terme. Pour simplifier la problématique je ne souhaite basculer qu&apos;un seul site pour le moment car il est consulté fréquemment pour des raisons professionnelles, les autres n&apos;ont pas d&apos;importance cruciale.&lt;/p&gt;
-&lt;p&gt;J&apos;ai les équipements suivants avec moi :&lt;/p&gt;
+&lt;p&gt;Nothing too complicated in this joystick replacement on the joycons, you just need to be meticulous and well-equipped!&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Poor man's redundancy for a personal website]]></title><description><![CDATA[Context My hosted server has been having some issues lately, it tends to crash regularly despite the fact that I actively monitor it. For a long time I thought it was one of my…]]></description><link>https://homelabeur.eu/redundancy-sites</link><guid isPermaLink="false">https://homelabeur.eu/redundancy-sites</guid><category><![CDATA[ovh]]></category><category><![CDATA[python]]></category><pubDate>Thu, 18 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;context&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#context&quot; aria-label=&quot;context permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Context&lt;/h1&gt;
+&lt;p&gt;My hosted server has been having some issues lately, it tends to crash regularly despite the fact that I actively monitor it.&lt;br&gt;
+For a long time I thought it was one of my docker containers going crazy (despite having runtime options configured) but it turns out it was the OVH metrics scraper that was causing the problem!&lt;br&gt;
+Anyway, before resolving the issue, my hosted services would stop responding from time to time and that remains very annoying. I therefore had to think about a potential redundancy solution!&lt;/p&gt;
+&lt;h1 id=&quot;exploring-solutions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#exploring-solutions&quot; aria-label=&quot;exploring solutions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Exploring solutions&lt;/h1&gt;
+&lt;p&gt;I needed to find a solution to keep the most important sites always running in case of a major failure of my dedicated server while I find a long-term solution. To simplify the problem I only want to switch one site for now as it is frequently visited for professional reasons, the others are not really important.&lt;/p&gt;
+&lt;p&gt;Here is the equipment I have available:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Une IP publique dédiée d&apos;OVH&lt;/li&gt;
-&lt;li&gt;Un serveur hébergé chez OVH&lt;/li&gt;
-&lt;li&gt;Un micro serveur avec des ressources équivalentes de celle d&apos;OVH chez moi&lt;/li&gt;
-&lt;li&gt;La fibre et une IP publique dynamique (celle de ma box)&lt;/li&gt;
+&lt;li&gt;A dedicated public IP from OVH&lt;/li&gt;
+&lt;li&gt;A server hosted at OVH&lt;/li&gt;
+&lt;li&gt;A micro server with equivalent resources to OVH at home&lt;/li&gt;
+&lt;li&gt;Fiber internet and a dynamic public IP (from my router)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Voici les quelques techniques auxquelles j&apos;ai pensé en premier lieu :&lt;/p&gt;
+&lt;p&gt;Here are a few techniques I first thought of:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Backup, Replica&lt;/li&gt;
 &lt;li&gt;Cluster&lt;/li&gt;
-&lt;li&gt;Solution de fail over&lt;/li&gt;
+&lt;li&gt;Failover solution&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;La solution &lt;strong&gt;backup/réplica&lt;/strong&gt; a tout de suite été écartée du fait qu&apos;elle ne soit pas du tout flexible. Je fais déjà du backup de mon serveur vers chez moi mais c&apos;est cela concerne plus la conf de mon dockerfile et les datas de certains containers mais rien qui ne me permet de remonter une infra en 10min automatiquement (surtout pour une solution censée rester temporaire).&lt;br&gt;
-Pour le &lt;strong&gt;cluster&lt;/strong&gt; ça serait la solution idéale, dans mon cas passer sous Docker Swarm ou encore mieux tout migrer sous K8s/K3s. Le problème est que je veux une solution rapide à mettre en place ne necessitant pas une refonte complète de mon infra. D&apos;autant plus que je n&apos;ai pas du tout réfléchi à la conception de ma future infra et comment cela est géré avec une IP publique dynamique.&lt;br&gt;
-La dernière proposition est surement la plus adaptée pour moi, trouver une &lt;strong&gt;solution de failover&lt;/strong&gt; simple et efficace avec le moins d&apos;intervention humaine sans toucher à la configuration déjà en place.&lt;/p&gt;
-&lt;p&gt;Une fois choisie il a fallu que je compare les solutions avec les contraintes suivantes :&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;backup/replica&lt;/strong&gt; solution was immediately ruled out because it is not flexible at all. I already back up my server to my home but that covers more the configuration of my dockerfile and the data of some containers, nothing that would let me bring an infrastructure back up in 10 minutes automatically (especially for a solution meant to be temporary).&lt;br&gt;
+For a &lt;strong&gt;cluster&lt;/strong&gt;, that would be the ideal solution — in my case switching to Docker Swarm or even better migrating everything to K8s/K3s. The problem is that I want a solution that is quick to set up without requiring a complete overhaul of my infrastructure. Especially since I haven&apos;t thought at all about the design of my future infrastructure and how it would be managed with a dynamic public IP.&lt;br&gt;
+The last option is probably the most suitable for me: find a simple and effective &lt;strong&gt;failover solution&lt;/strong&gt; with minimal human intervention without touching the existing configuration.&lt;/p&gt;
+&lt;p&gt;Once chosen, I had to compare solutions against the following constraints:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Une bascule faite en 5 minutes max en cas de problème.&lt;/li&gt;
-&lt;li&gt;L&apos;ensemble des données doivent être identique et synchronisé (si modification d&apos;un fichier html réplication immédiate sur le backup).&lt;/li&gt;
-&lt;li&gt;Rapide et simple à mettre en place, pas de service payant etc...&lt;/li&gt;
+&lt;li&gt;A switchover completed in 5 minutes max in case of a problem.&lt;/li&gt;
+&lt;li&gt;All data must be identical and synchronized (if an HTML file is modified, immediate replication to the backup).&lt;/li&gt;
+&lt;li&gt;Quick and simple to set up, no paid services, etc.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Après un moment de réflexion voici le workflow imaginé :&lt;/p&gt;
+&lt;p&gt;After some thought, here is the imagined workflow:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 799px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/0b40409ff0374b8d105c68dfa76bfa3f/dd6e8/schema_failover.png&quot;
+    href=&quot;/static/002f6e8117ebfbf006974ea456e01e34/dd6e8/schema_failover.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 81.69014084507043%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACdElEQVQ4y21Ua5OiQAzk//+w+3BVt+4pyCpvmAEGUN4goPZVsovluUtVagaS6XQ6E7TLNOPZxsuEeVlQtz38SCFWJTyRIy1q+DJHFOfIzzWm+TOWbD1Hpr2CUWBDYELxNyklHNdlEzLGNC8I4wLzcn2APZu2IpMN44UPnKsWvsjQdANknCASAkIIpCpj/8EJeb9cb2i7ns/S2vUDNAogx2qUhVl2A5wg5VLjrELbT0jzGoHMEac5LNuBHwQIghDmxxFHy0IkJLSm7RAnKZJU8doPI5dD4HXTIFUKoYhxtH2EkWQW5L/e7ggjAV03OIbOs4ZBGPFLXTcQQmK73XEglWqaH3jbvGOnG9jqOu8d12MtbceFsTc5tqobZkyrRjSJJTE6nUumTSzoG7EdxwuGfsDYD5i+GrdqTRURCD20L6saGmUj+zhaXJKUMQMRKFk7jOhtD8POREvvXY+27Rg4TRU2m3e4js9siYQWyhidynE3LZzLCtudDpXlUCrjTqZ5gTwUOB1s3qssY39xOsH1fGZ26mv4YYi6bqGFQiJ0XOReAN/zWaumaXG749H56cvmeeFSyUfaGYaJQEYQVcracslU3qmsUFQ1a0jvlJUSOZ4HahppR7p9TtGVJcrygiUhzZNEcRMphieFMq/Z+R4uVyR+gOLXb1wI6GsKCMzzA9iOw6Ck2fWOxzX7NikPm2fMTYuz6+Ng2Xx5ialu7FGWFeqmRRwnDPg8xz/O8iOAGN/u2O9Nvqek0fvfLXdznS5aX+f5P8DLUyYqI0lS7vrhaOFo2dz1P28b9q2aPhP5DvjClA7RvaMSadSoEbphPP40P/1t/gE/lLzSQjd27wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 81.69014084507043%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAA7CAAAOwgEVKEqAAAACWklEQVQoz31T167bOhDU/39YHgIkp1iushrFKsmy2avkQNbFwcFFEGAeSGJnd3Z3mDkfvmBdCDFyqRvIcH+v4cBG3qKhw8M4cR/i92DnQ/b94kMU0jSw9yEihMqqLqsaIhJC7PAYYnrFfCNb5zcY50OIE5ct6qUymNAOQggR6wcf4rkElPUxzUpp67zSRmmT+RBjmjds+YQyFaB05KTn0njEpgb2mI7Xa9m2oAXgeL5ciqKDKBNSYUIJZZhQbWyIKaZZCMlYDyA5FzWX2of4KrGADub5nrKest46n7WgI5RxISHCn7scdBATcjyd3t4/dvn+7f2jaUEHUQdRWVWHwxF0kAtZXMsHF1kHkVQ6zct0f3QQK22EVNrYdRDaOm2NscY6Y50PERP64Pz5fL4OIoMIQ4TPl7UHhImxbhuGNFYXtdkdlbFKrRmNdZT1b+8fVdUcDichVQYQVmyYT9fpznf5nvXDCtbTYRw6NJ0LNt62x/E2VXWDCZ00bwDgQmYAIlDWQ902dbPL90KqZXnGNKd5CWn2aQ4h+piW5dlBuD8cWwTRg5VVvcrWxt7ujxsX0/2hjcWEAoSrpi3Kyhi3WSDEBBHuh1EbC9eBsq3B7GWNFNZlvAwUE23a8cdPa9y29phS04LiWmFMpvtjXp7bOv+z55fJrPMuxCDUvWrPxfVliS7fH+4PzoVEZCV/xf/f2yuctyGGeTkcT4SyqqrfPz73x9OqYF42dX//GFvWGBOh7HOXXy7Fpbgy1v/6/RZiMtZZF/5F3mCsk0pzIdO8DOMt3x9CTJvU7+Q/p/1/L6qVPkYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;schema failover&quot;
         title=&quot;schema failover&quot;
-        src=&quot;/static/0b40409ff0374b8d105c68dfa76bfa3f/dd6e8/schema_failover.png&quot;
-        srcset=&quot;/static/0b40409ff0374b8d105c68dfa76bfa3f/53f68/schema_failover.png 213w,
-/static/0b40409ff0374b8d105c68dfa76bfa3f/df70d/schema_failover.png 425w,
-/static/0b40409ff0374b8d105c68dfa76bfa3f/dd6e8/schema_failover.png 799w&quot;
+        src=&quot;/static/002f6e8117ebfbf006974ea456e01e34/dd6e8/schema_failover.png&quot;
+        srcset=&quot;/static/002f6e8117ebfbf006974ea456e01e34/53f68/schema_failover.png 213w,
+/static/002f6e8117ebfbf006974ea456e01e34/df70d/schema_failover.png 425w,
+/static/002f6e8117ebfbf006974ea456e01e34/dd6e8/schema_failover.png 799w&quot;
         sizes=&quot;(max-width: 799px) 100vw, 799px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -414,155 +414,155 @@ La dernière proposition est surement la plus adaptée pour moi, trouver une &lt
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Le détail des flux serait donc le suivant :&lt;/p&gt;
+&lt;p&gt;The detail of the flow would be as follows:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Problème sur la production (serveur OVH) qui rend le site web indisponible&lt;/li&gt;
-&lt;li&gt;Un script sur le serveur backup vérifie régulièrement la disponibilité du site web&lt;/li&gt;
-&lt;li&gt;Le script constate l&apos;indisponibilité et via les API OVH change l&apos;IP publique du site en question en la faisant pointer sur le serveur de backup lui-même&lt;/li&gt;
-&lt;li&gt;Avec un TTL assez faible (60), l&apos;utilisateur devrait avoir accès au site web via le backup&lt;/li&gt;
+&lt;li&gt;Problem on production (OVH server) that makes the website unavailable&lt;/li&gt;
+&lt;li&gt;A script on the backup server regularly checks the availability of the website&lt;/li&gt;
+&lt;li&gt;The script detects the unavailability and via the OVH API changes the public IP of the site to point to the backup server itself&lt;/li&gt;
+&lt;li&gt;With a sufficiently low TTL (60), the user should be able to access the website via the backup&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Il reste le sujet de la synchronisation des données, solutions possibles :&lt;/p&gt;
+&lt;p&gt;There is still the subject of data synchronization, possible solutions:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Un montage sur le dossier du site web en question&lt;/li&gt;
-&lt;li&gt;Un rsync depuis le backup vers la prod à une fréquence régulière&lt;/li&gt;
-&lt;li&gt;Un rsync depuis la prod vers le backup dès qu&apos;un fichier est modifié&lt;/li&gt;
+&lt;li&gt;A mount on the website folder in question&lt;/li&gt;
+&lt;li&gt;An rsync from the backup to production at a regular frequency&lt;/li&gt;
+&lt;li&gt;An rsync from production to the backup whenever a file is modified&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;J&apos;ai passé pas mal de temps sur ces solutions car elles ont toutes leurs problèmes :&lt;/p&gt;
+&lt;p&gt;I spent quite a bit of time on these solutions because they all have their problems:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Montage&lt;/strong&gt; : Aucun intérêt car si la prod plante je n&apos;ai plus de montage et donc plus de donnée, il faut forcément une copie. Je peux toujours par la suite via un cron faire une copie régulière des données en local mais aucun intérêt par rapport aux autres solutions.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rsync depuis le backup&lt;/strong&gt; : Pas trop fan de créer des accès sur mon serveur de prod même si c&apos;est du rsync via clé SSH sur un user non root. Mais surtout comment je détecte qu&apos;un fichier a changé ou été créé ? Seule la prod peut avoir ses infos. J&apos;ai tout de même essayé de créer un montage sshfs avec une surveillance du dossier via l&apos;outil inotify mais cela ne marche pas du tout ensemble, inotify fonctionne avec un système de fichier local.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rsync depuis la prod&lt;/strong&gt; : Dernière solution, celle-ci parait la plus &quot;faisable&quot; la prod surveillant ses fichiers via inotify ou un autre outil et rsync en cas de changement. Par contre avec l&apos;IP dynamique je suis toujours &quot;bloqué&quot; car à chaque redémarrage de ma box je change d&apos;IP. J&apos;ai donc dû faire appel à un service type DynDNS, ma box ne gérant que DynDNS ou NoIP j&apos;ai choisi ce dernier qui a une version freemium (il faut valider manuellement le domaine tous les mois sinon 5€/mois...)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mount&lt;/strong&gt;: No point because if production crashes I no longer have the mount and therefore no data, a copy is absolutely necessary. I could always use a cron job to regularly copy the data locally but there&apos;s no advantage over the other solutions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rsync from backup&lt;/strong&gt;: Not a big fan of creating access to my production server even if it&apos;s rsync via SSH key on a non-root user. But most importantly, how do I detect that a file has changed or been created? Only production can have that information. I did try to create an sshfs mount with folder monitoring via the inotify tool but they don&apos;t work together at all — inotify works with a local filesystem.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rsync from production&lt;/strong&gt;: Last solution, this one seems the most &quot;feasible&quot; — production monitors its files via inotify or another tool and rsyncs on change. However with the dynamic IP I&apos;m still &quot;stuck&quot; because every time my router restarts I get a new IP. I therefore had to use a DynDNS-type service; since my router only supports DynDNS or NoIP I chose the latter which has a freemium version (you have to manually validate the domain every month otherwise it&apos;s 5$/month...)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;mise-en-place&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mise-en-place&quot; aria-label=&quot;mise en place permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Mise en place&lt;/h1&gt;
-&lt;p&gt;J&apos;ai 4 parties à mettre en place :&lt;/p&gt;
+&lt;h1 id=&quot;implementation&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#implementation&quot; aria-label=&quot;implementation permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Implementation&lt;/h1&gt;
+&lt;p&gt;I have 4 parts to set up:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Le script de vérification de la disponibilité du site web.&lt;/li&gt;
-&lt;li&gt;Le script de changement du DNS.&lt;/li&gt;
-&lt;li&gt;L&apos;outil qui va permettre la synchro des données de la prod vers le backup.&lt;/li&gt;
-&lt;li&gt;Des petits scripts annexes pour alerter en cas de défaillance de la prod/backup.&lt;/li&gt;
+&lt;li&gt;The script to check website availability.&lt;/li&gt;
+&lt;li&gt;The script to change the DNS.&lt;/li&gt;
+&lt;li&gt;The tool that will allow data sync from production to the backup.&lt;/li&gt;
+&lt;li&gt;Small auxiliary scripts to alert in case of production/backup failure.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Toute la partie scripting va être condensée dans un seul et même script&lt;/p&gt;
-&lt;h2 id=&quot;partie-scripting&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#partie-scripting&quot; aria-label=&quot;partie scripting permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Partie scripting&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;from urllib.request import urlopen, Request
-from urllib.error import HTTPError, URLError
-import sys
-import time
-import requests
-import dns.resolver
-import ovh
+&lt;p&gt;All the scripting part will be condensed into a single script.&lt;/p&gt;
+&lt;h2 id=&quot;scripting-part&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#scripting-part&quot; aria-label=&quot;scripting part permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Scripting part&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-python line-numbers&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; urllib&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;request &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; urlopen&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Request
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; urllib&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;error &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; HTTPError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; URLError
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; sys
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; time
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; requests
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; dns&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;resolver
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ovh
 
-new_ip = requests.get(&apos;https://api.ipify.org&apos;).content.decode(&apos;utf8&apos;) #Dynamic public IP
-domain = &quot;homelabeur.eu&quot;
-site_name = &quot;&amp;lt;the_website_to_monitor&gt;&quot;
-ifttt_event = &quot;&amp;lt;event_ifttt_name&gt;&quot; #See https://ifttt.com
-ifttt_key = &quot;&amp;lt;event_ifttt_key&gt;&quot; #See https://ifttt.com
-ovh_secret = &quot;&amp;lt;ovh_secret&gt;&quot; #See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/
-ovh_key = &quot;&amp;lt;ovh_key&gt;&quot; #See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/
-ovh_consumer = &quot;&amp;lt;ovh_consumer&gt;&quot; #See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/
+new_ip &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; requests&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;https://api.ipify.org&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;decode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;utf8&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#Dynamic public IP&lt;/span&gt;
+domain &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;domain&gt;&quot;&lt;/span&gt;
+site_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;the_website_to_monitor&gt;&quot;&lt;/span&gt;
+ifttt_event &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;event_ifttt_name&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#See https://ifttt.com&lt;/span&gt;
+ifttt_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;event_ifttt_key&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#See https://ifttt.com&lt;/span&gt;
+ovh_secret &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;ovh_secret&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/&lt;/span&gt;
+ovh_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;ovh_key&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/&lt;/span&gt;
+ovh_consumer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;ovh_consumer&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;#See https://docs.ovh.com/ca/fr/api/first-steps-with-ovh-api/&lt;/span&gt;
 
-# setting the URL you want to monitor
-URL = Request(&quot;https://{0}.{1}&quot;.format(site_name, domain),
-              headers={&apos;User-Agent&apos;: &apos;Mozilla/5.0&apos;})
-i = 0
+&lt;span class=&quot;token comment&quot;&gt;# setting the URL you want to monitor&lt;/span&gt;
+URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Request&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://{0}.{1}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;site_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; domain&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              headers&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;User-Agent&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Mozilla/5.0&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
 
-#Verify status of the DNS
-result = dns.resolver.query(site_name, &apos;A&apos;)
-for ipval in result:
-    if ipval.to_text() == new_ip:
-        print(&quot;Already switched&quot;)
-        sys.exit(0)
+&lt;span class=&quot;token comment&quot;&gt;#Verify status of the DNS&lt;/span&gt;
+result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dns&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;resolver&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;query&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;site_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;A&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; ipval &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; ipval&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;to_text&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; new_ip&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Already switched&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        sys&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exit&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-#The site is answering ?
-while i &amp;lt; 10:
-    time.sleep(5)
-    print(URL.full_url)
-    try:
-        response = urlopen(URL, timeout=2)
-    except (HTTPError, URLError) as error:
-        i = i+1
-        continue
-    if response.status == 200:
-        print(&quot;Prod is okay&quot;)
-        break
-    i = i+1
+&lt;span class=&quot;token comment&quot;&gt;#The site is answering ?&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;URL&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;full_url&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; urlopen&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;URL&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; timeout&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;HTTPError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; URLError&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;continue&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;status &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Prod is okay&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;
+    i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
 
-#The website is down so we can switch and alert
-if i == 10:
-    response = requests.post(&apos;https://maker.ifttt.com/trigger/{0}/with/key/{1}&apos;.format(ifttt_event, ifttt_key))
-    client = ovh.Client(
-        endpoint=&apos;ovh-eu&apos;,
-        application_key=ovh_key,
-        application_secret=ovh_secret,
-        consumer_key=ovh_consumer,
-    )
+&lt;span class=&quot;token comment&quot;&gt;#The website is down so we can switch and alert&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; requests&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;post&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;https://maker.ifttt.com/trigger/{0}/with/key/{1}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ifttt_event&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ifttt_key&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    client &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ovh&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Client&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        endpoint&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;ovh-eu&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        application_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;ovh_key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        application_secret&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;ovh_secret&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        consumer_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;ovh_consumer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-    result = client.put(
-        &apos;/domain/zone/{0}/record/5206233547&apos;.format(domain),
-        subDomain=site_name,
-        target=new_ip,
-        ttl=60,
-    )
+    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; client&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;put&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&apos;/domain/zone/{0}/record/5206233547&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;domain&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        subDomain&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;site_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        target&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;new_ip&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        ttl&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-    result = client.post(&apos;/domain/zone/{0}/refresh&apos;.format(domain))&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Le script ci-dessus a été passé en cron sur le serveur backup et est exécuté toutes les 10 minutes.&lt;br&gt;
-Il exécute les actions suivantes :&lt;/p&gt;
+    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; client&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;post&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/domain/zone/{0}/refresh&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;domain&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The script above was set as a cron job on the backup server and runs every 10 minutes.&lt;br&gt;
+It performs the following actions:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Vérification du DNS (le site a-t-il déjà basculé ?)&lt;/li&gt;
-&lt;li&gt;Curl vers le site en question, 10 tests avec un intervalle de 5s&lt;/li&gt;
-&lt;li&gt;Si down bascule vers le backup via les API d&apos;OVH&lt;/li&gt;
-&lt;li&gt;Notification (on verra ça dans une autre partie)&lt;/li&gt;
+&lt;li&gt;DNS check (has the site already switched over?)&lt;/li&gt;
+&lt;li&gt;Curl to the site in question, 10 tests with a 5s interval&lt;/li&gt;
+&lt;li&gt;If down, switches to the backup via the OVH API&lt;/li&gt;
+&lt;li&gt;Notification (we&apos;ll cover that in another section)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;synchronisation-donnees&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#synchronisation-donnees&quot; aria-label=&quot;synchronisation donnees permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Synchronisation données&lt;/h2&gt;
-&lt;p&gt;Pour la synchro j&apos;avais dans un premier temps pensé à inotify avec rsync.&lt;br&gt;
-Il aurait suffi de lancer le binaire (via systemd dans l&apos;idéal) et dès lors qu&apos;il aurait remarqué un event qui match avec les options précisées (create, delete, move etc...) il effectuerait un rsync.&lt;br&gt;
-Le problème étant que cela nécessite pas mal de bricolage (script, création d&apos;un systemd etc...) et j&apos;aurais aimé en éviter le plus possible.
-Heureusement je suis tombé sur l&apos;outil &lt;strong&gt;lsyncd&lt;/strong&gt; qui fait exactement ce travail, pas besoin de réinventer la roue !
-En plus il peut se baser sur rsync pour faire ses actions ce qui est parfait pour moi. J&apos;ai fait deux configurations :&lt;/p&gt;
+&lt;h2 id=&quot;data-synchronization&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#data-synchronization&quot; aria-label=&quot;data synchronization permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Data synchronization&lt;/h2&gt;
+&lt;p&gt;For the sync I had initially thought about inotify with rsync.&lt;br&gt;
+It would have been enough to launch the binary (via systemd ideally) and whenever it detected an event matching the specified options (create, delete, move, etc.) it would perform an rsync.&lt;br&gt;
+The problem is that this requires quite a bit of tinkering (script, creating a systemd service, etc.) and I wanted to avoid that as much as possible.&lt;br&gt;
+Fortunately I came across the tool &lt;strong&gt;lsyncd&lt;/strong&gt; which does exactly this job — no need to reinvent the wheel!&lt;br&gt;
+On top of that it can use rsync to perform its actions which is perfect for me. I made two configurations:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Une pour le webroot de mon site, en cas de modification/ajout/suppression lsyncd exécute un rsync immédiatement vers mon backup&lt;/li&gt;
-&lt;li&gt;Une pour le dossier des certificats de mon site web, étant donné que je suis sous LetsEncrypt les certificats sont renouvelés régulièrement. De la même façon dès qu&apos;il y a une modification de ceux-ci (le certificat public à priori) il copie le nouveau certificat sur le backup&lt;/li&gt;
+&lt;li&gt;One for the webroot of my site: on any modification/addition/deletion lsyncd immediately runs an rsync to my backup&lt;/li&gt;
+&lt;li&gt;One for the certificates folder of my website: since I&apos;m using LetsEncrypt, certificates are renewed regularly. Likewise, whenever they are modified (the public certificate mainly) it copies the new certificate to the backup&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Tous cela est parfait mais il me manque encore la partie SSH pure car mon serveur backup est hébergé chez moi derrière ma box. J&apos;utilise déjà le port 22 pour d&apos;autres usages donc il va falloir faire de la configuration additionnelle.&lt;br&gt;
-J&apos;avais deux possibilités :&lt;/p&gt;
+&lt;p&gt;All of this is great but I&apos;m still missing the pure SSH part since my backup server is hosted at home behind my router. I already use port 22 for other purposes so I need to do some additional configuration.&lt;br&gt;
+I had two options:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Je fais un NAT sur un port différent du 22 (du style IP_PUB:2222 --&gt; backup:22)&lt;/li&gt;
-&lt;li&gt;Je fais un bastion SSH avec un hardenning et qui forward mes requêtes vers mon backup&lt;/li&gt;
+&lt;li&gt;NAT on a different port than 22 (e.g. PUBLIC_IP:2222 --&gt; backup:22)&lt;/li&gt;
+&lt;li&gt;Set up an SSH bastion with hardening that forwards my requests to my backup&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;J&apos;ai décidé de faire la deuxième solution, ça permet de s&apos;entrainer sur quelque chose que je n&apos;ai pas l&apos;habitude de faire 🙂. Je passe la partie hardenning car ce n&apos;est pas ce que j&apos;ai envie d&apos;aborder dans ce post mais ça consiste à faire les choses suivantes (non exhaustives) :&lt;/p&gt;
+&lt;p&gt;I decided to go with the second solution — it&apos;s a good opportunity to practice something I don&apos;t usually do. I&apos;ll skip the hardening part as it&apos;s not what I want to cover in this post, but it involves the following (non-exhaustive):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Fail2ban&lt;/li&gt;
 &lt;li&gt;No PermitRoot&lt;/li&gt;
-&lt;li&gt;Authentification par clé uniquement&lt;/li&gt;
-&lt;li&gt;Un Jail chroot avec un nombre de binaire limité (adios su et sudo 😈)&lt;/li&gt;
+&lt;li&gt;Key-only authentication&lt;/li&gt;
+&lt;li&gt;A chroot jail with a limited set of binaries (goodbye su and sudo 😈)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Par rapport au bastion, 3 solutions pour faire ce jump :&lt;/p&gt;
+&lt;p&gt;Regarding the bastion, 3 solutions for making this jump:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Stockage des clés SSH sur le bastion&lt;/li&gt;
-&lt;li&gt;Forwarding SSH agent&lt;/li&gt;
-&lt;li&gt;Utiliser ProxyCommand/ProxyJump&lt;/li&gt;
+&lt;li&gt;Storing SSH keys on the bastion&lt;/li&gt;
+&lt;li&gt;SSH agent forwarding&lt;/li&gt;
+&lt;li&gt;Using ProxyCommand/ProxyJump&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Stockage des clés SSH sur le bastion&lt;/strong&gt;: Cela signifie que le bastion possède la clé SSH privée de mon serveur backup, étant donné qu&apos;il reste public cela est toujours dangereux. On met cette idée de côté pour l&apos;instant.&lt;br&gt;
-&lt;strong&gt;Forwarding SSH agent&lt;/strong&gt;: On passe nos clés privées à un agent SSH puis on forward cet agent sur notre bastion. L&apos;agent SSH étant une socket Unix (lié à la variable $SSH_AUTH_SOCK) le jump host va pointer vers notre agent local au lieu de pointer sur le sien. Mais il suffit d&apos;être root sur le bastion pour faire pointer sa variable $SSH_AUTH_SOCK sur notre socket et accéder au backup. Pas terrible niveau sécu également.&lt;br&gt;
-&lt;strong&gt;ProxyCommand/ProxyJump&lt;/strong&gt;: La meilleure solution, le serveur intermédiaire (le bastion) exécute une &lt;code class=&quot;language-text&quot;&gt;ProxyCommand&lt;/code&gt; lors de la connexion et forward l&apos;input et l&apos;output vers le backup. Il suffit pour cela d&apos;utiliser l&apos;option &lt;code class=&quot;language-text&quot;&gt;-J&lt;/code&gt; du binaire SSH.&lt;br&gt;
-Ex : &lt;code class=&quot;language-text&quot;&gt;ssh -J username@bastion username@backup&lt;/code&gt;. Le seul problème de cette solution c&apos;est que si je veux préciser une clé SSH privée la commande ne peut pas deviner si cela s&apos;applique au bastion ou au backup. Je suis donc passé via la config SSH :&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Storing SSH keys on the bastion&lt;/strong&gt;: This means the bastion holds the private SSH key of my backup server — since it remains public this is always risky. Let&apos;s set this idea aside for now.&lt;br&gt;
+&lt;strong&gt;SSH agent forwarding&lt;/strong&gt;: We pass our private keys to an SSH agent and forward that agent to our bastion. The SSH agent being a Unix socket (bound to the &lt;code class=&quot;language-text&quot;&gt;$SSH_AUTH_SOCK&lt;/code&gt; variable) the jump host will point to our local agent instead of its own. But being root on the bastion is enough to redirect the &lt;code class=&quot;language-text&quot;&gt;$SSH_AUTH_SOCK&lt;/code&gt; variable to our socket and access the backup. Not great security-wise either.&lt;br&gt;
+&lt;strong&gt;ProxyCommand/ProxyJump&lt;/strong&gt;: The best solution — the intermediate server (the bastion) executes a &lt;code class=&quot;language-text&quot;&gt;ProxyCommand&lt;/code&gt; during the connection and forwards input and output to the backup. You just use the &lt;code class=&quot;language-text&quot;&gt;-J&lt;/code&gt; option of the SSH binary.&lt;br&gt;
+Ex: &lt;code class=&quot;language-text&quot;&gt;ssh -J username@bastion username@backup&lt;/code&gt;. The only problem with this solution is that if I want to specify a private SSH key, the command can&apos;t know whether it applies to the bastion or the backup. I therefore went through the SSH config:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Host bastion
     User linux
     HostName bastion.domain.tld
     IdentityFile ~/.ssh/bastion_rsa
 
-Host backup #Pas besoin d&apos;être accessible depuis internet donc
+Host backup #No need to be accessible from the internet
     User backup
     HostName backup.domain.lan
     IdentityFile ~/.ssh/backup_rsa
     ProxyJump bastion.domain.tld&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Et lorsque je fais un simple &lt;code class=&quot;language-text&quot;&gt;ssh backup&lt;/code&gt; (après recopie des clés publiques sur les bons serveurs) la magie opère ! Petit test de modification d&apos;un fichier ça fonctionne bien, le fichier modifié est bien propagé sur le backup 🙂&lt;/p&gt;
+&lt;p&gt;And when I simply run &lt;code class=&quot;language-text&quot;&gt;ssh backup&lt;/code&gt; (after copying the public keys to the right servers) the magic happens! Quick test modifying a file — it works perfectly, the modified file is properly propagated to the backup 🙂&lt;/p&gt;
 &lt;h2 id=&quot;notifications&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#notifications&quot; aria-label=&quot;notifications permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Notifications&lt;/h2&gt;
-&lt;p&gt;Dernier point : le fignolage ! Il s&apos;agit désormais de m&apos;avertir en cas de défaillance de la prod OU du backup (on ne sait jamais lui aussi il peut planter !).&lt;br&gt;
-Pour le backup je fais presque que la même chose que le script ci-dessus, j&apos;ai des curl qui interroge régulièrement le nom DynDNS pointant vers mon site web (j&apos;ai configuré mon reverse proxy Nginx pour répondre au vrai nom de mon site web et au nom DynDNS). En cas de défaillance je reçois un mail sur ma boite perso @homelabeur.eu.&lt;/p&gt;
-&lt;p&gt;Par contre pour la prod c&apos;est plus complexe (et plus important aussi). En fait je pourrais faire le même mécanisme que pour le backup mais je ne recevrai jamais le mail @homelabeur.eu car mon serveur mail est hébergé sur la même machine que mon site web...&lt;br&gt;
-J&apos;ai commencé à regarder pour pouvoir utiliser les API de Gmail mais très honnetement ça ne me tentait pas trop.&lt;br&gt;
-Donc à la place j&apos;ai utilisé le service &lt;strong&gt;IFTTT&lt;/strong&gt;, j&apos;ai trouvé le concept tellement simple et efficace.
-Une application Android (ou Apple) à télécharger ensuite &quot;programmer&quot; son alerte :&lt;/p&gt;
+&lt;p&gt;Last point: the finishing touches! It&apos;s now about getting alerted in case of production OR backup failure (you never know, it can crash too!).&lt;br&gt;
+For the backup I do almost the same thing as the script above — I have curl requests that regularly query the DynDNS name pointing to my website (I configured my Nginx reverse proxy to respond to both the real site name and the DynDNS name). In case of failure I receive an email on my personal mailbox.&lt;/p&gt;
+&lt;p&gt;However for production it&apos;s more complex (and more important too). I could actually use the same mechanism as for the backup but I would never receive the email because my mail server is hosted on the same machine as my website...&lt;br&gt;
+I started looking into using the Gmail API but honestly it didn&apos;t appeal to me much.&lt;br&gt;
+So instead I used the &lt;strong&gt;IFTTT&lt;/strong&gt; service — I found the concept so simple and effective.&lt;br&gt;
+An Android (or Apple) app to download, then &quot;program&quot; your alert:&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 757px; &quot;
@@ -593,32 +593,32 @@ Une application Android (ou Apple) à télécharger ensuite &quot;programmer&quo
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Comme on peut le voir ci-dessus en cas de réception d&apos;un webhook on envoie une notification push à l&apos;application IFTTT reliée au compte.&lt;br&gt;
-J&apos;ai juste eu à ajouter la commande curl à mon script ci-dessus et le tour était joué, ça marche parfaitement ! Très peu d&apos;infos sont également transmise à ce service tiers (surement une ip publique et peut-être des infos négligables concernant mon téléphone) ça reste acceptable de mon côté, le businness plan consiste à proposer des version premium qui permettent de développer son propre algo ou avoir plus d&apos;event.&lt;/p&gt;
+&lt;p&gt;As you can see above, upon receiving a webhook a push notification is sent to the IFTTT app linked to the account.&lt;br&gt;
+I just had to add the curl command to my script above and it was done — works perfectly! Very little information is also transmitted to this third-party service (probably a public IP and maybe some negligible info about my phone) which remains acceptable to me. The business plan consists of offering premium versions that allow you to develop your own algorithm or have more events.&lt;/p&gt;
 &lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;Une grosse journée de travail pour concevoir, mettre en place et peaufiner. J&apos;espérais pas mettre plus de temps et c&apos;est chose faite.
-J&apos;ai une solution, certes bricolée, mais fonctionnelle et facile. Il me reste tout de même une partie manuelle : en cas de défaillance de la prod et de bascule sur le backup, je dois manuellement refaire pointer le DNS vers la prod (bien que j&apos;utilise un script pour ça).
-La solution n&apos;est de toute façon mise en place que temporairement le temps que je réfléchisse à une nouvelle architecture qui sera bien plus robuste et pensée en amont.&lt;br&gt;
-Cela reste malgré tout un très bon exercice, très proche du système ça toujours fait du bien de remettre les mains dans le cambouis 🙂&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Retour d'expérience sur la certification CKA]]></title><description><![CDATA[Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c'est l'occasion pour moi de faire un petit…]]></description><link>https://homelabeur.eu/get-CKA</link><guid isPermaLink="false">https://homelabeur.eu/get-CKA</guid><category><![CDATA[k8s]]></category><category><![CDATA[certification]]></category><pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c&apos;est l&apos;occasion pour moi de faire un petit retour d&apos;expérience !&lt;/p&gt;
-&lt;h1 id=&quot;contexte&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexte&quot; aria-label=&quot;contexte permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Contexte&lt;/h1&gt;
-&lt;p&gt;Tout d&apos;abord il faut savoir qu&apos;il n&apos;existe que 4 certifications Kubernetes officielles :&lt;/p&gt;
+&lt;p&gt;A full day&apos;s work to design, implement and fine-tune. I hoped not to take more time and mission accomplished.&lt;br&gt;
+I have a solution — admittedly a makeshift one — but functional and easy. I still have one manual part: in case of production failure and switchover to the backup, I have to manually point the DNS back to production (though I use a script for that).&lt;br&gt;
+The solution is anyway only temporary while I think about a new architecture that will be much more robust and planned from the start.&lt;br&gt;
+It remains nonetheless a very good exercise — very close to the system level, it always feels good to get your hands dirty 🙂&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Feedback on the CKA certification]]></title><description><![CDATA[My company was able to fund the Certified Kubernetes Administrator (CKA) for me this year. Having passed it successfully a few days ago, it's a good opportunity to share my…]]></description><link>https://homelabeur.eu/get-CKA</link><guid isPermaLink="false">https://homelabeur.eu/get-CKA</guid><category><![CDATA[k8s]]></category><category><![CDATA[certification]]></category><pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;My company was able to fund the Certified Kubernetes Administrator (CKA) for me this year. Having passed it successfully a few days ago, it&apos;s a good opportunity to share my experience!&lt;/p&gt;
+&lt;h1 id=&quot;context&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#context&quot; aria-label=&quot;context permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Context&lt;/h1&gt;
+&lt;p&gt;First of all, it&apos;s worth knowing that there are only 4 official Kubernetes certifications:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Kubernetes and Cloud Native Associate (KCNA)&lt;/li&gt;
 &lt;li&gt;Certified Kubernetes Application Developer (CKAD)&lt;/li&gt;
 &lt;li&gt;Certified Kubernetes Administrator (CKA)&lt;/li&gt;
 &lt;li&gt;Certified Kubernetes Security Specialist (CKS)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Celle qui correspond le plus à mon profil et ce que je sais faire est la CKA.
-Elle coûte environ 400$ et possède les avantages suivants :&lt;/p&gt;
+&lt;p&gt;The one that best matches my profile and skill set is the CKA.
+It costs around $400 and comes with the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Un certain nombre de ressources sur Kubernetes (rien d&apos;exceptionnel)&lt;/li&gt;
-&lt;li&gt;Deux examens blancs (identiques cependant) pour se préparer&lt;/li&gt;
-&lt;li&gt;Des accès à des plateformes d&apos;entrainement et de scénario divers&lt;/li&gt;
-&lt;li&gt;L&apos;accès à certification en elle-même&lt;/li&gt;
+&lt;li&gt;A number of Kubernetes resources (nothing exceptional)&lt;/li&gt;
+&lt;li&gt;Two mock exams (identical though) to prepare&lt;/li&gt;
+&lt;li&gt;Access to training platforms and various scenario labs&lt;/li&gt;
+&lt;li&gt;Access to the certification itself&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Afin d&apos;obtenir la certification il &quot;suffit&quot; d&apos;avoir 66% de réponse correcte le jour de l&apos;examen.&lt;br&gt;
-Les réponses ne sont pas de type QCM mais plus en mode TP, il faut &quot;réaliser&quot; l&apos;exercice sur un environnement Kubernetes.&lt;br&gt;
-L&apos;examen se décompose de la façon suivante :&lt;/p&gt;
+&lt;p&gt;To obtain the certification you &quot;simply&quot; need to score 66% correct answers on exam day.&lt;br&gt;
+The answers are not multiple choice but more hands-on — you need to &quot;complete&quot; the exercise on a Kubernetes environment.&lt;br&gt;
+The exam breaks down as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Storage 10%&lt;/li&gt;
 &lt;li&gt;Troubleshooting 30%&lt;/li&gt;
@@ -626,43 +626,43 @@ L&apos;examen se décompose de la façon suivante :&lt;/p&gt;
 &lt;li&gt;Cluster Architecture, Installation &amp;#x26; Configuration 25%&lt;/li&gt;
 &lt;li&gt;Services &amp;#x26; Networking 20%&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;se-preparer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#se-preparer&quot; aria-label=&quot;se preparer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Se préparer&lt;/h1&gt;
-&lt;p&gt;Etant donné que je n&apos;ai jamais eu de réelle expérience professionnelle de Kubernetes je n&apos;ai pas pris cette certification à la légère, j&apos;ai acheté deux formations sur Udemy pour préparer cet examen :&lt;/p&gt;
+&lt;h1 id=&quot;preparing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#preparing&quot; aria-label=&quot;preparing permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Preparing&lt;/h1&gt;
+&lt;p&gt;Since I never had any real professional experience with Kubernetes I didn&apos;t take this certification lightly — I bought two courses on Udemy to prepare for this exam:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Certified Kubernetes Administrator (CKA) with Practice Tests (~13€)&lt;/li&gt;
-&lt;li&gt;Kubernetes for the Absolute Beginners (~13€)&lt;/li&gt;
+&lt;li&gt;Certified Kubernetes Administrator (CKA) with Practice Tests (~20$)&lt;/li&gt;
+&lt;li&gt;Kubernetes for the Absolute Beginners (~20$)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Ces formations comprennent :&lt;/p&gt;
+&lt;p&gt;These courses include:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Les cours en vidéo de 3 à 20 minutes chacune&lt;/li&gt;
-&lt;li&gt;Des résumés PDF des chapitres étudiés (honnêtement pas terrible les PDF)&lt;/li&gt;
-&lt;li&gt;Accès à une plateforme d&apos;entrainement scénarisée selon les chapitres&lt;/li&gt;
-&lt;li&gt;Quelques examens blancs (ne représente pas les conditions de l&apos;examen cependant)&lt;/li&gt;
+&lt;li&gt;Video lessons ranging from 3 to 20 minutes each&lt;/li&gt;
+&lt;li&gt;PDF summaries of the studied chapters (honestly not great)&lt;/li&gt;
+&lt;li&gt;Access to a scenario-based training platform organized by chapter&lt;/li&gt;
+&lt;li&gt;A few mock exams (though they don&apos;t replicate actual exam conditions)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Franchement je n&apos;attendais pas grand-chose de ces formations notamment par rapport au prix investi mais j&apos;ai vraiment été agréablement surpris ! (Comme quoi ne pas juger une formation en fonction du prix).&lt;br&gt;
-Par contre si j&apos;avais su je n&apos;aurais peut-être pas pris la formation &quot;Kubernetes for the Absolute Beginners&quot; qui est reprise en entier ou presque dans la formation &quot;Certified Kubernetes Administrator (CKA) with Practice Tests&quot;.&lt;/p&gt;
-&lt;p&gt;Pour ceux qui ne veulent pas débourser de l&apos;argent pour cela je conseille les vidéos de Xavki sur YouTube dans la playlist Kubernetes. Elle ne prépare pas en tant que tel pour la certification mais ses vidéos sont vraiment de qualité et vont plus loin que le périmètre de la certification.&lt;/p&gt;
-&lt;p&gt;Ensuite je conseille les liens suivants qui m&apos;ont été utile pour fignoler ma préparation :&lt;/p&gt;
+&lt;p&gt;Honestly I wasn&apos;t expecting much from these courses given the price, but I was genuinely pleasantly surprised! (Goes to show you shouldn&apos;t judge a course by its price.)&lt;br&gt;
+That said, had I known, I might not have bought the &quot;Kubernetes for the Absolute Beginners&quot; course since it is almost entirely covered in the &quot;Certified Kubernetes Administrator (CKA) with Practice Tests&quot; course.&lt;/p&gt;
+&lt;p&gt;For those who don&apos;t want to spend money on this, I recommend Xavki&apos;s videos on YouTube in the Kubernetes playlist. It doesn&apos;t prepare you specifically for the certification but the videos are really high quality and go beyond the certification scope.&lt;/p&gt;
+&lt;p&gt;Here are some links that were useful to me for polishing my preparation:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://kubernetes.io/docs&quot;&gt;https://kubernetes.io/docs&lt;/a&gt; : fait partie des rares sites autorisés le jour de l&apos;examen, je conseille de bien s&apos;approprier le site afin de perdre le moins de temps possible le jour J.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad&quot;&gt;https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad&lt;/a&gt; : concerne les détails pratique de l&apos;examen (comment cela se passe, la plateforme utilisé etc...)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/StenlyTU/K8s-training-official&quot;&gt;https://github.com/StenlyTU/K8s-training-official&lt;/a&gt; : un repo d&apos;exercices en lien avec les topics CKA&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://kubernetes.io/docs&quot;&gt;https://kubernetes.io/docs&lt;/a&gt; : one of the few sites allowed on exam day — I strongly recommend getting familiar with it to lose as little time as possible on the day.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad&quot;&gt;https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad&lt;/a&gt; : covers the practical details of the exam (how it works, the platform used, etc.)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/StenlyTU/K8s-training-official&quot;&gt;https://github.com/StenlyTU/K8s-training-official&lt;/a&gt; : a repository of exercises related to CKA topics&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Je conseille plus que vivement d&apos;utiliser la plateforme d&apos;examen blanc fourni par le site killer.sh&lt;br&gt;
-Elle propose des conditions d&apos;examen &lt;strong&gt;identiques&lt;/strong&gt; et permet donc d&apos;avoir une première approche de ce qu&apos;il sera proposé le jour J.&lt;br&gt;
-Personnellement je n&apos;ai eu que 75/125 soit seulement 60% donc en dessous des 66% demandé. MAIS :&lt;/p&gt;
+&lt;p&gt;I highly recommend using the mock exam platform provided by killer.sh.&lt;br&gt;
+It offers &lt;strong&gt;identical&lt;/strong&gt; exam conditions and gives you a first taste of what will be presented on the day.&lt;br&gt;
+Personally I only scored 75/125, which is 60% — below the required 66%. BUT:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Les questions sont plus difficiles que celles du vrai examen&lt;/li&gt;
-&lt;li&gt;Elles sont également plus nombreuses (25 au lieu de 17) pour le même temps (2h)&lt;/li&gt;
+&lt;li&gt;The questions are harder than those in the real exam&lt;/li&gt;
+&lt;li&gt;There are also more of them (25 instead of 17) for the same duration (2h)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En lisant quelques sub reddit je me suis rendu compte que je n&apos;étais pas seul dans ce cas et que 75pts restait finalement un bon score.&lt;/p&gt;
-&lt;p&gt;Enfin voici quelques conseils que j&apos;ai pu trouver ici et là sur internet.&lt;br&gt;
-Ajouter des variables bash pour aller plus vite :&lt;/p&gt;
+&lt;p&gt;Reading a few subreddits I realized I wasn&apos;t alone in this situation and that 75 points was actually a decent score.&lt;/p&gt;
+&lt;p&gt;Finally, here are a few tips I found here and there online.&lt;br&gt;
+Add bash variables to work faster:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;export do=&quot;--dry-run=client -o yaml&quot;
 export now=&quot;--force --grace-period 0&quot;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ces deux variables peuvent être ajoutées à la fin des commandes kubectl pour créer un fichier ou supprimer un pod plus rapidement.&lt;br&gt;
+&lt;p&gt;These two variables can be appended to kubectl commands to create a file or delete a pod more quickly.&lt;br&gt;
 Ex: &lt;code class=&quot;language-text&quot;&gt;kubectl run nginx --image nginx $do &gt; pod.yml&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Bien étudier ce workflow qui détaille comment troubleshoot une partie des ressources K8S, cela représente 30% de la note tout de même :
+&lt;p&gt;Study this workflow carefully — it details how to troubleshoot some K8s resources, which accounts for 30% of the score:
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -694,88 +694,88 @@ Ex: &lt;code class=&quot;language-text&quot;&gt;kubectl run nginx --image nginx 
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&quot;lexamen-en-lui-meme&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#lexamen-en-lui-meme&quot; aria-label=&quot;lexamen en lui meme permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;L&apos;examen en lui même&lt;/h1&gt;
-&lt;p&gt;Une fois qu&apos;une date sera choisie il faudra respecter les conditions suivantes le jour J :&lt;/p&gt;
+&lt;h1 id=&quot;the-exam-itself&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#the-exam-itself&quot; aria-label=&quot;the exam itself permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The exam itself&lt;/h1&gt;
+&lt;p&gt;Once a date has been chosen, you will need to meet the following conditions on exam day:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Avoir une webcam (externe ou interne)&lt;/li&gt;
-&lt;li&gt;Avoir une pièce d&apos;identité non expirée (permis de conduire, passeport, CNI etc...)&lt;/li&gt;
-&lt;li&gt;Être dans une pièce isolée où être seul et au calme&lt;/li&gt;
+&lt;li&gt;Have a webcam (external or built-in)&lt;/li&gt;
+&lt;li&gt;Have a non-expired ID (driver&apos;s license, passport, national ID card, etc.)&lt;/li&gt;
+&lt;li&gt;Be in an isolated room, alone and in a quiet environment&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Bien vérifier également que la webcam puisse filmer la pièce d&apos;identité &lt;strong&gt;distinctement&lt;/strong&gt; (c&apos;est très important !).&lt;/p&gt;
-&lt;p&gt;Il faut se connecter jusqu&apos;à 30min avant, une fois cela fait il sera possible de télécharger un logiciel qui fera office de plateforme d&apos;examen (attention 300Mo dans mon cas).&lt;br&gt;
-Une fois téléchargé et installé il faudra prendre une photo de soi-même via la webcam et une photo de notre pièce d&apos;identité, cela enclenchera la vérification par un instructeur.&lt;br&gt;
-La vérification dans mon cas n&apos;a pas duré très longtemps, cela effectué l&apos;instructeur demandera de filmer la pièce afin de vérifier que tout est ok et qu&apos;il n&apos;y a rien d&apos;interdit à proximité.&lt;br&gt;
-Dans mon cas on m&apos;a demandé de poser mon téléphone dans le champ de la caméra mais hors de portée et d&apos;enlever le plastique de ma bouteille d&apos;eau !
-Lorsque toutes ces vérifications sont terminées on peut enfin commencer l&apos;examen ! Comme vu précédemment l&apos;environnement est exactement le même que killer.sh mais en plus simple.&lt;br&gt;
-A part un ou deux écueils je n&apos;ai pas trouvé l&apos;examen très complexe.&lt;/p&gt;
-&lt;p&gt;On obtient le résultat au bout de 24h max, pour moi j&apos;ai réussi à l&apos;obtenir avec 83% donc ça passe 🙂&lt;/p&gt;
+&lt;p&gt;Also make sure the webcam can film your ID &lt;strong&gt;clearly&lt;/strong&gt; (this is very important!).&lt;/p&gt;
+&lt;p&gt;You need to connect up to 30 minutes before, after which you will be able to download a piece of software that serves as the exam platform (note: 300MB in my case).&lt;br&gt;
+Once downloaded and installed you will need to take a photo of yourself via the webcam and a photo of your ID, which will trigger verification by a proctor.&lt;br&gt;
+In my case the verification didn&apos;t take very long — once done, the proctor will ask you to film the room to verify everything is in order and that there is nothing prohibited nearby.&lt;br&gt;
+In my case I was asked to place my phone in the camera&apos;s field of view but out of reach, and to remove the plastic wrapper from my water bottle!&lt;br&gt;
+Once all these checks are complete you can finally start the exam! As mentioned earlier the environment is exactly the same as killer.sh but simpler.&lt;br&gt;
+Apart from one or two hiccups I didn&apos;t find the exam very complex.&lt;/p&gt;
+&lt;p&gt;You get the result within 24 hours at most — I passed with 83%, so all good 🙂&lt;/p&gt;
 &lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;Je doutais un peu que la certification m&apos;apporte réellement quelque chose mais finalement afin de l&apos;obtenir je me suis vraiment investi et cela m&apos;a apporté des connaissances théoriques sur la techno.&lt;br&gt;
-Cela me donne un véritable vernis de base lorsqu&apos;il sera question de Kubernetes.&lt;/p&gt;
-&lt;p&gt;Ceci dit cela ne remplacera jamais l&apos;expérience &quot;sur le terrain&quot; selon moi et la certification ne vient qu&apos;en complément. J&apos;ai donc hâte de pouvoir mettre en pratique les connaissances acquises ! 🤞&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Déployer son infra K3S sur Proxmox en mode IaC]]></title><description><![CDATA[Architecture Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m'exercer. J'ai pas mal fait de Kubernetes classique en lab via…]]></description><link>https://homelabeur.eu/deploy-k3s-proxmox</link><guid isPermaLink="false">https://homelabeur.eu/deploy-k3s-proxmox</guid><category><![CDATA[k3s]]></category><category><![CDATA[hashicorp]]></category><category><![CDATA[packer]]></category><category><![CDATA[terraform]]></category><category><![CDATA[proxmox]]></category><pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#architecture&quot; aria-label=&quot;architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Architecture&lt;/h1&gt;
-&lt;p&gt;Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m&apos;exercer. J&apos;ai pas mal fait de Kubernetes classique en lab via des formations Udemy et j&apos;aimerai tester autre chose mais toujours sur une base K8S.
-Je me suis penché sur K3S de Rancher. Il dispose de plusieurs qualités qui me semble intéressantes :&lt;/p&gt;
+&lt;p&gt;I had some doubts about whether the certification would really bring me anything, but in the end the effort I put in to obtain it gave me solid theoretical knowledge of the technology.&lt;br&gt;
+It gives me a genuine foundation when it comes to Kubernetes.&lt;/p&gt;
+&lt;p&gt;That said, in my opinion it will never replace real hands-on experience, and the certification is only a complement. So I&apos;m eager to put the acquired knowledge into practice! 🤞&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Deploy your K3S infrastructure on Proxmox in IaC mode]]></title><description><![CDATA[Architecture I'm preparing for the Certified Kubernetes Administrator (CKA) and I needed a lab to practice. I've done quite a bit of standard Kubernetes in lab environments through…]]></description><link>https://homelabeur.eu/deploy-k3s-proxmox</link><guid isPermaLink="false">https://homelabeur.eu/deploy-k3s-proxmox</guid><category><![CDATA[k3s]]></category><category><![CDATA[hashicorp]]></category><category><![CDATA[packer]]></category><category><![CDATA[terraform]]></category><category><![CDATA[proxmox]]></category><pubDate>Tue, 19 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#architecture&quot; aria-label=&quot;architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Architecture&lt;/h1&gt;
+&lt;p&gt;I&apos;m preparing for the Certified Kubernetes Administrator (CKA) and I needed a lab to practice. I&apos;ve done quite a bit of standard Kubernetes in lab environments through Udemy courses and I wanted to try something different but still K8S-based.
+I looked into K3S from Rancher. It has several qualities that seem interesting to me:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Il est léger et plus rapide que K8s&lt;/li&gt;
-&lt;li&gt;Il peut s&apos;exécuter sur du plus petit matériel (proc ARM par ex 🥰). J&apos;ai comme projet potentiel de faire un cluster de raspberry donc K3S est plus qu&apos;indiqué.&lt;/li&gt;
-&lt;li&gt;Il ne dispose pas de tous les connecteurs cloud mais vu que ça sera du &quot;on premise&quot; dans mon cas c&apos;est parfait.&lt;/li&gt;
-&lt;li&gt;Plein de petits avantages : + facile et rapide à déployer, moins de surface d&apos;attaque, facile à update etc...&lt;/li&gt;
+&lt;li&gt;It is lighter and faster than K8s&lt;/li&gt;
+&lt;li&gt;It can run on smaller hardware (ARM processors for example 🥰). I have a potential project to build a Raspberry Pi cluster so K3S is more than suitable.&lt;/li&gt;
+&lt;li&gt;It doesn&apos;t have all the cloud connectors but since it will be &quot;on premise&quot; in my case that&apos;s perfect.&lt;/li&gt;
+&lt;li&gt;Lots of small advantages: easier and faster to deploy, smaller attack surface, easy to update, etc.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Par contre il ne fait pas tourner docker nativement mais containerd (bien que j&apos;ai vu un projet passer s&apos;appelant k3d qui intègre docker), ça sera l&apos;occasion d&apos;apprendre autre chose surtout que le CRI (Container Runtime Interface) en soi n&apos;est pas le plus important.&lt;/p&gt;
-&lt;p&gt;Une fois mon choix d&apos;orchestrateur choisi je me suis dit que j&apos;allais installer mon cluster K3s sur mon lab maison qui exécute un Proxmox et tant qu&apos;à faire autant avoir un workflow de déploiement un peu évolué pour s&apos;exercer.&lt;/p&gt;
-&lt;p&gt;Parmi toutes les ressources que j&apos;ai pu voir le workflow qui me semblait au départ le plus intéressant faisait les choses suivantes :&lt;/p&gt;
+&lt;p&gt;On the other hand it doesn&apos;t run docker natively but containerd (although I came across a project called k3d that integrates docker) — it will be an opportunity to learn something different, especially since the CRI (Container Runtime Interface) itself is not the most important thing to me.&lt;/p&gt;
+&lt;p&gt;Once I had chosen my orchestrator I decided to install my K3s cluster on my home lab running Proxmox, and while I was at it I might as well have a more advanced deployment workflow to practice with.&lt;/p&gt;
+&lt;p&gt;Among all the resources I found, the workflow that seemed most interesting at first did the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Récupération de l&apos;ISO Ubuntu 20 sur Proxmox&lt;/li&gt;
-&lt;li&gt;Création du template Proxmox &quot;à la main&quot; via des commandes qm (cli proxmox)&lt;/li&gt;
-&lt;li&gt;Configuration de cloud init via l&apos;onglet promox dédié&lt;/li&gt;
-&lt;li&gt;Création des VM via Terraform&lt;/li&gt;
-&lt;li&gt;Ansible pour déployer K3s sur mes nouvelles VM&lt;/li&gt;
+&lt;li&gt;Downloading the Ubuntu 20 ISO on Proxmox&lt;/li&gt;
+&lt;li&gt;Creating the Proxmox template &quot;by hand&quot; via qm commands (Proxmox CLI)&lt;/li&gt;
+&lt;li&gt;Configuring cloud init via the dedicated Proxmox tab&lt;/li&gt;
+&lt;li&gt;Creating VMs via Terraform&lt;/li&gt;
+&lt;li&gt;Ansible to deploy K3s on the new VMs&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Cela paraissait sympa sur le papier et puis ça permettait de mettre en application les quelques connaissances Terraform dont je disposais.
-Mais à bien réfléchir il y avait quand même deux problèmes dans ce process :&lt;/p&gt;
+&lt;p&gt;It looked good on paper and allowed me to apply the Terraform knowledge I had.
+But thinking about it more carefully there were still two problems with this process:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Une partie manuelle qui cassait un peu l&apos;automatisation voulue. Si je pouvais automatiser cela je serais vraiment dans un cas d&apos;IaC (&lt;strong&gt;Infra As Code&lt;/strong&gt;)&lt;/li&gt;
-&lt;li&gt;Pas très flexible car si je veux customiser mon template ça sera à la main aussi ou à la limite via script bash&lt;/li&gt;
+&lt;li&gt;A manual part that somewhat broke the desired automation. If I could automate this I would truly be in an IaC (&lt;strong&gt;Infrastructure As Code&lt;/strong&gt;) scenario&lt;/li&gt;
+&lt;li&gt;Not very flexible because if I want to customize my template it would also be done manually or at best via a bash script&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;C&apos;est là que je suis tombé sur un autre outil d&apos;Hashicorp qui fait tout ce travail manuel pour moi et dispose de la flexibilité voulue : Packer !&lt;/p&gt;
-&lt;p&gt;&lt;/br&gt;Voici les deux workflows qui sont ressortis au final :&lt;/p&gt;
+&lt;p&gt;That&apos;s when I came across another Hashicorp tool that does all this manual work for me and has the desired flexibility: Packer!&lt;/p&gt;
+&lt;p&gt;&lt;/br&gt;Here are the two workflows that emerged in the end:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Création du template --&gt; Cloud init --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/li&gt;
+&lt;li&gt;Template creation --&gt; Cloud init --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Packer (+Cloud init) --&gt; Terraform --&gt; Ansible --&gt; K3S&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;J&apos;ai donc choisi le deuxième worflow&lt;br&gt;
-Avantages :&lt;/p&gt;
+&lt;p&gt;I therefore chose the second workflow&lt;br&gt;
+Advantages:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Infra as code - Full automatisée&lt;/li&gt;
-&lt;li&gt;Pas d&apos;interaction directe avec Proxmox, seulement via son API&lt;/li&gt;
-&lt;li&gt;Peut donc être piloté depuis une machine tierce&lt;/li&gt;
+&lt;li&gt;Infrastructure as code - Fully automated&lt;/li&gt;
+&lt;li&gt;No direct interaction with Proxmox, only via its API&lt;/li&gt;
+&lt;li&gt;Can therefore be driven from a third-party machine&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;⚠️ Inconvénients :&lt;/p&gt;
+&lt;p&gt;⚠️ Disadvantages:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Nécessite plus de développement et de temps pour un résultat équivalent dans mon cas (installation d&apos;un potentiel DHCP, création du fichier de conf packer etc...)&lt;/li&gt;
-&lt;li&gt;Temps d&apos;exécution de création du template plus long&lt;/li&gt;
+&lt;li&gt;Requires more development and time for an equivalent result in my case (setting up a potential DHCP, creating the packer config file, etc.)&lt;/li&gt;
+&lt;li&gt;Longer template creation execution time&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Retrouver l&apos;ensemble du projet sur ce git : &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Find the entire project on this git: &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;packer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#packer&quot; aria-label=&quot;packer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Packer&lt;/h1&gt;
-&lt;p&gt;Je vais donc utiliser packer pour packager mon image Ubuntu 20.04 avec quelques packages et confs additionnelles. Il suffit d&apos;installer &lt;a href=&quot;https://www.packer.io/downloads&quot;&gt;packer&lt;/a&gt; puis nous verrons les fichiers de configuration.&lt;br&gt;
-D&apos;ailleurs dans mon cas pas besoin de DHCP, celui de ma box avec ma VM template en mode bridge sera largement suffisant.&lt;br&gt;
-Voici mon arborescence packer pour la config :&lt;/p&gt;
+&lt;p&gt;I&apos;m going to use Packer to package my Ubuntu 20.04 image with some additional packages and configurations. Simply install &lt;a href=&quot;https://www.packer.io/downloads&quot;&gt;packer&lt;/a&gt; then we&apos;ll look at the configuration files.&lt;br&gt;
+In my case no DHCP is needed — the one from my router with my template VM in bridge mode will be more than sufficient.&lt;br&gt;
+Here is my Packer folder structure for the config:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── http
 │   ├── meta-data
 │   └── user-data
 ├── ubuntu20.pkr.hcl
 └── variables.pkr.hcl&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Les fichiers de conf peuvent être en json ou HCL (format hashicorp), j&apos;ai choisi HCL à la place de JSON pour deux raisons :&lt;/p&gt;
+&lt;p&gt;The config files can be in JSON or HCL (HashiCorp format). I chose HCL over JSON for two reasons:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Langage commun avec tous les outils HashiCorp (vu qu&apos;on va aussi utiliser Terraform ça a du sens)&lt;/li&gt;
-&lt;li&gt;Plus &quot;fonctionnel&quot;, on peut par exemple mettre des commentaires (dans JSON non ça fera toujours partie de la data)&lt;/li&gt;
+&lt;li&gt;Common language across all HashiCorp tools (since we&apos;ll also be using Terraform it makes sense)&lt;/li&gt;
+&lt;li&gt;More &quot;functional&quot; — you can add comments for example (which you can&apos;t in JSON as it would always be part of the data)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;On a donc 2 fichiers hcl concernant :&lt;/p&gt;
+&lt;p&gt;We therefore have 2 HCL files covering:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.pkr.hcl&lt;/code&gt; : la définition des variables par défaut&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ubuntu20.pkr.hcl&lt;/code&gt; : la définition du job packer&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.pkr.hcl&lt;/code&gt;: the definition of default variables&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ubuntu20.pkr.hcl&lt;/code&gt;: the definition of the Packer job&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Regardons plus en détail &lt;code class=&quot;language-text&quot;&gt;ubuntu20.pkr.hcl&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;Let&apos;s look at &lt;code class=&quot;language-text&quot;&gt;ubuntu20.pkr.hcl&lt;/code&gt; in more detail:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;source &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;template&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   proxmox_url &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${var.proxmox_hostname}/api2/json&quot;&lt;/span&gt;&lt;/span&gt;
   username &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;proxmox_username
@@ -828,28 +828,28 @@ build &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Rien de bien compliqué là-dedans c&apos;est aussi l&apos;avantage en général des outils Hashicorp la configuration est très descriptive et donc compréhensible rapidement.
-On va renseigner les informations suivantes :&lt;/p&gt;
+&lt;p&gt;Nothing too complicated here — this is also generally the advantage of HashiCorp tools: the configuration is very descriptive and therefore quickly understandable.
+We will fill in the following information:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Des credentials pour le proxmox&lt;/li&gt;
-&lt;li&gt;Un peu de hardware pour le template (RAM, CPU, Disk etc...)&lt;/li&gt;
-&lt;li&gt;Une config pour le template (ID, nom, boot command , ssh cred etc...)&lt;/li&gt;
-&lt;li&gt;Un dossier pour la conf subiquity&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;On active cloud-init car sinon on ne peut pas set les IP via Terraform&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;On tweak un peu l&apos;image car on veut qu&apos;elle soit cloud-init ready&lt;/li&gt;
+&lt;li&gt;Credentials for Proxmox&lt;/li&gt;
+&lt;li&gt;Some hardware specs for the template (RAM, CPU, Disk, etc.)&lt;/li&gt;
+&lt;li&gt;A config for the template (ID, name, boot command, SSH credentials, etc.)&lt;/li&gt;
+&lt;li&gt;A folder for the Subiquity config&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;We enable cloud-init because otherwise we can&apos;t set IPs via Terraform&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;We tweak the image a bit because we want it to be cloud-init ready&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Justement concernant autoinstall depuis la version 20.04 preseed a été délaissé au profit de subiquity qui est (de mon point de vue) bien plus facile à utiliser car format yaml et s&apos;intègre très bien avec Packer. Ce qui donne deux fichiers :&lt;/p&gt;
+&lt;p&gt;Speaking of autoinstall — since version 20.04, preseed has been replaced by Subiquity which is (in my view) much easier to use as it uses YAML format and integrates very well with Packer. This gives us two files:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;meta-data&lt;/code&gt; : requis. Utilisé par le cloud vu qu&apos;on déploit en local on le laisse vide&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;user-data&lt;/code&gt; : l&apos;équivalent du preseed, utilise autoinstall&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;meta-data&lt;/code&gt;: required. Used by the cloud — since we&apos;re deploying locally we leave it empty&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;user-data&lt;/code&gt;: the equivalent of preseed, uses autoinstall&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Le fichier &lt;code class=&quot;language-text&quot;&gt;user-data&lt;/code&gt; en détail :&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;user-data&lt;/code&gt; file in detail:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-yml line-numbers&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#cloud-config&lt;/span&gt;
 &lt;span class=&quot;token key atrule&quot;&gt;autoinstall&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;token key atrule&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
   &lt;span class=&quot;token key atrule&quot;&gt;locale&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; en_US
   &lt;span class=&quot;token key atrule&quot;&gt;keyboard&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; fr
+    &lt;span class=&quot;token key atrule&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; us
   &lt;span class=&quot;token key atrule&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;token key atrule&quot;&gt;install-server&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
     &lt;span class=&quot;token key atrule&quot;&gt;allow-pw&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
@@ -865,10 +865,10 @@ On va renseigner les informations suivantes :&lt;/p&gt;
           &lt;span class=&quot;token key atrule&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; /bin/bash
           &lt;span class=&quot;token key atrule&quot;&gt;ssh_authorized_keys&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ssh&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEXrwiuUOCpWPvwOsGuF4K+aq1ufToGMi4ra/1omOZb&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Fichier de configuration ultra basique, on définit un seul user et deux confs pour le système. Les autres options peuvent être trouvées dans la &lt;a href=&quot;https://ubuntu.com/server/docs/install/autoinstall-reference&quot;&gt;doc&lt;/a&gt;&lt;br&gt;
-⚠️ Ce fichier est &quot;templatiser&quot; et redéfini via Terraform voir plus bas&lt;/p&gt;
-&lt;p&gt;On peut ensuite exécuter packer via Terraform pour avoir une seule et même exécution&lt;br&gt;
-Ce qui nous donne un template de qualité !
+&lt;p&gt;An extremely basic configuration file — we define a single user and two system configs. Other options can be found in the &lt;a href=&quot;https://ubuntu.com/server/docs/install/autoinstall-reference&quot;&gt;docs&lt;/a&gt;&lt;br&gt;
+⚠️ This file is &quot;templated&quot; and redefined via Terraform, see below&lt;/p&gt;
+&lt;p&gt;We can then run Packer via Terraform to have a single unified execution.&lt;br&gt;
+This gives us a quality template!
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; &quot;
@@ -901,30 +901,30 @@ Ce qui nous donne un template de qualité !
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&quot;terraform&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#terraform&quot; aria-label=&quot;terraform permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Terraform&lt;/h1&gt;
-&lt;p&gt;Il faut maintenant déployer notre template sous forme de VM, on va utiliser Terraform pour qui sera notre outil principal. &lt;strong&gt;Tout&lt;/strong&gt; passera par Terraform :&lt;/p&gt;
+&lt;p&gt;We now need to deploy our template as VMs — we&apos;ll use Terraform as our main tool. &lt;strong&gt;Everything&lt;/strong&gt; will go through Terraform:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;La création de fichier de conf pour Packer, Ansible et Terraform&lt;/li&gt;
-&lt;li&gt;L&apos;exécution de Packer&lt;/li&gt;
-&lt;li&gt;L&apos;exécution de Terraform bien sûr&lt;/li&gt;
-&lt;li&gt;L&apos;exécution d&apos;Ansible&lt;/li&gt;
+&lt;li&gt;Creating config files for Packer, Ansible, and Terraform&lt;/li&gt;
+&lt;li&gt;Running Packer&lt;/li&gt;
+&lt;li&gt;Running Terraform of course&lt;/li&gt;
+&lt;li&gt;Running Ansible&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;On installe &lt;a href=&quot;https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started&quot;&gt;Terraform&lt;/a&gt; puis on s&apos;attaque aux fichiers de configuration :&lt;/p&gt;
+&lt;p&gt;Install &lt;a href=&quot;https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started&quot;&gt;Terraform&lt;/a&gt; then let&apos;s tackle the configuration files:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── main.tf
 ├── output.tf
 ├── provider.tf
 ├── terraform.tfvars
 └── variables.tf&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Listons les fichiers Terraform :&lt;/p&gt;
+&lt;p&gt;Let&apos;s list the Terraform files:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;main.tf&lt;/code&gt; : On décrit notre déploiement, le fichier de job.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;output.tf&lt;/code&gt; : La sortie voulue lors de l&apos;exécution de Terraform apply (on va print les IP ici)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;provider.tf&lt;/code&gt; : On précise quel provider on utilise, ici proxmox. (voir &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;doc&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;terraform.tfvars&lt;/code&gt; : la définition des variables pour le main.tf (même principe que Packer)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.tf&lt;/code&gt; : la définition des variables par défaut (même principe que Packer)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;main.tf&lt;/code&gt;: We describe our deployment — the job file.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;output.tf&lt;/code&gt;: The desired output when running Terraform apply (we&apos;ll print the IPs here)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;provider.tf&lt;/code&gt;: We specify which provider we use, here Proxmox. (see &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;docs&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;terraform.tfvars&lt;/code&gt;: the variable definitions for main.tf (same principle as Packer)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;variables.tf&lt;/code&gt;: the default variable definitions (same principle as Packer)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Et on a des fichiers de template qui vont nous permettre de définir notre inventory ansible, groups_vars ansible, user-data de autoinstall etc...&lt;/p&gt;
-&lt;p&gt;Je vais juste décrire le fichier main.tf car les autres sont plutôt évident.
-On définit les variables pour l&apos;exécution future de packer :&lt;/p&gt;
+&lt;p&gt;And we have template files that will let us define our Ansible inventory, Ansible group_vars, autoinstall user-data, etc.&lt;/p&gt;
+&lt;p&gt;I&apos;ll just describe the main.tf file as the others are fairly self-explanatory.
+We define the variables for the future Packer execution:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;locals &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   template_folder &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${path.module}/${var.folder_packer}/${var.distrib_folder}&quot;&lt;/span&gt;&lt;/span&gt;
   packer_cfg &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -951,8 +951,8 @@ On définit les variables pour l&apos;exécution future de packer :&lt;/p&gt;
     PKR_VAR_user_password         &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user_password
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ici justement on définit le job packer avec l&apos;ensemble des paramètres souhaités (au final c&apos;est une exécution shell classique).&lt;br&gt;
-J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt pour l&apos;exécution Terraform. Également un script python pour supprimer le template créé par Packer (pas de ressource native donc obligé de &quot;hack&quot;) :&lt;/p&gt;
+&lt;p&gt;Here we define the Packer job with all the desired parameters (ultimately it&apos;s a standard shell execution).&lt;br&gt;
+I added a small sleep because sometimes the template wasn&apos;t ready for the Terraform execution. Also a Python script to delete the template created by Packer (no native resource so we have to &quot;hack&quot; it):&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;null_resource&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;packer_build&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local-exec&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     working_dir &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; local&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;template_folder
@@ -973,7 +973,7 @@ J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt
     local_file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;data
   &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;On redéfinit un master K3S par-dessus notre template (var.tamplate_vm_name), on remarque qu&apos;on doit préciser une dépendance pour que les tâches s&apos;exécutent dans le bon ordre. A noter aussi un script sh qui vérifiera que le déploiement cloud-init est bien fini sur le serveur :&lt;/p&gt;
+&lt;p&gt;We redefine a K3S master on top of our template (var.template_vm_name). Note that we need to specify a dependency so that tasks execute in the right order. Also note a shell script that will verify that the cloud-init deployment is fully finished on the server:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox_vm_qemu&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;proxmox_vm_master&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   count       &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; var&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;num_k3s_masters
   name        &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;k3s-master-${count.index}&quot;&lt;/span&gt;&lt;/span&gt;
@@ -1018,11 +1018,11 @@ J&apos;ai ajouté un petit sleep car parfois le template n&apos;était pas prêt
     null_resource&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;packer_build
   &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;On fera la même tâche pour les workers&lt;/p&gt;
-&lt;p&gt;Et ici on définit nos tâches de customisation de conf, c&apos;est à dire :&lt;/p&gt;
+&lt;p&gt;We&apos;ll do the same task for the workers.&lt;/p&gt;
+&lt;p&gt;And here we define our configuration customization tasks, namely:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Générer des fichiers de configuration pour la future exécution d&apos;ansible&lt;/li&gt;
-&lt;li&gt;Générer le user-data nécessaire à l&apos;autoinstall de packer (on modifie essentiellement le user/password)&lt;/li&gt;
+&lt;li&gt;Generate configuration files for the future Ansible execution&lt;/li&gt;
+&lt;li&gt;Generate the user-data needed for Packer&apos;s autoinstall (we mainly modify the user/password)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;data &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;template_file&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;cloud-init-user-data&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     template &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${file(&quot;&lt;/span&gt;&lt;/span&gt;$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;templates&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;user&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tpl&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;)}&quot;&lt;/span&gt;&lt;/span&gt;
@@ -1062,7 +1062,7 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
     content     &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${data.template_file.groups_vars_ansible.rendered}&quot;&lt;/span&gt;&lt;/span&gt;
     filename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;${path.module}/ansible/group_vars/all.yml&quot;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Et enfin le job ansible :&lt;/p&gt;
+&lt;p&gt;And finally the Ansible job:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-ruby line-numbers&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;null_resource&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ansible-playbook&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   provisioner &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;local-exec&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     command &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ansible-playbook -i ${var.inventory_file}  --private-key ${var.ssh_key_file} site.yml&quot;&lt;/span&gt;&lt;/span&gt;
@@ -1076,7 +1076,7 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
   &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&quot;ansible&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ansible&quot; aria-label=&quot;ansible permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ansible&lt;/h1&gt;
-&lt;p&gt;Le cluster K3S est déployer via ansible. En voici l&apos;arborescence :&lt;/p&gt;
+&lt;p&gt;The K3S cluster is deployed via Ansible. Here is the folder structure:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-text line-numbers&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ansible/
 ├── ansible.cfg
 ├── group_vars
@@ -1119,21 +1119,21 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
     │           ├── Raspbian.yml
     │           ├── Ubuntu.yml
     │           └── default.yml&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Voici les différents roles :&lt;/p&gt;
+&lt;p&gt;Here are the different roles:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;download&lt;/code&gt; : Télécharge la release de k3s&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;k3s&lt;/code&gt; : La configuration de k3s pour le master et les nodes (rien de bien compliqué)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;postconfig&lt;/code&gt; : On configure kubeconfig et installe helm en local sur le server/workstation exécutant le job ansible&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;prereq&lt;/code&gt; : On installe les prérequis K3S (netfilter, ip forwarding etc...)&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;raspberrypi&lt;/code&gt; : Un job spécifique si on est sous Raspberry PI&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;download&lt;/code&gt;: Downloads the K3s release&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;k3s&lt;/code&gt;: The K3s configuration for the master and nodes (nothing too complicated)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;postconfig&lt;/code&gt;: Configures kubeconfig and installs Helm locally on the server/workstation running the Ansible job&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;prereq&lt;/code&gt;: Installs K3S prerequisites (netfilter, IP forwarding, etc.)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;raspberrypi&lt;/code&gt;: A specific job if running on Raspberry Pi&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;A noter :&lt;/p&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Le fichier de group vars all.yml est généré via Terraform à partir de variables&lt;/li&gt;
-&lt;li&gt;Le fichier ansible.cfg peut être configurer à votre convenance&lt;/li&gt;
+&lt;li&gt;The group vars all.yml file is generated via Terraform from variables&lt;/li&gt;
+&lt;li&gt;The ansible.cfg file can be configured to your liking&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;On a donc créé un cluster K3s de 0 sans aucune interaction directe ou manuelle avec Proxmox, pas mal non ? En plus de cela tous est dynamique et flexible, il suffit de changer les conf 😉&lt;/p&gt;
+&lt;p&gt;We have created a K3s cluster from scratch with no direct or manual interaction with Proxmox — not bad right? On top of that everything is dynamic and flexible, you just need to change the config 😉&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 193px; &quot;
@@ -1162,50 +1162,50 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Vous pouvez reprendre ce &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;projet&lt;/a&gt; (qui lui-même est forké). Par rapport à son utilisation tout est expliqué dans le &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer/blob/main/terraform/README.md&quot;&gt;README&lt;/a&gt;  et consiste principalement à changer des variables Terraform.&lt;/p&gt;
-&lt;p&gt;Malgré tous cela il y a pas mal d&apos;axes d&apos;améliorations et problèmes inhérents à la solution choisie :&lt;/p&gt;
+&lt;p&gt;You can reuse this &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer&quot;&gt;project&lt;/a&gt; (which is itself forked). For usage instructions everything is explained in the &lt;a href=&quot;https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer/blob/main/terraform/README.md&quot;&gt;README&lt;/a&gt; and mainly consists of changing Terraform variables.&lt;/p&gt;
+&lt;p&gt;Despite all this there are quite a few areas for improvement and problems inherent to the chosen solution:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;On pourrait mettre les variables sensibles dans Vault (Outil Hashicorp) et un git qui à chaque push redéploit une image packer.&lt;/li&gt;
-&lt;li&gt;Il faudrait aussi créer les utilisateurs adaptés (Terraform &amp;#x26; Packer) avec les bons droits, voir ressource &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;Terraform&lt;/a&gt; par exemple.&lt;/li&gt;
-&lt;li&gt;Il faudrait que le job packer se termine au bon moment pour que le job Terraform ne se lance pas trop tôt (j&apos;ai un sleep 30 pour l&apos;instant)&lt;/li&gt;
-&lt;li&gt;Pas de provider packer natif donc on doit &quot;tricher&quot; pour supprimer le template&lt;/li&gt;
-&lt;li&gt;Terraform considère à un deuxième run que rien a changé et ne relance pas le job ansible (on peut tout de même le lancer à la main)&lt;/li&gt;
+&lt;li&gt;We could store sensitive variables in Vault (HashiCorp tool) and a git that redeploys a Packer image on each push.&lt;/li&gt;
+&lt;li&gt;We should also create appropriate users (Terraform &amp;#x26; Packer) with the right permissions — see the &lt;a href=&quot;https://registry.terraform.io/providers/Telmate/proxmox/latest/docs&quot;&gt;Terraform&lt;/a&gt; resource for example.&lt;/li&gt;
+&lt;li&gt;The Packer job should finish at the right moment so the Terraform job doesn&apos;t start too early (I currently have a sleep 30 in place)&lt;/li&gt;
+&lt;li&gt;No native Packer provider so we have to &quot;cheat&quot; to delete the template&lt;/li&gt;
+&lt;li&gt;Terraform considers on a second run that nothing has changed and doesn&apos;t re-run the Ansible job (you can still run it manually)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Bref il y a plein d&apos;autres moyens de faire et d&apos;améliorer ce pipeline, les outils HashiCorp sont quand même super pour cela !&lt;/p&gt;
+&lt;p&gt;In short there are plenty of other ways to do and improve this pipeline — HashiCorp tools are really great for that!&lt;/p&gt;
 &lt;h1 id=&quot;sources&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#sources&quot; aria-label=&quot;sources permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sources&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.aerialls.eu/posts/ubuntu-server-2004-image-packer-subiquity-for-proxmox/&quot;&gt;https://www.aerialls.eu/posts/ubuntu-server-2004-image-packer-subiquity-for-proxmox/&lt;/a&gt;&lt;br&gt;
 &lt;a href=&quot;https://tlhakhan.medium.com/ubuntu-server-20-04-autoinstall-2e5f772b655a&quot;&gt;https://tlhakhan.medium.com/ubuntu-server-20-04-autoinstall-2e5f772b655a&lt;/a&gt;&lt;br&gt;
 &lt;a href=&quot;https://stackoverflow.com/questions/72567455/running-cloud-init-twice-via-packer-terraform-on-vmware-ubuntu-22-04-guest&quot;&gt;https://stackoverflow.com/questions/72567455/running-cloud-init-twice-via-packer-terraform-on-vmware-ubuntu-22-04-guest&lt;/a&gt;&lt;br&gt;
 &lt;a href=&quot;https://salmonsec.com/blogs/home_lab_3#6-init-kubeadm-images-sh&quot;&gt;https://salmonsec.com/blogs/home_lab_3#6-init-kubeadm-images-sh&lt;/a&gt;&lt;br&gt;
 &lt;a href=&quot;https://github.com/blz-ea/proxmox-packer&quot;&gt;https://github.com/blz-ea/proxmox-packer&lt;/a&gt;&lt;br&gt;
-&lt;a href=&quot;https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5&quot;&gt;https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5&lt;/a&gt;&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Créer mon propre blog !]]></title><description><![CDATA[Je cherchais une bonne solution pour monter mon propre blog. Au début j'ai forcément réfléchis à des CMS classique tel que : Wordpress Drupal Grav etc... Mais je désirais aussi…]]></description><link>https://homelabeur.eu/creation-du-blog</link><guid isPermaLink="false">https://homelabeur.eu/creation-du-blog</guid><category><![CDATA[gatsby]]></category><category><![CDATA[jamstack]]></category><category><![CDATA[blog]]></category><pubDate>Thu, 14 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Je cherchais une bonne solution pour monter mon propre blog. Au début j&apos;ai forcément réfléchis à des CMS classique tel que :&lt;/p&gt;
+&lt;a href=&quot;https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5&quot;&gt;https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5&lt;/a&gt;&lt;/p&gt;</content:encoded><author>Homelabeur Inc.</author></item><item><title><![CDATA[Creating my own blog!]]></title><description><![CDATA[I was looking for a good solution to set up my own blog. At first I naturally thought about classic CMSs such as: Wordpress Drupal Grav, etc. But I also wanted something simple and…]]></description><link>https://homelabeur.eu/creating-blog</link><guid isPermaLink="false">https://homelabeur.eu/creating-blog</guid><category><![CDATA[gatsby]]></category><category><![CDATA[jamstack]]></category><category><![CDATA[blog]]></category><pubDate>Thu, 14 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I was looking for a good solution to set up my own blog. At first I naturally thought about classic CMSs such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Wordpress&lt;/li&gt;
 &lt;li&gt;Drupal&lt;/li&gt;
-&lt;li&gt;Grav etc...&lt;/li&gt;
+&lt;li&gt;Grav, etc.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Mais je désirais aussi avoir quelque chose de simple si possible et facile d&apos;utilisation car contenu blogging (pas de difficulté particulière). Un CMS tel que wordpress nécessite une base de donnée que j&apos;aimerai éviter au maximum mon site n&apos;hébergeant que des pages statiques. Si on peut éviter le PHP aussi c&apos;est pas mal :) (toujours source de faille de sécu entre autres choses).&lt;/p&gt;
-&lt;p&gt;C&apos;est là que j&apos;ai découvert JAMStack (JavaScript, APIs, and (HTML) Markup). Il build le site en amont et le met à disposition sur un CDN (ou n&apos;importe quel hoster) et en fait donc un site composé de pages statique ! Cela correspond totalement à mon besoin, on ajoute à ça quelques feature cool :&lt;/p&gt;
+&lt;p&gt;But I also wanted something simple and easy to use since the content is just blogging (no particular complexity). A CMS like WordPress requires a database which I&apos;d like to avoid as much as possible since my site only hosts static pages. Avoiding PHP is also a bonus 🙂 (always a source of security vulnerabilities among other things).&lt;/p&gt;
+&lt;p&gt;That&apos;s when I discovered JAMStack (JavaScript, APIs, and (HTML) Markup). It builds the site ahead of time and serves it on a CDN (or any host), making it a site composed of static pages! This perfectly matches my needs, and on top of that it comes with some cool features:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Pas besoin de database&lt;/li&gt;
-&lt;li&gt;Surface d&apos;attaque bien moins étendue, sécurité +++&lt;/li&gt;
-&lt;li&gt;Meilleur référencement&lt;/li&gt;
-&lt;li&gt;S’intègre super bien dans une pipeline CI/CD ou n&apos;importe quel process d&apos;automatisation (🤤)&lt;/li&gt;
-&lt;li&gt;Apparemment bien plus rapide qu&apos;un CMS traditionnel (vu que c&apos;est des pages statiques je veux bien le croire)&lt;/li&gt;
+&lt;li&gt;No database needed&lt;/li&gt;
+&lt;li&gt;Much smaller attack surface, security +++&lt;/li&gt;
+&lt;li&gt;Better SEO&lt;/li&gt;
+&lt;li&gt;Integrates really well into a CI/CD pipeline or any automation process (🤤)&lt;/li&gt;
+&lt;li&gt;Apparently much faster than a traditional CMS (since they&apos;re static pages I can believe it)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Plus d&apos;infos ici : &lt;a href=&quot;https://jamstack.org/&quot;&gt;https://jamstack.org/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Le truc c&apos;est que JAMStack n&apos;embarque aucune techno par défaut c&apos;est au développeur de choisir comment l&apos;implémenter. Je cherchais vers quel générateur JAMStack j&apos;allais choisir, il en existe plusieurs sur le marché :&lt;/p&gt;
+&lt;p&gt;More info here: &lt;a href=&quot;https://jamstack.org/&quot;&gt;https://jamstack.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The thing is, JAMStack doesn&apos;t come with any default technology — it&apos;s up to the developer to choose how to implement it. I was looking into which JAMStack generator to pick; there are several on the market:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Next.js&lt;/li&gt;
 &lt;li&gt;Jekyll&lt;/li&gt;
-&lt;li&gt;Gastby&lt;/li&gt;
+&lt;li&gt;Gatsby&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Et je suis tombé sur le post de ce &lt;a href=&quot;https://calvin.me/now-powered-by-gatsby&quot;&gt;blog&lt;/a&gt; qui explique pourquoi et comment il est passé de Jekyll à Gatsby et son cas d&apos;usage correspond totalement au mien (et j&apos;adore le design de son blog !)&lt;/p&gt;
-&lt;p&gt;J&apos;ai donc choisi les paramètres suivants :&lt;/p&gt;
+&lt;p&gt;And I came across this &lt;a href=&quot;https://calvin.me/now-powered-by-gatsby&quot;&gt;blog&lt;/a&gt; post explaining why and how he moved from Jekyll to Gatsby — his use case matches mine perfectly (and I love the design of his blog!)&lt;/p&gt;
+&lt;p&gt;I therefore chose the following setup:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Redaction du code en local sur VS-Studio code (j&apos;ai les plugins preview markdown etc...)&lt;/li&gt;
-&lt;li&gt;Je push une fois fini sur un de mes projets github&lt;/li&gt;
-&lt;li&gt;Le push trigger un build GitHub action (workflow dans le projets) qui héberge mon blog sur GitHub Pages&lt;/li&gt;
+&lt;li&gt;Writing code locally in VS Code (I have the markdown preview plugins, etc.)&lt;/li&gt;
+&lt;li&gt;I push once finished to one of my GitHub projects&lt;/li&gt;
+&lt;li&gt;The push triggers a GitHub Actions build (workflow in the project) that hosts my blog on GitHub Pages&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -1240,15 +1240,15 @@ resource &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Plusieurs avantages :&lt;/p&gt;
+&lt;p&gt;Several advantages:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Mon blog est centralisé et versionné (une ancienne version de ce post décrivait l&apos;ancienne façon d&apos;héberger via GatsbyCloud héhé)&lt;/li&gt;
-&lt;li&gt;Les utilisateurs peuvent collaborer sur les articles en soumettant un PR (dans les faits un simple edit du post sur GitHub)&lt;/li&gt;
-&lt;li&gt;J&apos;avais hésité à l&apos;héberger sur l&apos;infra maison mais vu que tout est déjà publique aucun problème à le faire héberger par un tiers&lt;/li&gt;
-&lt;li&gt;Tout passe par un seul hebergeur --&gt; Github&lt;/li&gt;
+&lt;li&gt;My blog is centralized and versioned (an older version of this post described the old way of hosting via GatsbyCloud hehe)&lt;/li&gt;
+&lt;li&gt;Users can collaborate on articles by submitting a PR (in practice a simple edit of the post on GitHub)&lt;/li&gt;
+&lt;li&gt;I had considered hosting it on my home infrastructure but since everything is already public there&apos;s no problem having it hosted by a third party&lt;/li&gt;
+&lt;li&gt;Everything goes through a single host --&gt; Github&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Et quelques inconvénients:&lt;/p&gt;
+&lt;p&gt;And a few disadvantages:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Je repose sur ce tiers pour le build et l&apos;exposition de mon blog (free version 25 build/jour)&lt;/li&gt;
-&lt;li&gt;Pas facile d&apos;utilisation (même si sur ce cas là j&apos;ai forké le projet de &lt;a href=&quot;https://github.com/calvinbui/calvin.me&quot;&gt;calvin&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;I rely on this third party for building and serving my blog (free version: 25 builds/day)&lt;/li&gt;
+&lt;li&gt;Not the easiest to use (though in this case I forked &lt;a href=&quot;https://github.com/calvinbui/calvin.me&quot;&gt;calvin&lt;/a&gt;&apos;s project)&lt;/li&gt;
 &lt;/ul&gt;</content:encoded><author>Homelabeur Inc.</author></item></channel></rss>
