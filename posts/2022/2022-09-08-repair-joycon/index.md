@@ -1,5 +1,5 @@
 ---
-title: Fix le "joycon drift" de ma switch
+title: Fix the "joycon drift" on my switch
 categories:
 - Gaming
 tags:
@@ -9,87 +9,87 @@ tags:
 thumbnail: thumbnail.svg
 ---
 
-# Contexte
+# Context
 
-C'est fait ! J'ai enfin eu le fameux joycon drift sur les deux joycons de ma switch. Pour rappel ce qu'est le joycon drit voir [ici](https://www.pocket-lint.com/fr-fr/jeux-video/actualites/nintendo/148751-comment-reparer-nintendo-switch-joy-con-drift).  
-Cela ne m'empêche pas réellement de jouer mais cela reste très pénible voir même parfois handicapant dans certains jeux, j'ai donc commencé à réfléchir à changer ou réparer mes joycons.
+Done! I finally got the infamous joycon drift on both joycons of my switch. As a reminder, for what joycon drift is, see [here](https://www.nintendo.com/en-gb/Support/Repair/Joy-Con-Control-Sticks-Are-Not-Responding-or-Respond-Incorrectly-responsiveness-syndrome-or-so-called-drifting--1867803.html).  
+It doesn't really prevent me from playing but it remains very annoying and sometimes even handicapping in certain games, so I started thinking about replacing or repairing my joycons.
 
-# Outils
+# Tools
 
-Forcément c'est un problème rencontré par tous les utilisateurs de la switch à un moment donné donc il existe une foison de tutoriels/vidéos sur internet.  
-Ce qui ressorti des ressources que j'ai pu consultées c'est qu'il me fallait deux tournevis spécifiques :
+Of course this is a problem encountered by all switch users at some point, so there are plenty of tutorials/videos on the internet.  
+What came out of the resources I consulted is that I needed two specific screwdrivers:
 - Y00 Triwing Screwdriver
 - PH000 Phillips Screwdriver
 
-Au début je voulais prendre uniquement ces deux tournevis et utiliser une feuille de papier cartonnée (type business card) qui est censée être placée juste en dessous du joycon. Mais j'ai eu du mal à trouver ces deux tournevis seuls (hors site chinois type Aliexpress par lesquels je ne veux pas passer...)  
-Je suis donc parti sur ce [pack](https://www.amazon.ca/gp/product/B08CS7DS5V/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) à 20 CAD soit environ 15€ ! Peut-être un peu cher mais là il y a tout dedans :
+At first I wanted to only get these two screwdrivers and use a piece of cardboard paper (like a business card) that is supposed to be placed just under the joycon. But I had trouble finding these two screwdrivers on their own (aside from Chinese sites like Aliexpress which I don't want to use...)  
+So I went with this [pack](https://www.amazon.ca/gp/product/B08CS7DS5V/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) for 20 CAD ! Maybe a little expensive but it has everything inside:
 - Y00 Triwing Screwdriver
 - PH000 Phillips Screwdriver
-- 4 joysticks neufs
-- Un tweezer
-- Un "Plastic crowbar" (pas trouvé le nom en français)
-- De la visserie en tout genre (ressort boutons L/R, Slider Lock, vis etc...)
-- De la cosmétique pour les joycons
+- 4 new joysticks
+- A tweezer
+- A "Plastic crowbar"
+- Various hardware (L/R button springs, Slider Lock, screws, etc.)
+- Cosmetics for the joycons
 
 ![](./full_box.jpg)
 
-# Réparation
+# Repair
 
-Ok maintenant qu'on est équipé il s'agit de passer à la pratique ! Pour cela il faut bien distinguer le joycon droit du gauche car ils sont montés différemment.  
-Je pense qu'il faut compter environ 30min pour les deux joycons pour être large.
+Ok now that we're equipped, it's time to get to work! To do this, you need to clearly distinguish the right joycon from the left one as they are assembled differently.  
+I think you should count about 30 minutes for both joycons to be safe.
 
-## Joycon droit
+## Right Joycon
 
-On va tout d'abord enlever les 4 vis entourées sur la photo ci-dessous :  
+We will first remove the 4 screws circled in the photo below:  
 
 ![](./first_screw.jpg)
 
-Une fois les 4 vis enlevées, passer le "plastic crowbar" dans la fente qui vient d'apparaître suite aux vis enlevées :
+Once the 4 screws are removed, slide the "plastic crowbar" into the gap that has appeared after removing the screws:
 
 ![](./unplug.jpg)
 
-Il suffit ensuite de **délicatement** ouvrir le joycon et en voici le contenu :  
+Then simply **carefully** open the joycon and here is its content:  
 
 ![](./fisrt_open.jpg)
 
-On peut remarquer que les deux parties sont reliées avec des câbles plats flexibles. Maintenant il faut retirer la batterie, légèrement pousser à l'endroit entouré en rouge.
+You can notice that the two parts are connected with flat flexible cables. Now you need to remove the battery, gently push at the area circled in red.
 
 ![](./remove_battery.jpg)
 
-Afin de donner ça :
+To get this:
 
 ![](./without_battery.jpg)
 
-A partir de ce point il va falloir enlever les 5 vis entourées pour pouvoir retirer le cache de la batterie :
+From this point you will need to remove the 5 circled screws to be able to remove the battery cover:
 
 ![](./without_battery_cache.jpg)
 
-C'est ici que la partie la plus technique va s'opérer. Il va falloir dans un premier temps retirer les 3 câbles plats entourés par un carré rouge. Pour faire cela il faut réaliser les deux tâches suivantes :
-- Relever le petit ergot noir (ou gris pour le carré n°1)
-- Avec les doigts ou le tweezer délicatement retirer le câble
+This is where the most technical part will take place. First you will need to remove the 3 flat cables circled with a red square. To do this you need to perform the following two tasks:
+- Lift the small black tab (or grey for square #1)
+- With your fingers or the tweezer, carefully remove the cable
 
-Puis retirer les deux vis entourées ce qui va libérer le joycon et vous pourrez mettre à sa place un des nouveaux joycon.  
+Then remove the two circled screws which will free the joystick and you can put one of the new joysticks in its place.  
 
-Et voilà ! Il "suffit" de faire toutes les opérations précédentes à l'envers et ainsi remonter le joycon. Attention pour mettre le câble plat je recommande vivement d'utiliser le tweezer afin d'être plus précis :
+And that's it! You just need to do all the previous operations in reverse and reassemble the joycon. Note that when inserting the flat cable I strongly recommend using the tweezer to be more precise:
 
 ![](./tweezer_ex.jpg)
 
-Pas besoin d'enfoncer jusqu'au bout, une fois réenfoncé il faut descendre l'ergot en plastique relevé précédemment.
+No need to push all the way in, once re-inserted you need to lower the plastic tab that was previously raised.
 
-NB : Il n'est pas impossible que le bouton L/R vienne à s'échapper (à droite sur la photo ci-dessus), il faut le reclipser avant de remonter la coque qui a été enlevée lors de la première étape.
+NB: It's possible that the L/R button may escape (on the right in the photo above), you need to re-clip it before reassembling the shell that was removed in the first step.
 
-## Joycon gauche
+## Left Joycon
 
-Le joycon gauche est légèrement différent du droit. En voici les différences :
+The left joycon is slightly different from the right one. Here are the differences:
 
 ![](./left_joycon.jpg)
 
-Retirer les 3 vis entourées ci-dessus. Une fois le cache de la batterie enlevé voilà ce que ça donne :
+Remove the 3 screws circled above. Once the battery cover is removed, here is what it looks like:
 
 ![](left_joycon_explode.jpg)
 
-Retirer les deux câbles plats entourés ci-dessus puis les deux vis entourées. Et voilà !
+Remove the two flat cables circled above then the two circled screws. And that's it!
 
 # Conclusion
 
-Rien de bien compliqué dans ce changement de sticks sur les joycons, il faut juste être minutieux et bien équipé ! 
+Nothing too complicated in this joystick replacement on the joycons, you just need to be meticulous and well-equipped! 

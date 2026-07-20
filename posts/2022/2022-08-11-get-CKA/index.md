@@ -1,5 +1,5 @@
 ---
-title: Retour d'expérience sur la certification CKA
+title: Feedback on the CKA certification
 categories:
 - Infra
 tags:
@@ -9,99 +9,99 @@ tags:
 thumbnail: thumbnail.svg
 ---
 
-Mon entreprise a pu cette année me financer la Certified Kubernetes Administrator (CKA), obtenue avec succès il y a quelques jours c'est l'occasion pour moi de faire un petit retour d'expérience !
+My company was able to fund the Certified Kubernetes Administrator (CKA) for me this year. Having passed it successfully a few days ago, it's a good opportunity to share my experience!
 
-# Contexte
+# Context
 
-Tout d'abord il faut savoir qu'il n'existe que 4 certifications Kubernetes officielles :
+First of all, it's worth knowing that there are only 4 official Kubernetes certifications:
 - Kubernetes and Cloud Native Associate (KCNA)
 - Certified Kubernetes Application Developer (CKAD)
 - Certified Kubernetes Administrator (CKA)
 - Certified Kubernetes Security Specialist (CKS)
 
-Celle qui correspond le plus à mon profil et ce que je sais faire est la CKA.
-Elle coûte environ 400$ et possède les avantages suivants :
-- Un certain nombre de ressources sur Kubernetes (rien d'exceptionnel)
-- Deux examens blancs (identiques cependant) pour se préparer
-- Des accès à des plateformes d'entrainement et de scénario divers
-- L'accès à certification en elle-même
+The one that best matches my profile and skill set is the CKA.
+It costs around $400 and comes with the following:
+- A number of Kubernetes resources (nothing exceptional)
+- Two mock exams (identical though) to prepare
+- Access to training platforms and various scenario labs
+- Access to the certification itself
 
-Afin d'obtenir la certification il "suffit" d'avoir 66% de réponse correcte le jour de l'examen.  
-Les réponses ne sont pas de type QCM mais plus en mode TP, il faut "réaliser" l'exercice sur un environnement Kubernetes.  
-L'examen se décompose de la façon suivante :
+To obtain the certification you "simply" need to score 66% correct answers on exam day.  
+The answers are not multiple choice but more hands-on — you need to "complete" the exercise on a Kubernetes environment.  
+The exam breaks down as follows:
 - Storage 10%
 - Troubleshooting 30%
 - Workloads & Scheduling 15%
 - Cluster Architecture, Installation & Configuration 25%
 - Services & Networking 20%
 
-# Se préparer
+# Preparing
 
-Etant donné que je n'ai jamais eu de réelle expérience professionnelle de Kubernetes je n'ai pas pris cette certification à la légère, j'ai acheté deux formations sur Udemy pour préparer cet examen :
-- Certified Kubernetes Administrator (CKA) with Practice Tests (~13€)
-- Kubernetes for the Absolute Beginners (~13€)
+Since I never had any real professional experience with Kubernetes I didn't take this certification lightly — I bought two courses on Udemy to prepare for this exam:
+- Certified Kubernetes Administrator (CKA) with Practice Tests (~20$)
+- Kubernetes for the Absolute Beginners (~20$)
 
-Ces formations comprennent :
-- Les cours en vidéo de 3 à 20 minutes chacune
-- Des résumés PDF des chapitres étudiés (honnêtement pas terrible les PDF)
-- Accès à une plateforme d'entrainement scénarisée selon les chapitres
-- Quelques examens blancs (ne représente pas les conditions de l'examen cependant)
+These courses include:
+- Video lessons ranging from 3 to 20 minutes each
+- PDF summaries of the studied chapters (honestly not great)
+- Access to a scenario-based training platform organized by chapter
+- A few mock exams (though they don't replicate actual exam conditions)
 
-Franchement je n'attendais pas grand-chose de ces formations notamment par rapport au prix investi mais j'ai vraiment été agréablement surpris ! (Comme quoi ne pas juger une formation en fonction du prix).  
-Par contre si j'avais su je n'aurais peut-être pas pris la formation "Kubernetes for the Absolute Beginners" qui est reprise en entier ou presque dans la formation "Certified Kubernetes Administrator (CKA) with Practice Tests".  
+Honestly I wasn't expecting much from these courses given the price, but I was genuinely pleasantly surprised! (Goes to show you shouldn't judge a course by its price.)  
+That said, had I known, I might not have bought the "Kubernetes for the Absolute Beginners" course since it is almost entirely covered in the "Certified Kubernetes Administrator (CKA) with Practice Tests" course.
 
-Pour ceux qui ne veulent pas débourser de l'argent pour cela je conseille les vidéos de Xavki sur YouTube dans la playlist Kubernetes. Elle ne prépare pas en tant que tel pour la certification mais ses vidéos sont vraiment de qualité et vont plus loin que le périmètre de la certification.
+For those who don't want to spend money on this, I recommend Xavki's videos on YouTube in the Kubernetes playlist. It doesn't prepare you specifically for the certification but the videos are really high quality and go beyond the certification scope.
 
-Ensuite je conseille les liens suivants qui m'ont été utile pour fignoler ma préparation :
-- https://kubernetes.io/docs : fait partie des rares sites autorisés le jour de l'examen, je conseille de bien s'approprier le site afin de perdre le moins de temps possible le jour J.
-- https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad : concerne les détails pratique de l'examen (comment cela se passe, la plateforme utilisé etc...)
-- https://github.com/StenlyTU/K8s-training-official : un repo d'exercices en lien avec les topics CKA
+Here are some links that were useful to me for polishing my preparation:
+- https://kubernetes.io/docs : one of the few sites allowed on exam day — I strongly recommend getting familiar with it to lose as little time as possible on the day.
+- https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad : covers the practical details of the exam (how it works, the platform used, etc.)
+- https://github.com/StenlyTU/K8s-training-official : a repository of exercises related to CKA topics
 
-Je conseille plus que vivement d'utiliser la plateforme d'examen blanc fourni par le site killer.sh  
-Elle propose des conditions d'examen **identiques** et permet donc d'avoir une première approche de ce qu'il sera proposé le jour J.  
-Personnellement je n'ai eu que 75/125 soit seulement 60% donc en dessous des 66% demandé. MAIS :
-- Les questions sont plus difficiles que celles du vrai examen
-- Elles sont également plus nombreuses (25 au lieu de 17) pour le même temps (2h)
+I highly recommend using the mock exam platform provided by killer.sh.  
+It offers **identical** exam conditions and gives you a first taste of what will be presented on the day.  
+Personally I only scored 75/125, which is 60% — below the required 66%. BUT:
+- The questions are harder than those in the real exam
+- There are also more of them (25 instead of 17) for the same duration (2h)
 
-En lisant quelques sub reddit je me suis rendu compte que je n'étais pas seul dans ce cas et que 75pts restait finalement un bon score.
-
-
+Reading a few subreddits I realized I wasn't alone in this situation and that 75 points was actually a decent score.
 
 
-Enfin voici quelques conseils que j'ai pu trouver ici et là sur internet.  
-Ajouter des variables bash pour aller plus vite :
+
+
+Finally, here are a few tips I found here and there online.  
+Add bash variables to work faster:
 ```
 export do="--dry-run=client -o yaml"
 export now="--force --grace-period 0"
 ```
 
-Ces deux variables peuvent être ajoutées à la fin des commandes kubectl pour créer un fichier ou supprimer un pod plus rapidement.  
+These two variables can be appended to kubectl commands to create a file or delete a pod more quickly.  
 Ex: `kubectl run nginx --image nginx $do > pod.yml`  
 
-Bien étudier ce workflow qui détaille comment troubleshoot une partie des ressources K8S, cela représente 30% de la note tout de même :
+Study this workflow carefully — it details how to troubleshoot some K8s resources, which accounts for 30% of the score:
 ![](./workflow_troubleshoot.jpeg)
 
-# L'examen en lui même
+# The exam itself
 
-Une fois qu'une date sera choisie il faudra respecter les conditions suivantes le jour J :
-- Avoir une webcam (externe ou interne)
-- Avoir une pièce d'identité non expirée (permis de conduire, passeport, CNI etc...)
-- Être dans une pièce isolée où être seul et au calme
+Once a date has been chosen, you will need to meet the following conditions on exam day:
+- Have a webcam (external or built-in)
+- Have a non-expired ID (driver's license, passport, national ID card, etc.)
+- Be in an isolated room, alone and in a quiet environment
 
-Bien vérifier également que la webcam puisse filmer la pièce d'identité **distinctement** (c'est très important !).  
+Also make sure the webcam can film your ID **clearly** (this is very important!).  
 
-Il faut se connecter jusqu'à 30min avant, une fois cela fait il sera possible de télécharger un logiciel qui fera office de plateforme d'examen (attention 300Mo dans mon cas).  
-Une fois téléchargé et installé il faudra prendre une photo de soi-même via la webcam et une photo de notre pièce d'identité, cela enclenchera la vérification par un instructeur.  
-La vérification dans mon cas n'a pas duré très longtemps, cela effectué l'instructeur demandera de filmer la pièce afin de vérifier que tout est ok et qu'il n'y a rien d'interdit à proximité.  
-Dans mon cas on m'a demandé de poser mon téléphone dans le champ de la caméra mais hors de portée et d'enlever le plastique de ma bouteille d'eau !
-Lorsque toutes ces vérifications sont terminées on peut enfin commencer l'examen ! Comme vu précédemment l'environnement est exactement le même que killer.sh mais en plus simple.  
-A part un ou deux écueils je n'ai pas trouvé l'examen très complexe.
+You need to connect up to 30 minutes before, after which you will be able to download a piece of software that serves as the exam platform (note: 300MB in my case).  
+Once downloaded and installed you will need to take a photo of yourself via the webcam and a photo of your ID, which will trigger verification by a proctor.  
+In my case the verification didn't take very long — once done, the proctor will ask you to film the room to verify everything is in order and that there is nothing prohibited nearby.  
+In my case I was asked to place my phone in the camera's field of view but out of reach, and to remove the plastic wrapper from my water bottle!  
+Once all these checks are complete you can finally start the exam! As mentioned earlier the environment is exactly the same as killer.sh but simpler.  
+Apart from one or two hiccups I didn't find the exam very complex.
 
-On obtient le résultat au bout de 24h max, pour moi j'ai réussi à l'obtenir avec 83% donc ça passe 🙂
+You get the result within 24 hours at most — I passed with 83%, so all good 🙂
 
 # Conclusion
 
-Je doutais un peu que la certification m'apporte réellement quelque chose mais finalement afin de l'obtenir je me suis vraiment investi et cela m'a apporté des connaissances théoriques sur la techno.  
-Cela me donne un véritable vernis de base lorsqu'il sera question de Kubernetes.
+I had some doubts about whether the certification would really bring me anything, but in the end the effort I put in to obtain it gave me solid theoretical knowledge of the technology.  
+It gives me a genuine foundation when it comes to Kubernetes.
 
-Ceci dit cela ne remplacera jamais l'expérience "sur le terrain" selon moi et la certification ne vient qu'en complément. J'ai donc hâte de pouvoir mettre en pratique les connaissances acquises ! 🤞
+That said, in my opinion it will never replace real hands-on experience, and the certification is only a complement. So I'm eager to put the acquired knowledge into practice! 🤞

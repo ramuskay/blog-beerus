@@ -1,5 +1,5 @@
 ---
-title: Déployer son infra K3S sur Proxmox en mode IaC
+title: Deploy your K3S infrastructure on Proxmox in IaC mode
 categories:
 - Infra
 tags:
@@ -14,53 +14,53 @@ thumbnail: thumbnail.svg
 
 # Architecture
 
-Je suis en train de préparer la Certified Kubernetes Administrator (CKA) et il me faudrait un lab pour m'exercer. J'ai pas mal fait de Kubernetes classique en lab via des formations Udemy et j'aimerai tester autre chose mais toujours sur une base K8S.
-Je me suis penché sur K3S de Rancher. Il dispose de plusieurs qualités qui me semble intéressantes :
-- Il est léger et plus rapide que K8s
-- Il peut s'exécuter sur du plus petit matériel (proc ARM par ex 🥰). J'ai comme projet potentiel de faire un cluster de raspberry donc K3S est plus qu'indiqué.
-- Il ne dispose pas de tous les connecteurs cloud mais vu que ça sera du "on premise" dans mon cas c'est parfait.
-- Plein de petits avantages : + facile et rapide à déployer, moins de surface d'attaque, facile à update etc...
+I'm preparing for the Certified Kubernetes Administrator (CKA) and I needed a lab to practice. I've done quite a bit of standard Kubernetes in lab environments through Udemy courses and I wanted to try something different but still K8S-based.
+I looked into K3S from Rancher. It has several qualities that seem interesting to me:
+- It is lighter and faster than K8s
+- It can run on smaller hardware (ARM processors for example 🥰). I have a potential project to build a Raspberry Pi cluster so K3S is more than suitable.
+- It doesn't have all the cloud connectors but since it will be "on premise" in my case that's perfect.
+- Lots of small advantages: easier and faster to deploy, smaller attack surface, easy to update, etc.
 
-Par contre il ne fait pas tourner docker nativement mais containerd (bien que j'ai vu un projet passer s'appelant k3d qui intègre docker), ça sera l'occasion d'apprendre autre chose surtout que le CRI (Container Runtime Interface) en soi n'est pas le plus important.
+On the other hand it doesn't run docker natively but containerd (although I came across a project called k3d that integrates docker) — it will be an opportunity to learn something different, especially since the CRI (Container Runtime Interface) itself is not the most important thing to me.
 
-Une fois mon choix d'orchestrateur choisi je me suis dit que j'allais installer mon cluster K3s sur mon lab maison qui exécute un Proxmox et tant qu'à faire autant avoir un workflow de déploiement un peu évolué pour s'exercer.
+Once I had chosen my orchestrator I decided to install my K3s cluster on my home lab running Proxmox, and while I was at it I might as well have a more advanced deployment workflow to practice with.
 
-Parmi toutes les ressources que j'ai pu voir le workflow qui me semblait au départ le plus intéressant faisait les choses suivantes :
-- Récupération de l'ISO Ubuntu 20 sur Proxmox
-- Création du template Proxmox "à la main" via des commandes qm (cli proxmox)
-- Configuration de cloud init via l'onglet promox dédié
-- Création des VM via Terraform
-- Ansible pour déployer K3s sur mes nouvelles VM
+Among all the resources I found, the workflow that seemed most interesting at first did the following:
+- Downloading the Ubuntu 20 ISO on Proxmox
+- Creating the Proxmox template "by hand" via qm commands (Proxmox CLI)
+- Configuring cloud init via the dedicated Proxmox tab
+- Creating VMs via Terraform
+- Ansible to deploy K3s on the new VMs
 
-Cela paraissait sympa sur le papier et puis ça permettait de mettre en application les quelques connaissances Terraform dont je disposais.
-Mais à bien réfléchir il y avait quand même deux problèmes dans ce process :
-- Une partie manuelle qui cassait un peu l'automatisation voulue. Si je pouvais automatiser cela je serais vraiment dans un cas d'IaC (**Infra As Code**)
-- Pas très flexible car si je veux customiser mon template ça sera à la main aussi ou à la limite via script bash
+It looked good on paper and allowed me to apply the Terraform knowledge I had.
+But thinking about it more carefully there were still two problems with this process:
+- A manual part that somewhat broke the desired automation. If I could automate this I would truly be in an IaC (**Infrastructure As Code**) scenario
+- Not very flexible because if I want to customize my template it would also be done manually or at best via a bash script
 
-C'est là que je suis tombé sur un autre outil d'Hashicorp qui fait tout ce travail manuel pour moi et dispose de la flexibilité voulue : Packer !
+That's when I came across another Hashicorp tool that does all this manual work for me and has the desired flexibility: Packer!
 
-</br>Voici les deux workflows qui sont ressortis au final :
+</br>Here are the two workflows that emerged in the end:
 
-- Création du template --> Cloud init --> Terraform --> Ansible --> K3S  
+- Template creation --> Cloud init --> Terraform --> Ansible --> K3S  
 - **Packer (+Cloud init) --> Terraform --> Ansible --> K3S**
 
-J'ai donc choisi le deuxième worflow  
-Avantages :
-- Infra as code - Full automatisée
-- Pas d'interaction directe avec Proxmox, seulement via son API
-- Peut donc être piloté depuis une machine tierce
+I therefore chose the second workflow  
+Advantages:
+- Infrastructure as code - Fully automated
+- No direct interaction with Proxmox, only via its API
+- Can therefore be driven from a third-party machine
 
-⚠️ Inconvénients :
-- Nécessite plus de développement et de temps pour un résultat équivalent dans mon cas (installation d'un potentiel DHCP, création du fichier de conf packer etc...)
-- Temps d'exécution de création du template plus long
+⚠️ Disadvantages:
+- Requires more development and time for an equivalent result in my case (setting up a potential DHCP, creating the packer config file, etc.)
+- Longer template creation execution time
 
-Retrouver l'ensemble du projet sur ce git : https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer
+Find the entire project on this git: https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer
 
 # Packer
 
-Je vais donc utiliser packer pour packager mon image Ubuntu 20.04 avec quelques packages et confs additionnelles. Il suffit d'installer [packer](https://www.packer.io/downloads) puis nous verrons les fichiers de configuration.  
-D'ailleurs dans mon cas pas besoin de DHCP, celui de ma box avec ma VM template en mode bridge sera largement suffisant.  
-Voici mon arborescence packer pour la config :
+I'm going to use Packer to package my Ubuntu 20.04 image with some additional packages and configurations. Simply install [packer](https://www.packer.io/downloads) then we'll look at the configuration files.  
+In my case no DHCP is needed — the one from my router with my template VM in bridge mode will be more than sufficient.  
+Here is my Packer folder structure for the config:
 ```
 ├── http
 │   ├── meta-data
@@ -69,15 +69,15 @@ Voici mon arborescence packer pour la config :
 └── variables.pkr.hcl
 ```
 
-Les fichiers de conf peuvent être en json ou HCL (format hashicorp), j'ai choisi HCL à la place de JSON pour deux raisons :
-- Langage commun avec tous les outils HashiCorp (vu qu'on va aussi utiliser Terraform ça a du sens)
-- Plus "fonctionnel", on peut par exemple mettre des commentaires (dans JSON non ça fera toujours partie de la data)
+The config files can be in JSON or HCL (HashiCorp format). I chose HCL over JSON for two reasons:
+- Common language across all HashiCorp tools (since we'll also be using Terraform it makes sense)
+- More "functional" — you can add comments for example (which you can't in JSON as it would always be part of the data)
 
-On a donc 2 fichiers hcl concernant :
-- `variables.pkr.hcl` : la définition des variables par défaut
-- `ubuntu20.pkr.hcl` : la définition du job packer
+We therefore have 2 HCL files covering:
+- `variables.pkr.hcl`: the definition of default variables
+- `ubuntu20.pkr.hcl`: the definition of the Packer job
 
-Regardons plus en détail `ubuntu20.pkr.hcl` :
+Let's look at `ubuntu20.pkr.hcl` in more detail:
 
 ```ruby
 source "proxmox" "template" {
@@ -133,27 +133,27 @@ build {
   }
 }
 ```
-Rien de bien compliqué là-dedans c'est aussi l'avantage en général des outils Hashicorp la configuration est très descriptive et donc compréhensible rapidement.
-On va renseigner les informations suivantes :
-- Des credentials pour le proxmox
-- Un peu de hardware pour le template (RAM, CPU, Disk etc...)
-- Une config pour le template (ID, nom, boot command , ssh cred etc...)
-- Un dossier pour la conf subiquity
-- **On active cloud-init car sinon on ne peut pas set les IP via Terraform**
-- On tweak un peu l'image car on veut qu'elle soit cloud-init ready
+Nothing too complicated here — this is also generally the advantage of HashiCorp tools: the configuration is very descriptive and therefore quickly understandable.
+We will fill in the following information:
+- Credentials for Proxmox
+- Some hardware specs for the template (RAM, CPU, Disk, etc.)
+- A config for the template (ID, name, boot command, SSH credentials, etc.)
+- A folder for the Subiquity config
+- **We enable cloud-init because otherwise we can't set IPs via Terraform**
+- We tweak the image a bit because we want it to be cloud-init ready
 
-Justement concernant autoinstall depuis la version 20.04 preseed a été délaissé au profit de subiquity qui est (de mon point de vue) bien plus facile à utiliser car format yaml et s'intègre très bien avec Packer. Ce qui donne deux fichiers :
-- `meta-data` : requis. Utilisé par le cloud vu qu'on déploit en local on le laisse vide
-- `user-data` : l'équivalent du preseed, utilise autoinstall
+Speaking of autoinstall — since version 20.04, preseed has been replaced by Subiquity which is (in my view) much easier to use as it uses YAML format and integrates very well with Packer. This gives us two files:
+- `meta-data`: required. Used by the cloud — since we're deploying locally we leave it empty
+- `user-data`: the equivalent of preseed, uses autoinstall
 
-Le fichier `user-data` en détail :
+The `user-data` file in detail:
 ```yml
 #cloud-config
 autoinstall:
   version: 1
   locale: en_US
   keyboard:
-    layout: fr
+    layout: us
   ssh:
     install-server: true
     allow-pw: true
@@ -171,22 +171,22 @@ autoinstall:
             - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEXrwiuUOCpWPvwOsGuF4K+aq1ufToGMi4ra/1omOZb
 ```
 
-Fichier de configuration ultra basique, on définit un seul user et deux confs pour le système. Les autres options peuvent être trouvées dans la [doc](https://ubuntu.com/server/docs/install/autoinstall-reference)  
-⚠️ Ce fichier est "templatiser" et redéfini via Terraform voir plus bas
+An extremely basic configuration file — we define a single user and two system configs. Other options can be found in the [docs](https://ubuntu.com/server/docs/install/autoinstall-reference)  
+⚠️ This file is "templated" and redefined via Terraform, see below
 
-On peut ensuite exécuter packer via Terraform pour avoir une seule et même exécution  
-Ce qui nous donne un template de qualité !
+We can then run Packer via Terraform to have a single unified execution.  
+This gives us a quality template!
 ![](./template-proxmox.png)
 
 # Terraform
 
-Il faut maintenant déployer notre template sous forme de VM, on va utiliser Terraform pour qui sera notre outil principal. **Tout** passera par Terraform :
-- La création de fichier de conf pour Packer, Ansible et Terraform
-- L'exécution de Packer
-- L'exécution de Terraform bien sûr
-- L'exécution d'Ansible
+We now need to deploy our template as VMs — we'll use Terraform as our main tool. **Everything** will go through Terraform:
+- Creating config files for Packer, Ansible, and Terraform
+- Running Packer
+- Running Terraform of course
+- Running Ansible
 
-On installe [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started) puis on s'attaque aux fichiers de configuration :
+Install [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started) then let's tackle the configuration files:
 ```
 ├── main.tf
 ├── output.tf
@@ -195,17 +195,17 @@ On installe [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-
 └── variables.tf
 ```
 
-Listons les fichiers Terraform :
-- `main.tf` : On décrit notre déploiement, le fichier de job.
-- `output.tf` : La sortie voulue lors de l'exécution de Terraform apply (on va print les IP ici)
-- `provider.tf` : On précise quel provider on utilise, ici proxmox. (voir [doc](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs))
-- `terraform.tfvars` : la définition des variables pour le main.tf (même principe que Packer)
-- `variables.tf` : la définition des variables par défaut (même principe que Packer)
+Let's list the Terraform files:
+- `main.tf`: We describe our deployment — the job file.
+- `output.tf`: The desired output when running Terraform apply (we'll print the IPs here)
+- `provider.tf`: We specify which provider we use, here Proxmox. (see [docs](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs))
+- `terraform.tfvars`: the variable definitions for main.tf (same principle as Packer)
+- `variables.tf`: the default variable definitions (same principle as Packer)
 
-Et on a des fichiers de template qui vont nous permettre de définir notre inventory ansible, groups_vars ansible, user-data de autoinstall etc...
+And we have template files that will let us define our Ansible inventory, Ansible group_vars, autoinstall user-data, etc.
 
-Je vais juste décrire le fichier main.tf car les autres sont plutôt évident.
-On définit les variables pour l'exécution future de packer :
+I'll just describe the main.tf file as the others are fairly self-explanatory.
+We define the variables for the future Packer execution:
 
 ```ruby
 locals {
@@ -235,8 +235,8 @@ locals {
   }
 }
 ```
-Ici justement on définit le job packer avec l'ensemble des paramètres souhaités (au final c'est une exécution shell classique).  
-J'ai ajouté un petit sleep car parfois le template n'était pas prêt pour l'exécution Terraform. Également un script python pour supprimer le template créé par Packer (pas de ressource native donc obligé de "hack") :
+Here we define the Packer job with all the desired parameters (ultimately it's a standard shell execution).  
+I added a small sleep because sometimes the template wasn't ready for the Terraform execution. Also a Python script to delete the template created by Packer (no native resource so we have to "hack" it):
 ```ruby
 resource "null_resource" "packer_build" {
     provisioner "local-exec" {
@@ -260,7 +260,7 @@ resource "null_resource" "packer_build" {
 }
 ```
 
-On redéfinit un master K3S par-dessus notre template (var.tamplate_vm_name), on remarque qu'on doit préciser une dépendance pour que les tâches s'exécutent dans le bon ordre. A noter aussi un script sh qui vérifiera que le déploiement cloud-init est bien fini sur le serveur :
+We redefine a K3S master on top of our template (var.template_vm_name). Note that we need to specify a dependency so that tasks execute in the right order. Also note a shell script that will verify that the cloud-init deployment is fully finished on the server:
 ```ruby
 resource "proxmox_vm_qemu" "proxmox_vm_master" {
   count       = var.num_k3s_masters
@@ -308,11 +308,11 @@ resource "proxmox_vm_qemu" "proxmox_vm_master" {
 }
 ```
 
-On fera la même tâche pour les workers
+We'll do the same task for the workers.
 
-Et ici on définit nos tâches de customisation de conf, c'est à dire :
-- Générer des fichiers de configuration pour la future exécution d'ansible
-- Générer le user-data nécessaire à l'autoinstall de packer (on modifie essentiellement le user/password)
+And here we define our configuration customization tasks, namely:
+- Generate configuration files for the future Ansible execution
+- Generate the user-data needed for Packer's autoinstall (we mainly modify the user/password)
 
 ```ruby
 data "template_file" "cloud-init-user-data" {
@@ -354,7 +354,7 @@ resource "local_file" "groups_vars_ansible" {
     filename = "${path.module}/ansible/group_vars/all.yml"
 }
 ```
-Et enfin le job ansible :
+And finally the Ansible job:
 
 ```ruby
 resource "null_resource" "ansible-playbook" {
@@ -373,7 +373,7 @@ resource "null_resource" "ansible-playbook" {
 
 # Ansible
 
-Le cluster K3S est déployer via ansible. En voici l'arborescence :
+The K3S cluster is deployed via Ansible. Here is the folder structure:
 ```
 ansible/
 ├── ansible.cfg
@@ -419,34 +419,34 @@ ansible/
     │           └── default.yml
 ```
 
-Voici les différents roles :
-- `download` : Télécharge la release de k3s
-- `k3s` : La configuration de k3s pour le master et les nodes (rien de bien compliqué)
-- `postconfig` : On configure kubeconfig et installe helm en local sur le server/workstation exécutant le job ansible
-- `prereq` : On installe les prérequis K3S (netfilter, ip forwarding etc...)
-- `raspberrypi` : Un job spécifique si on est sous Raspberry PI
+Here are the different roles:
+- `download`: Downloads the K3s release
+- `k3s`: The K3s configuration for the master and nodes (nothing too complicated)
+- `postconfig`: Configures kubeconfig and installs Helm locally on the server/workstation running the Ansible job
+- `prereq`: Installs K3S prerequisites (netfilter, IP forwarding, etc.)
+- `raspberrypi`: A specific job if running on Raspberry Pi
 
-A noter :
-- Le fichier de group vars all.yml est généré via Terraform à partir de variables
-- Le fichier ansible.cfg peut être configurer à votre convenance
+Notes:
+- The group vars all.yml file is generated via Terraform from variables
+- The ansible.cfg file can be configured to your liking
 
 
 # Conclusion
-On a donc créé un cluster K3s de 0 sans aucune interaction directe ou manuelle avec Proxmox, pas mal non ? En plus de cela tous est dynamique et flexible, il suffit de changer les conf 😉
+We have created a K3s cluster from scratch with no direct or manual interaction with Proxmox — not bad right? On top of that everything is dynamic and flexible, you just need to change the config 😉
 
 ![](./final_promox.png)
 
 
-Vous pouvez reprendre ce [projet](https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer) (qui lui-même est forké). Par rapport à son utilisation tout est expliqué dans le [README](https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer/blob/main/terraform/README.md)  et consiste principalement à changer des variables Terraform.
+You can reuse this [project](https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer) (which is itself forked). For usage instructions everything is explained in the [README](https://github.com/ramuskay/k3s-proxmox-terraform-ansible-packer/blob/main/terraform/README.md) and mainly consists of changing Terraform variables.
 
-Malgré tous cela il y a pas mal d'axes d'améliorations et problèmes inhérents à la solution choisie :
-- On pourrait mettre les variables sensibles dans Vault (Outil Hashicorp) et un git qui à chaque push redéploit une image packer.
-- Il faudrait aussi créer les utilisateurs adaptés (Terraform & Packer) avec les bons droits, voir ressource [Terraform](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs) par exemple.  
-- Il faudrait que le job packer se termine au bon moment pour que le job Terraform ne se lance pas trop tôt (j'ai un sleep 30 pour l'instant)  
-- Pas de provider packer natif donc on doit "tricher" pour supprimer le template
-- Terraform considère à un deuxième run que rien a changé et ne relance pas le job ansible (on peut tout de même le lancer à la main)
+Despite all this there are quite a few areas for improvement and problems inherent to the chosen solution:
+- We could store sensitive variables in Vault (HashiCorp tool) and a git that redeploys a Packer image on each push.
+- We should also create appropriate users (Terraform & Packer) with the right permissions — see the [Terraform](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs) resource for example.  
+- The Packer job should finish at the right moment so the Terraform job doesn't start too early (I currently have a sleep 30 in place)  
+- No native Packer provider so we have to "cheat" to delete the template
+- Terraform considers on a second run that nothing has changed and doesn't re-run the Ansible job (you can still run it manually)
 
-Bref il y a plein d'autres moyens de faire et d'améliorer ce pipeline, les outils HashiCorp sont quand même super pour cela !
+In short there are plenty of other ways to do and improve this pipeline — HashiCorp tools are really great for that!
 
 # Sources
 

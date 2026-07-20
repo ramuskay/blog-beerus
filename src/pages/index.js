@@ -44,8 +44,8 @@ export default class Index extends Component {
         <div className="container">
           <div className="lead">
             <div className="elevator">
-              <h1>Bonjour à tous 🖖</h1>
-              <p>Je suis un passionné de sysadmin et de Devops !</p>
+              <h1>Hello all 🖖</h1>
+              <p>I am passionate geek about sysadmin and DevOps !</p>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default class Index extends Component {
               </Link>
             ))}
           </div>
-          <label htmlFor="searchTerm">Filtres posts</label>
+          <label htmlFor="searchTerm">Filter posts</label>
           <div className="search-container">
             <input
               id="searchTerm"
@@ -70,7 +70,7 @@ export default class Index extends Component {
               type="text"
               name="searchTerm"
               value={searchTerm}
-              placeholder="Ecrit ici pour filtrer les posts..."
+              placeholder="Write here to filter..."
               onChange={this.handleChange}
             />
             <div className="filter-count">{filterCount}</div>
